@@ -1276,14 +1276,14 @@ class AppLocalizationsJa extends AppLocalizations {
   String get idRngReachableExcellentSidFinder => 'SID検索';
 
   @override
-  String get idRngReachableExcellentSidSearch => 'SID検索';
+  String get idRngReachableExcellentSidSearch => '結果検索';
 
   @override
   String get idRngQuickGuide => '説明';
 
   @override
   String get idRngQuickGuideBody =>
-      '優秀SID検索を押し、表示されたPIDを見て、狙いたいSID範囲のカードを選ぶと自動で戻って入力されます。\n次に年を入力します。新規ゲームでは操作時間が必要なため、最小Delayは5000以上を推奨します。\nSID検索を押し、狙いたい結果を選ぶとID乱数ページに戻り、タイマーが表示されます。\nタイマーに従ってDSの時刻を設定し、ゲームを開始して主人公作成を終えたら、テレビ画面で待機します。カウントダウン終了の瞬間にAを押します。\n実際に出たTIDでタイマーを補正し、再度試行します。';
+      '優秀SID検索を押し、表示されたPIDを見て、狙いたいSID範囲のカードを選ぶと自動で戻って入力されます。\n次に年を入力します。新規ゲームでは操作時間が必要なため、最小Delayは5500以上を推奨します。\n結果検索を押し、狙いたい結果を選ぶとID乱数ページに戻り、タイマーが表示されます。\nタイマーに従ってDSの時刻を設定し、ゲームを開始して主人公作成を終えたら、テレビ画面で待機します。カウントダウン終了の瞬間にAを押します。\n実際に出たTIDでタイマーを補正し、再度試行します。';
 
   @override
   String get idRngExcellentSidSearch => '優秀SIDを検索';

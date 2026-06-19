@@ -1294,14 +1294,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get idRngReachableExcellentSidFinder => 'Find SID';
 
   @override
-  String get idRngReachableExcellentSidSearch => 'Search SID';
+  String get idRngReachableExcellentSidSearch => 'Search Results';
 
   @override
   String get idRngQuickGuide => 'Guide';
 
   @override
   String get idRngQuickGuideBody =>
-      'Tap Excellent SID Finder, review the displayed PIDs, choose the SID range you want, then tap a card to return and fill the fields automatically.\nEnter the year next. A minimum Delay of at least 5000 is recommended, because a new game usually needs that much time for setup.\nTap Search SID and choose the desired result. The page returns to ID RNG and shows the timer.\nUse the timer to set the DS time, start the game, finish character creation, then wait on the TV screen. Press A exactly when the timer countdown ends.\nUse the TID you actually received to calibrate the timer, then repeat the attempt.';
+      'Tap Excellent SID Finder, review the displayed PIDs, choose the SID range you want, then tap a card to return and fill the fields automatically.\nEnter the year next. A minimum Delay of at least 5500 is recommended, because a new game usually needs that much time for setup.\nTap Search Results and choose the desired result. The page returns to ID RNG and shows the timer.\nUse the timer to set the DS time, start the game, finish character creation, then wait on the TV screen. Press A exactly when the timer countdown ends.\nUse the TID you actually received to calibrate the timer, then repeat the attempt.';
 
   @override
   String get idRngExcellentSidSearch => 'Search Excellent SID';

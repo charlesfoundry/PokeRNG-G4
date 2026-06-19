@@ -16,7 +16,7 @@ class ReachableExcellentSidResult {
   const ReachableExcellentSidResult({required this.state, required this.group});
 
   final Gen4IdState state;
-  final Gen4PidTargetGroup group;
+  final Gen4PidTargetGroup? group;
 }
 
 List<ReachableExcellentSidResult> matchReachableExcellentSidResults(
@@ -25,6 +25,10 @@ List<ReachableExcellentSidResult> matchReachableExcellentSidResults(
 ) {
   final results = <ReachableExcellentSidResult>[];
   for (final state in states) {
+    if (groupsByTsv.isEmpty) {
+      results.add(ReachableExcellentSidResult(state: state, group: null));
+      continue;
+    }
     final group = groupsByTsv[state.trainerShinyValue];
     if (group == null) {
       continue;
@@ -38,14 +42,17 @@ int compareReachableExcellentSidResults(
   ReachableExcellentSidResult left,
   ReachableExcellentSidResult right,
 ) {
-  final natureCompare = excellentSidNatureCount(
-    right.group,
-  ).compareTo(excellentSidNatureCount(left.group));
+  final leftGroup = left.group;
+  final rightGroup = right.group;
+  final natureCompare =
+      (rightGroup == null ? 0 : excellentSidNatureCount(rightGroup)).compareTo(
+        leftGroup == null ? 0 : excellentSidNatureCount(leftGroup),
+      );
   if (natureCompare != 0) {
     return natureCompare;
   }
-  final countCompare = right.group.targets.length.compareTo(
-    left.group.targets.length,
+  final countCompare = (rightGroup?.targets.length ?? 0).compareTo(
+    leftGroup?.targets.length ?? 0,
   );
   if (countCompare != 0) {
     return countCompare;

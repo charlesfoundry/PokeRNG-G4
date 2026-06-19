@@ -245,7 +245,7 @@ class _IdRngPageState extends State<IdRngPage> {
               game: widget.profile.game,
               tid: _selectedState?.tid,
               year: _selectedYear ?? _currentYear(),
-              minDelay: 5000,
+              minDelay: 5500,
               maxDelay: 6000,
             ),
           ),

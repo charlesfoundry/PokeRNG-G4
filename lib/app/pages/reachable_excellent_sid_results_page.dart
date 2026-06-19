@@ -205,18 +205,24 @@ class _ReachableExcellentSidCard extends StatelessWidget {
                     Text('${l10n.delay}: ${state.delay}'),
                     Text('${l10n.secretId}: ${_padId(state.sid)}'),
                     Text('TSV: ${state.trainerShinyValue}'),
-                    Text(
-                      l10n.idRngNatureCount(
-                        excellentSidNatureCount(group).toString(),
+                    if (group != null) ...[
+                      Text(
+                        l10n.idRngNatureCount(
+                          excellentSidNatureCount(group).toString(),
+                        ),
                       ),
-                    ),
-                    Text(
-                      l10n.idRngPidTargetCount(group.targets.length.toString()),
-                    ),
+                      Text(
+                        l10n.idRngPidTargetCount(
+                          group.targets.length.toString(),
+                        ),
+                      ),
+                    ],
                   ],
                 ),
-                const SizedBox(height: 8),
-                _TargetTable(targets: group.targets, names: names),
+                if (group != null) ...[
+                  const SizedBox(height: 8),
+                  _TargetTable(targets: group.targets, names: names),
+                ],
               ],
             ),
           ),
