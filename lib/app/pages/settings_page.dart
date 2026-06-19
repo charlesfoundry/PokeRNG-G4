@@ -235,198 +235,6 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           ],
         ),
-        const SizedBox(height: 18),
-        _SectionHeader(icon: Icons.timer, label: l10n.timerDefaults),
-        Row(
-          children: [
-            Expanded(
-              child: TextField(
-                controller: _calibratedDelayController,
-                decoration: InputDecoration(
-                  labelText: l10n.timerCalibratedDelay,
-                ),
-                keyboardType: TextInputType.number,
-                textInputAction: TextInputAction.next,
-                inputFormatters: platformDigitOnlyInputFormatters(),
-              ),
-            ),
-            const SizedBox(width: 10),
-            Expanded(
-              child: TextField(
-                controller: _calibratedSecondController,
-                decoration: InputDecoration(
-                  labelText: l10n.timerCalibratedSecond,
-                ),
-                keyboardType: TextInputType.number,
-                textInputAction: TextInputAction.next,
-                inputFormatters: platformDigitOnlyInputFormatters(),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 10),
-        Row(
-          children: [
-            Expanded(
-              child: TextField(
-                controller: _delayWindowController,
-                decoration: InputDecoration(labelText: l10n.delayWindow),
-                keyboardType: TextInputType.number,
-                textInputAction: TextInputAction.next,
-                inputFormatters: platformDigitOnlyInputFormatters(),
-              ),
-            ),
-            const SizedBox(width: 10),
-            Expanded(
-              child: TextField(
-                controller: _secondWindowController,
-                decoration: InputDecoration(labelText: l10n.secondWindow),
-                keyboardType: TextInputType.number,
-                textInputAction: TextInputAction.done,
-                inputFormatters: platformDigitOnlyInputFormatters(),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 10),
-        _SectionHeader(icon: Icons.badge_outlined, label: l10n.idRngSettings),
-        TextField(
-          controller: _idCalibratedDelayController,
-          decoration: InputDecoration(labelText: l10n.idRngCalibratedDelay),
-          keyboardType: TextInputType.number,
-          textInputAction: TextInputAction.done,
-          inputFormatters: platformDigitOnlyInputFormatters(),
-        ),
-        const SizedBox(height: 10),
-        _SectionHeader(
-          icon: Icons.egg_alt_outlined,
-          label: l10n.eggRngSettings,
-        ),
-        TextField(
-          controller: _eggCalibratedDelayController,
-          decoration: InputDecoration(labelText: l10n.eggRngCalibratedDelay),
-          keyboardType: TextInputType.number,
-          textInputAction: TextInputAction.next,
-          inputFormatters: platformDigitOnlyInputFormatters(),
-        ),
-        const SizedBox(height: 10),
-        TextField(
-          controller: _eggLockedPidController,
-          decoration: InputDecoration(labelText: l10n.eggLockedPid),
-          keyboardType: TextInputType.text,
-          textCapitalization: TextCapitalization.characters,
-          textInputAction: TextInputAction.done,
-        ),
-        const SizedBox(height: 18),
-        DropdownButtonFormField<Gen4TimerConsole>(
-          key: ValueKey(_timerConsole),
-          initialValue: _timerConsole,
-          isExpanded: true,
-          decoration: InputDecoration(labelText: l10n.timerConsole),
-          items: Gen4TimerConsole.values
-              .map(
-                (console) => DropdownMenuItem(
-                  value: console,
-                  child: Text(_timerConsoleLabel(l10n, console)),
-                ),
-              )
-              .toList(growable: false),
-          onChanged: (console) {
-            if (console == null) {
-              return;
-            }
-            setState(() => _timerConsole = console);
-          },
-        ),
-        const SizedBox(height: 10),
-        Row(
-          children: [
-            if (_timerConsole == Gen4TimerConsole.custom) ...[
-              Expanded(
-                child: TextField(
-                  controller: _timerCustomFrameRateController,
-                  decoration: InputDecoration(
-                    labelText: l10n.timerCustomFrameRate,
-                  ),
-                  keyboardType: const TextInputType.numberWithOptions(
-                    decimal: true,
-                  ),
-                  textInputAction: TextInputAction.next,
-                ),
-              ),
-              const SizedBox(width: 10),
-            ],
-            Expanded(
-              child: TextField(
-                controller: _timerMinimumLengthController,
-                decoration: InputDecoration(labelText: l10n.timerMinimumLength),
-                keyboardType: TextInputType.number,
-                textInputAction: TextInputAction.done,
-                inputFormatters: platformDigitOnlyInputFormatters(),
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 6),
-        SwitchListTile(
-          contentPadding: EdgeInsets.zero,
-          title: Text(l10n.timerPrecisionCalibration),
-          value: _timerPrecisionCalibration,
-          onChanged: (value) {
-            setState(() => _timerPrecisionCalibration = value);
-          },
-        ),
-        if (_game.isHgss) ...[
-          const SizedBox(height: 10),
-          DropdownButtonFormField<Gen4PhoneCaller>(
-            key: ValueKey(_phoneCaller),
-            initialValue: _phoneCaller,
-            isExpanded: true,
-            decoration: InputDecoration(labelText: l10n.hgssPhoneCaller),
-            items: Gen4PhoneCaller.values
-                .map(
-                  (caller) => DropdownMenuItem(
-                    value: caller,
-                    child: Text(_phoneCallerLabel(l10n, caller)),
-                  ),
-                )
-                .toList(growable: false),
-            onChanged: (caller) {
-              if (caller == null) {
-                return;
-              }
-              setState(() => _phoneCaller = caller);
-            },
-          ),
-          const SizedBox(height: 10),
-          TextField(
-            controller: _maxPhoneCallSkipController,
-            decoration: InputDecoration(labelText: l10n.maxPhoneCallSkip),
-            keyboardType: TextInputType.number,
-            textInputAction: TextInputAction.done,
-            inputFormatters: platformDigitOnlyInputFormatters(),
-          ),
-        ],
-        const SizedBox(height: 18),
-        _SectionHeader(icon: Icons.egg_alt, label: l10n.eggParentsSettings),
-        _SettingsIvGrid(
-          title: l10n.eggParentA,
-          controllers: _eggParentAControllers,
-        ),
-        const SizedBox(height: 10),
-        _SettingsIvGrid(
-          title: l10n.eggParentB,
-          controllers: _eggParentBControllers,
-        ),
-        const SizedBox(height: 6),
-        SwitchListTile(
-          contentPadding: EdgeInsets.zero,
-          title: Text(l10n.eggMasuda),
-          value: _eggMasuda,
-          onChanged: (value) {
-            setState(() => _eggMasuda = value);
-          },
-        ),
         const SizedBox(height: 12),
         SizedBox(
           key: const ValueKey('settings-save-row'),
@@ -437,17 +245,351 @@ class _SettingsPageState extends State<SettingsPage> {
             label: Text(l10n.save),
           ),
         ),
-        if (_errorText != null) ...[
-          const SizedBox(height: 16),
-          Text(
-            _errorText!,
-            style: TextStyle(color: Theme.of(context).colorScheme.error),
-          ),
-        ],
+        _SettingsError(errorText: _errorText),
+        const SizedBox(height: 22),
+        _SectionHeader(icon: Icons.tune, label: l10n.settings),
+        _SettingsEntryTile(
+          icon: Icons.timer,
+          title: l10n.timerDefaults,
+          subtitle:
+              '${l10n.timerCalibratedDelay} ${_calibratedDelayController.text} · '
+              '${l10n.timerCalibratedSecond} ${_calibratedSecondController.text}',
+          onTap: _openTimerDefaultsPage,
+        ),
+        const SizedBox(height: 8),
+        _SettingsEntryTile(
+          icon: Icons.badge_outlined,
+          title: l10n.idRngSettings,
+          subtitle:
+              '${l10n.idRngCalibratedDelay} ${_idCalibratedDelayController.text}',
+          onTap: _openIdRngSettingsPage,
+        ),
+        const SizedBox(height: 8),
+        _SettingsEntryTile(
+          icon: Icons.egg_alt_outlined,
+          title: l10n.eggRngSettings,
+          subtitle:
+              '${l10n.eggRngCalibratedDelay} ${_eggCalibratedDelayController.text}',
+          onTap: _openEggRngSettingsPage,
+        ),
+        const SizedBox(height: 8),
+        _SettingsEntryTile(
+          icon: Icons.egg_alt,
+          title: l10n.eggParentsSettings,
+          subtitle:
+              '${l10n.eggParentA} ${_eggParentAControllers.map((c) => c.text).join('/')}',
+          onTap: _openEggParentsSettingsPage,
+        ),
         const SizedBox(height: 22),
         _aboutSection(l10n),
       ],
     );
+  }
+
+  Future<void> _openTimerDefaultsPage() async {
+    await Navigator.of(context).push<void>(
+      MaterialPageRoute(
+        builder: (context) {
+          return StatefulBuilder(
+            builder: (context, setDetailState) {
+              final l10n = AppLocalizations.of(context);
+              return _SettingsDetailPage(
+                title: l10n.timerDefaults,
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          controller: _calibratedDelayController,
+                          decoration: InputDecoration(
+                            labelText: l10n.timerCalibratedDelay,
+                          ),
+                          keyboardType: TextInputType.number,
+                          textInputAction: TextInputAction.next,
+                          inputFormatters: platformDigitOnlyInputFormatters(),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: TextField(
+                          controller: _calibratedSecondController,
+                          decoration: InputDecoration(
+                            labelText: l10n.timerCalibratedSecond,
+                          ),
+                          keyboardType: TextInputType.number,
+                          textInputAction: TextInputAction.next,
+                          inputFormatters: platformDigitOnlyInputFormatters(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          controller: _delayWindowController,
+                          decoration: InputDecoration(
+                            labelText: l10n.delayWindow,
+                          ),
+                          keyboardType: TextInputType.number,
+                          textInputAction: TextInputAction.next,
+                          inputFormatters: platformDigitOnlyInputFormatters(),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: TextField(
+                          controller: _secondWindowController,
+                          decoration: InputDecoration(
+                            labelText: l10n.secondWindow,
+                          ),
+                          keyboardType: TextInputType.number,
+                          textInputAction: TextInputAction.done,
+                          inputFormatters: platformDigitOnlyInputFormatters(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 14),
+                  DropdownButtonFormField<Gen4TimerConsole>(
+                    key: ValueKey(_timerConsole),
+                    initialValue: _timerConsole,
+                    isExpanded: true,
+                    decoration: InputDecoration(labelText: l10n.timerConsole),
+                    items: Gen4TimerConsole.values
+                        .map(
+                          (console) => DropdownMenuItem(
+                            value: console,
+                            child: Text(_timerConsoleLabel(l10n, console)),
+                          ),
+                        )
+                        .toList(growable: false),
+                    onChanged: (console) {
+                      if (console == null) {
+                        return;
+                      }
+                      setDetailState(() => _timerConsole = console);
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  Row(
+                    children: [
+                      if (_timerConsole == Gen4TimerConsole.custom) ...[
+                        Expanded(
+                          child: TextField(
+                            controller: _timerCustomFrameRateController,
+                            decoration: InputDecoration(
+                              labelText: l10n.timerCustomFrameRate,
+                            ),
+                            keyboardType: const TextInputType.numberWithOptions(
+                              decimal: true,
+                            ),
+                            textInputAction: TextInputAction.next,
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                      ],
+                      Expanded(
+                        child: TextField(
+                          controller: _timerMinimumLengthController,
+                          decoration: InputDecoration(
+                            labelText: l10n.timerMinimumLength,
+                          ),
+                          keyboardType: TextInputType.number,
+                          textInputAction: TextInputAction.done,
+                          inputFormatters: platformDigitOnlyInputFormatters(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 6),
+                  SwitchListTile(
+                    contentPadding: EdgeInsets.zero,
+                    title: Text(l10n.timerPrecisionCalibration),
+                    value: _timerPrecisionCalibration,
+                    onChanged: (value) {
+                      setDetailState(() => _timerPrecisionCalibration = value);
+                    },
+                  ),
+                  if (_game.isHgss) ...[
+                    const SizedBox(height: 10),
+                    DropdownButtonFormField<Gen4PhoneCaller>(
+                      key: ValueKey(_phoneCaller),
+                      initialValue: _phoneCaller,
+                      isExpanded: true,
+                      decoration: InputDecoration(
+                        labelText: l10n.hgssPhoneCaller,
+                      ),
+                      items: Gen4PhoneCaller.values
+                          .map(
+                            (caller) => DropdownMenuItem(
+                              value: caller,
+                              child: Text(_phoneCallerLabel(l10n, caller)),
+                            ),
+                          )
+                          .toList(growable: false),
+                      onChanged: (caller) {
+                        if (caller == null) {
+                          return;
+                        }
+                        setDetailState(() => _phoneCaller = caller);
+                      },
+                    ),
+                    const SizedBox(height: 10),
+                    TextField(
+                      controller: _maxPhoneCallSkipController,
+                      decoration: InputDecoration(
+                        labelText: l10n.maxPhoneCallSkip,
+                      ),
+                      keyboardType: TextInputType.number,
+                      textInputAction: TextInputAction.done,
+                      inputFormatters: platformDigitOnlyInputFormatters(),
+                    ),
+                  ],
+                  ..._settingsSaveControls(setDetailState),
+                ],
+              );
+            },
+          );
+        },
+      ),
+    );
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  Future<void> _openIdRngSettingsPage() async {
+    await Navigator.of(context).push<void>(
+      MaterialPageRoute(
+        builder: (context) {
+          return StatefulBuilder(
+            builder: (context, setDetailState) {
+              final l10n = AppLocalizations.of(context);
+              return _SettingsDetailPage(
+                title: l10n.idRngSettings,
+                children: [
+                  TextField(
+                    controller: _idCalibratedDelayController,
+                    decoration: InputDecoration(
+                      labelText: l10n.idRngCalibratedDelay,
+                    ),
+                    keyboardType: TextInputType.number,
+                    textInputAction: TextInputAction.done,
+                    inputFormatters: platformDigitOnlyInputFormatters(),
+                  ),
+                  ..._settingsSaveControls(setDetailState),
+                ],
+              );
+            },
+          );
+        },
+      ),
+    );
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  Future<void> _openEggRngSettingsPage() async {
+    await Navigator.of(context).push<void>(
+      MaterialPageRoute(
+        builder: (context) {
+          return StatefulBuilder(
+            builder: (context, setDetailState) {
+              final l10n = AppLocalizations.of(context);
+              return _SettingsDetailPage(
+                title: l10n.eggRngSettings,
+                children: [
+                  TextField(
+                    controller: _eggCalibratedDelayController,
+                    decoration: InputDecoration(
+                      labelText: l10n.eggRngCalibratedDelay,
+                    ),
+                    keyboardType: TextInputType.number,
+                    textInputAction: TextInputAction.next,
+                    inputFormatters: platformDigitOnlyInputFormatters(),
+                  ),
+                  const SizedBox(height: 10),
+                  TextField(
+                    controller: _eggLockedPidController,
+                    decoration: InputDecoration(labelText: l10n.eggLockedPid),
+                    keyboardType: TextInputType.text,
+                    textCapitalization: TextCapitalization.characters,
+                    textInputAction: TextInputAction.done,
+                  ),
+                  ..._settingsSaveControls(setDetailState),
+                ],
+              );
+            },
+          );
+        },
+      ),
+    );
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  Future<void> _openEggParentsSettingsPage() async {
+    await Navigator.of(context).push<void>(
+      MaterialPageRoute(
+        builder: (context) {
+          return StatefulBuilder(
+            builder: (context, setDetailState) {
+              final l10n = AppLocalizations.of(context);
+              return _SettingsDetailPage(
+                title: l10n.eggParentsSettings,
+                children: [
+                  _SettingsIvGrid(
+                    title: l10n.eggParentA,
+                    controllers: _eggParentAControllers,
+                  ),
+                  const SizedBox(height: 10),
+                  _SettingsIvGrid(
+                    title: l10n.eggParentB,
+                    controllers: _eggParentBControllers,
+                  ),
+                  const SizedBox(height: 6),
+                  SwitchListTile(
+                    contentPadding: EdgeInsets.zero,
+                    title: Text(l10n.eggMasuda),
+                    value: _eggMasuda,
+                    onChanged: (value) {
+                      setDetailState(() => _eggMasuda = value);
+                    },
+                  ),
+                  ..._settingsSaveControls(setDetailState),
+                ],
+              );
+            },
+          );
+        },
+      ),
+    );
+    if (mounted) {
+      setState(() {});
+    }
+  }
+
+  List<Widget> _settingsSaveControls(StateSetter setDetailState) {
+    final l10n = AppLocalizations.of(context);
+    return [
+      const SizedBox(height: 16),
+      SizedBox(
+        width: double.infinity,
+        child: FilledButton.icon(
+          onPressed: () {
+            _saveProfile();
+            setDetailState(() {});
+          },
+          icon: const Icon(Icons.save),
+          label: Text(l10n.save),
+        ),
+      ),
+      _SettingsError(errorText: _errorText),
+    ];
   }
 
   void _copyProjectUrl() {
@@ -775,6 +917,73 @@ String _phoneCallerLabel(AppLocalizations l10n, Gen4PhoneCaller caller) {
     Gen4PhoneCaller.elm => l10n.phoneCallerElm,
     Gen4PhoneCaller.irwin => l10n.phoneCallerIrwin,
   };
+}
+
+class _SettingsEntryTile extends StatelessWidget {
+  const _SettingsEntryTile({
+    required this.icon,
+    required this.title,
+    required this.subtitle,
+    required this.onTap,
+  });
+
+  final IconData icon;
+  final String title;
+  final String subtitle;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Surface(
+      child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+        leading: Icon(icon),
+        title: Text(title),
+        subtitle: Text(subtitle, maxLines: 2, overflow: TextOverflow.ellipsis),
+        trailing: const Icon(Icons.chevron_right),
+        onTap: onTap,
+      ),
+    );
+  }
+}
+
+class _SettingsDetailPage extends StatelessWidget {
+  const _SettingsDetailPage({required this.title, required this.children});
+
+  final String title;
+  final List<Widget> children;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(title)),
+      body: ListView(
+        padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+        children: children,
+      ),
+    );
+  }
+}
+
+class _SettingsError extends StatelessWidget {
+  const _SettingsError({required this.errorText});
+
+  final String? errorText;
+
+  @override
+  Widget build(BuildContext context) {
+    final text = errorText;
+    if (text == null) {
+      return const SizedBox.shrink();
+    }
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: Text(
+        text,
+        style: TextStyle(color: Theme.of(context).colorScheme.error),
+      ),
+    );
+  }
 }
 
 class _SectionHeader extends StatelessWidget {
