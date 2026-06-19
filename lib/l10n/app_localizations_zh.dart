@@ -311,7 +311,34 @@ class AppLocalizationsZh extends AppLocalizations {
   String get about => '关于';
 
   @override
-  String get aboutPlaceholder => '关于内容以后补充。';
+  String get version => '版本';
+
+  @override
+  String get license => '许可证';
+
+  @override
+  String get project => '项目';
+
+  @override
+  String get privacyPolicy => '隐私政策';
+
+  @override
+  String get credits => '致谢';
+
+  @override
+  String get aboutDescription => '面向第四世代钻石、珍珠、白金、心金和魂银的多平台乱数工具。';
+
+  @override
+  String get unofficialNotice => '非官方乱数辅助工具。';
+
+  @override
+  String get aboutCredits => '参考 PokeFinder、EonTimer 与 PokemonRNG 社区研究。';
+
+  @override
+  String get copyProjectUrl => '复制项目地址';
+
+  @override
+  String get projectUrlCopied => '项目地址已复制';
 
   @override
   String get searchMode => '检索模式';

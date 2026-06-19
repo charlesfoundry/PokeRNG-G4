@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../core/gen4/gen4_timer.dart';
 import '../../data/gen4/gen4_game.dart';
@@ -7,6 +9,11 @@ import '../../l10n/gen4_game_localizations.dart';
 import '../app_chrome.dart';
 import '../app_language.dart';
 import '../app_profile.dart';
+
+const _projectUrl = 'https://github.com/charlesfoundry/PokeRNG-G4';
+const _privacyPolicyUrl =
+    'https://github.com/charlesfoundry/PokeRNG-G4/blob/main/PRIVACY.md';
+const _appLicense = 'GPL-3.0-only';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({
@@ -49,6 +56,7 @@ class _SettingsPageState extends State<SettingsPage> {
   late final List<TextEditingController> _eggParentAControllers;
   late final List<TextEditingController> _eggParentBControllers;
   late bool _eggMasuda;
+  String _appVersion = '-';
   String? _errorText;
 
   @override
@@ -92,6 +100,19 @@ class _SettingsPageState extends State<SettingsPage> {
     _eggParentAControllers = _ivControllers(widget.profile.eggParentAIvs);
     _eggParentBControllers = _ivControllers(widget.profile.eggParentBIvs);
     _eggMasuda = widget.profile.eggMasuda;
+    _loadAppVersion();
+  }
+
+  Future<void> _loadAppVersion() async {
+    final info = await PackageInfo.fromPlatform();
+    if (!mounted) {
+      return;
+    }
+    setState(() {
+      _appVersion = info.buildNumber.isEmpty
+          ? info.version
+          : '${info.version} (${info.buildNumber})';
+    });
   }
 
   @override
@@ -424,12 +445,88 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
         ],
         const SizedBox(height: 22),
+        _aboutSection(l10n),
+      ],
+    );
+  }
+
+  void _copyProjectUrl() {
+    Clipboard.setData(const ClipboardData(text: _projectUrl));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(AppLocalizations.of(context).projectUrlCopied)),
+    );
+  }
+
+  Widget _aboutSection(AppLocalizations l10n) {
+    final theme = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
         _SectionHeader(icon: Icons.info_outline, label: l10n.about),
-        Text(
-          l10n.aboutPlaceholder,
-          style: Theme.of(context).textTheme.bodyMedium,
+        Surface(
+          child: Padding(
+            padding: const EdgeInsets.all(14),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('PokeRNG G4', style: theme.textTheme.titleMedium),
+                const SizedBox(height: 6),
+                Text(l10n.aboutDescription),
+                const SizedBox(height: 4),
+                Text(l10n.unofficialNotice, style: theme.textTheme.labelMedium),
+                const SizedBox(height: 14),
+                _aboutRow(l10n.version, _appVersion),
+                _aboutRow(l10n.license, _appLicense),
+                _aboutRow(l10n.project, _projectUrl, selectable: true),
+                _aboutRow(
+                  l10n.privacyPolicy,
+                  _privacyPolicyUrl,
+                  selectable: true,
+                ),
+                const SizedBox(height: 10),
+                Text(l10n.credits, style: theme.textTheme.labelLarge),
+                const SizedBox(height: 6),
+                Text(l10n.aboutCredits),
+                const SizedBox(height: 12),
+                SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton.icon(
+                    onPressed: _copyProjectUrl,
+                    icon: const Icon(Icons.copy),
+                    label: Text(l10n.copyProjectUrl),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
       ],
+    );
+  }
+
+  Widget _aboutRow(String label, String value, {bool selectable = false}) {
+    final theme = Theme.of(context);
+    final valueStyle = theme.textTheme.bodyMedium;
+    final valueWidget = selectable
+        ? SelectableText(value, style: valueStyle)
+        : Text(value, style: valueStyle);
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 104,
+            child: Text(
+              label,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: theme.textTheme.labelMedium,
+            ),
+          ),
+          Expanded(child: valueWidget),
+        ],
+      ),
     );
   }
 

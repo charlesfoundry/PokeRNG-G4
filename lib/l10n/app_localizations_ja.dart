@@ -317,7 +317,36 @@ class AppLocalizationsJa extends AppLocalizations {
   String get about => 'このアプリについて';
 
   @override
-  String get aboutPlaceholder => '内容は後で追加します。';
+  String get version => 'バージョン';
+
+  @override
+  String get license => 'ライセンス';
+
+  @override
+  String get project => 'プロジェクト';
+
+  @override
+  String get privacyPolicy => 'プライバシーポリシー';
+
+  @override
+  String get credits => 'クレジット';
+
+  @override
+  String get aboutDescription =>
+      '第4世代のダイヤモンド、パール、プラチナ、ハートゴールド、ソウルシルバー向けのマルチプラットフォーム乱数ツールです。';
+
+  @override
+  String get unofficialNotice => '非公式の乱数補助ツールです。';
+
+  @override
+  String get aboutCredits =>
+      'PokeFinder、EonTimer、PokemonRNG コミュニティの研究を参考にしています。';
+
+  @override
+  String get copyProjectUrl => 'プロジェクトURLをコピー';
+
+  @override
+  String get projectUrlCopied => 'プロジェクトURLをコピーしました';
 
   @override
   String get searchMode => '検索モード';

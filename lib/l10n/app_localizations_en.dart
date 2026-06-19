@@ -321,7 +321,36 @@ class AppLocalizationsEn extends AppLocalizations {
   String get about => 'About';
 
   @override
-  String get aboutPlaceholder => 'About content will be added later.';
+  String get version => 'Version';
+
+  @override
+  String get license => 'License';
+
+  @override
+  String get project => 'Project';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get credits => 'Credits';
+
+  @override
+  String get aboutDescription =>
+      'A multi-platform RNG tool for Gen 4 Diamond, Pearl, Platinum, HeartGold, and SoulSilver.';
+
+  @override
+  String get unofficialNotice => 'Unofficial fan-made RNG utility.';
+
+  @override
+  String get aboutCredits =>
+      'References PokeFinder, EonTimer, and PokemonRNG community research.';
+
+  @override
+  String get copyProjectUrl => 'Copy project URL';
+
+  @override
+  String get projectUrlCopied => 'Project URL copied';
 
   @override
   String get searchMode => 'Search Mode';
