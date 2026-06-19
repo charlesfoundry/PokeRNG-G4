@@ -10,7 +10,7 @@ import '../app_profile.dart';
 import '../dppt_egg_pickup_search_job.dart';
 import '../dppt_egg_pid_search_job.dart';
 import '../gen4_time_finder_job.dart';
-import '../widgets/gen4_timer_panel.dart';
+import '../widgets/gen4_rng_timer_panel.dart';
 import '../widgets/keyboard_dismiss_region.dart';
 import 'dppt_egg_pickup_results_page.dart';
 import 'dppt_egg_pid_results_page.dart';
@@ -555,9 +555,6 @@ class _DpptEggPageState extends State<DpptEggPage> {
     final l10n = AppLocalizations.of(context);
     final selectedHeld = _selectedHeld!;
     final seedTime = _selectedHeldSeedTime;
-    final timerProfile = widget.profile.copyWith(
-      calibratedDelay: widget.profile.eggCalibratedDelay,
-    );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -581,8 +578,9 @@ class _DpptEggPageState extends State<DpptEggPage> {
             ),
           ],
           const SizedBox(height: 8),
-          Gen4TimerPanel(
-            profile: timerProfile,
+          Gen4RngTimerPanel(
+            slot: Gen4TimerCalibrationSlot.egg,
+            profile: widget.profile,
             targetDelay: seedTime.delay,
             targetSecond: seedTime.dateTime.second,
             targetDateTime: seedTime.dateTime,
@@ -919,10 +917,9 @@ class _DpptEggPageState extends State<DpptEggPage> {
               const SizedBox(height: 8),
             ],
             if (_selectedPickupSeedTime != null)
-              Gen4TimerPanel(
-                profile: widget.profile.copyWith(
-                  calibratedDelay: widget.profile.eggCalibratedDelay,
-                ),
+              Gen4RngTimerPanel(
+                slot: Gen4TimerCalibrationSlot.egg,
+                profile: widget.profile,
                 targetDelay: _selectedPickupSeedTime!.delay,
                 targetSecond: _selectedPickupSeedTime!.dateTime.second,
                 targetDateTime: _selectedPickupSeedTime!.dateTime,

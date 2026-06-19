@@ -11,7 +11,7 @@ import '../../l10n/app_localizations.dart';
 import '../app_profile.dart';
 import '../gen4_hit_reverse_search.dart';
 import '../search_results.dart';
-import '../widgets/gen4_timer_panel.dart';
+import '../widgets/gen4_rng_timer_panel.dart';
 import 'hit_reverse_page.dart';
 import 'seed_check_page.dart';
 import 'seed_to_time_page.dart';
@@ -267,7 +267,8 @@ class _CalibratePageState extends State<CalibratePage> {
           _SeedHitCard(match: _seedHit!, profile: widget.profile),
         ],
         const SizedBox(height: 16),
-        Gen4TimerPanel(
+        Gen4RngTimerPanel(
+          slot: Gen4TimerCalibrationSlot.encounter,
           profile: widget.profile,
           targetDelay: targetDelay,
           targetSecond: targetSecond,

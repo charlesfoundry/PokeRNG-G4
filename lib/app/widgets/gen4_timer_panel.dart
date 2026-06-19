@@ -127,10 +127,13 @@ class _Gen4TimerPanelState extends State<Gen4TimerPanel>
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
+    final hasSeedTime = widget.targetDateTime != null;
     final model = _model;
     final timer = Gen4Timer(settings: widget.profile.timerSettings);
-    final phases = model == null ? null : timer.createPhases(model);
-    final ndsSetTime = phases == null || widget.targetDateTime == null
+    final phases = model == null || !hasSeedTime
+        ? null
+        : timer.createPhases(model);
+    final ndsSetTime = phases == null
         ? null
         : widget.targetDateTime!.subtract(
             Duration(minutes: phases.minutesBeforeTarget),
@@ -198,7 +201,9 @@ class _Gen4TimerPanelState extends State<Gen4TimerPanel>
                   Expanded(
                     child: _TimerValue(
                       label: l10n.timerPreparation,
-                      value: _formatDuration(_timerPreparation),
+                      value: hasSeedTime
+                          ? _formatDuration(_timerPreparation)
+                          : '-',
                     ),
                   ),
                   const SizedBox(width: 8),
@@ -224,7 +229,9 @@ class _Gen4TimerPanelState extends State<Gen4TimerPanel>
               const SizedBox(height: 8),
               _TimerValue(
                 label: l10n.timerCurrentCountdown,
-                value: _formatDuration(displayRemaining),
+                value: phases == null && !_timerRunning
+                    ? '-'
+                    : _formatDuration(displayRemaining),
               ),
               if (kIsWeb)
                 Text(
@@ -273,7 +280,7 @@ class _Gen4TimerPanelState extends State<Gen4TimerPanel>
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton.icon(
-                  onPressed: _toggleTimer,
+                  onPressed: _timerRunning || hasSeedTime ? _toggleTimer : null,
                   icon: Icon(_timerRunning ? Icons.stop : Icons.play_arrow),
                   label: Text(_timerRunning ? l10n.timerStop : l10n.timerStart),
                 ),

@@ -5,8 +5,7 @@ import 'package:flutter/services.dart';
 import '../../core/gen4/gen4.dart';
 import '../../l10n/app_localizations.dart';
 import '../app_profile.dart';
-import '../widgets/gen4_id_timer_panel.dart';
-import '../widgets/gen4_timer_panel.dart';
+import '../widgets/gen4_rng_timer_panel.dart';
 import 'id_hit_results_page.dart';
 import 'reachable_excellent_sid_page.dart';
 import 'seed_to_time_page.dart';
@@ -74,7 +73,8 @@ class _IdRngPageState extends State<IdRngPage> {
           ],
           Text(l10n.idRngTimer, style: Theme.of(context).textTheme.titleSmall),
           const SizedBox(height: 8),
-          Gen4IdTimerPanel(
+          Gen4RngTimerPanel(
+            slot: Gen4TimerCalibrationSlot.id,
             profile: widget.profile,
             targetDelay: _selectedSeedTime?.delay,
             targetSecond: _selectedSeedTime?.dateTime.second,
