@@ -10,11 +10,14 @@ If that TID/SID pair matches useful PID targets, those PIDs can become shiny lat
 
 1. Open the **ID RNG** page.
 2. Tap **Find SID**.
-3. Enter the **TID** you want.
-4. Leave **Min SID** and **Max SID** blank if you do not have a range yet.
-5. Tap **Excellent SID Finder**.
+3. On the **Find SID** page, tap **Excellent SID Finder**.
 
 This opens the excellent SID search page.
+
+On that page, enter:
+
+- The **TID** you want.
+- The **Minimum IV** used to decide whether a PID is considered excellent.
 
 ## Find an Excellent SID
 
@@ -31,7 +34,7 @@ Each card shows the excellent PID targets available for that TSV.
 
 Tap a card you like.
 
-The app returns to the previous page and fills the corresponding SID range.
+The app returns to the **Find SID** page and fills the corresponding TID and SID range.
 
 ## Search Reachable SID Results
 
