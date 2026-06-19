@@ -181,6 +181,19 @@ String _tutorialLocale(BuildContext context) {
 List<_TutorialSection> _tutorialSections(AppLocalizations l10n) {
   return [
     _TutorialSection(
+      title: l10n.tutorialCategoryIntroduction,
+      topics: [
+        _TutorialTopic(
+          title: l10n.rngBeginnerHelpTitle,
+          assetName: 'rng_beginner',
+        ),
+        _TutorialTopic(
+          title: l10n.gen4RngPrinciplesHelpTitle,
+          assetName: 'gen4_rng_principles',
+        ),
+      ],
+    ),
+    _TutorialSection(
       title: l10n.tutorialCategoryBasics,
       topics: [
         _TutorialTopic(

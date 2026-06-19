@@ -592,6 +592,9 @@ class AppLocalizationsJa extends AppLocalizations {
       '下のチュートリアルは、作者が実機手順で確認済みの乱数です。載っていないゲームや場面でも、App が対応していないとは限りません。まだ追加検証が必要な場合があります。';
 
   @override
+  String get tutorialCategoryIntroduction => '紹介';
+
+  @override
   String get tutorialCategoryBasics => '基礎';
 
   @override
@@ -786,6 +789,12 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get pressA => 'Aを押す';
+
+  @override
+  String get rngBeginnerHelpTitle => '乱数とは';
+
+  @override
+  String get gen4RngPrinciplesHelpTitle => '第四世代乱数の原理';
 
   @override
   String get delayParityHelpTitle => 'Delayの奇偶切り替え';

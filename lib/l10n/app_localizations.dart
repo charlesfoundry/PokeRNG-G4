@@ -1210,6 +1210,12 @@ abstract class AppLocalizations {
   /// **'The tutorials below document workflows the author has verified through real play. A missing game or scenario does not mean the app does not support it; it may simply need further testing.'**
   String get tutorialNoticeBody;
 
+  /// No description provided for @tutorialCategoryIntroduction.
+  ///
+  /// In en, this message translates to:
+  /// **'Introduction'**
+  String get tutorialCategoryIntroduction;
+
   /// No description provided for @tutorialCategoryBasics.
   ///
   /// In en, this message translates to:
@@ -1575,6 +1581,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Press A'**
   String get pressA;
+
+  /// No description provided for @rngBeginnerHelpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What RNG Means'**
+  String get rngBeginnerHelpTitle;
+
+  /// No description provided for @gen4RngPrinciplesHelpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Gen 4 RNG Principles'**
+  String get gen4RngPrinciplesHelpTitle;
 
   /// No description provided for @delayParityHelpTitle.
   ///

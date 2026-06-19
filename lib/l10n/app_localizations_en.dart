@@ -600,6 +600,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'The tutorials below document workflows the author has verified through real play. A missing game or scenario does not mean the app does not support it; it may simply need further testing.';
 
   @override
+  String get tutorialCategoryIntroduction => 'Introduction';
+
+  @override
   String get tutorialCategoryBasics => 'Basics';
 
   @override
@@ -796,6 +799,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pressA => 'Press A';
+
+  @override
+  String get rngBeginnerHelpTitle => 'What RNG Means';
+
+  @override
+  String get gen4RngPrinciplesHelpTitle => 'Gen 4 RNG Principles';
 
   @override
   String get delayParityHelpTitle => 'Switching Delay Parity';

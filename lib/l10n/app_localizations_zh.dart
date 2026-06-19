@@ -584,6 +584,9 @@ class AppLocalizationsZh extends AppLocalizations {
       '下列教程记录的是作者已经在实机流程中验证过的乱数。没有出现在教程里的游戏或场景，并不代表 App 不支持，只是仍需要进一步尝试与确认。';
 
   @override
+  String get tutorialCategoryIntroduction => '介绍';
+
+  @override
   String get tutorialCategoryBasics => '基础';
 
   @override
@@ -777,6 +780,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get pressA => '按A';
+
+  @override
+  String get rngBeginnerHelpTitle => '什么是乱数';
+
+  @override
+  String get gen4RngPrinciplesHelpTitle => 'Gen4乱数原理';
 
   @override
   String get delayParityHelpTitle => 'Delay的奇偶切换';
