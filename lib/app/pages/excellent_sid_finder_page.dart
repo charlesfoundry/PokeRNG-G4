@@ -13,11 +13,13 @@ import '../search_results.dart';
 class ExcellentSidSelection {
   const ExcellentSidSelection({
     required this.tid,
+    required this.year,
     required this.sidRange,
     required this.group,
   });
 
   final int tid;
+  final int year;
   final Gen4ShinySidRange sidRange;
   final Gen4PidTargetGroup group;
 }
@@ -27,10 +29,12 @@ class ExcellentSidFinderPage extends StatefulWidget {
     super.key,
     required this.game,
     required this.tid,
+    required this.year,
   });
 
   final Gen4GameVersion game;
   final int? tid;
+  final int year;
 
   @override
   State<ExcellentSidFinderPage> createState() => _ExcellentSidFinderPageState();
@@ -41,7 +45,7 @@ class _ExcellentSidFinderPageState extends State<ExcellentSidFinderPage> {
     text: widget.tid == null || widget.tid == 0 ? '' : '${widget.tid}',
   );
   final _minIvController = TextEditingController(text: '28');
-  final _yearController = TextEditingController(text: '${DateTime.now().year}');
+  late final _yearController = TextEditingController(text: '${widget.year}');
   final _maxDelayController = TextEditingController(text: '40000');
   final _maxFrameController = TextEditingController(text: '200');
   _ExcellentSidSearchJob? _job;
@@ -215,6 +219,7 @@ class _ExcellentSidFinderPageState extends State<ExcellentSidFinderPage> {
               _ExcellentSidResults(
                 groups: _groups,
                 tid: _parseOptionalInt(_tidController),
+                year: _parseOptionalInt(_yearController),
                 names: snapshot.data,
                 onSelected: (selection) => Navigator.of(context).pop(selection),
               ),
@@ -526,12 +531,14 @@ class _ExcellentSidResults extends StatelessWidget {
   const _ExcellentSidResults({
     required this.groups,
     required this.tid,
+    required this.year,
     required this.names,
     required this.onSelected,
   });
 
   final List<_ReachableExcellentSidGroup>? groups;
   final int? tid;
+  final int? year;
   final Gen4NamedResources? names;
   final ValueChanged<ExcellentSidSelection> onSelected;
 
@@ -551,6 +558,7 @@ class _ExcellentSidResults extends StatelessWidget {
           _ExcellentSidGroupCard(
             group: group,
             tid: tid,
+            year: year,
             names: names,
             onSelected: onSelected,
           ),
@@ -565,12 +573,14 @@ class _ExcellentSidGroupCard extends StatelessWidget {
   const _ExcellentSidGroupCard({
     required this.group,
     required this.tid,
+    required this.year,
     required this.names,
     required this.onSelected,
   });
 
   final _ReachableExcellentSidGroup group;
   final int? tid;
+  final int? year;
   final Gen4NamedResources? names;
   final ValueChanged<ExcellentSidSelection> onSelected;
 
@@ -579,11 +589,12 @@ class _ExcellentSidGroupCard extends StatelessWidget {
     final l10n = AppLocalizations.of(context);
     final sidRange = tid == null ? null : group.group.sidRangeForTid(tid!);
     return _SurfaceCard(
-      onTap: tid == null || sidRange == null
+      onTap: tid == null || year == null || sidRange == null
           ? null
           : () => onSelected(
               ExcellentSidSelection(
                 tid: tid!,
+                year: year!,
                 sidRange: sidRange,
                 group: group.group,
               ),

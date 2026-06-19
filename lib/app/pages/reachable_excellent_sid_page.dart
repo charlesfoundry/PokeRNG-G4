@@ -210,6 +210,7 @@ class _ReachableExcellentSidPageState extends State<ReachableExcellentSidPage> {
         builder: (_) => ExcellentSidFinderPage(
           game: widget.game,
           tid: _parseOptionalInt(_tidController),
+          year: _searchYearValue,
         ),
       ),
     );
@@ -218,6 +219,7 @@ class _ReachableExcellentSidPageState extends State<ReachableExcellentSidPage> {
     }
     setState(() {
       _tidController.text = result.tid.toString();
+      _yearController.text = result.year.toString();
       _minSidController.text = _padId(result.sidRange.first);
       _maxSidController.text = _padId(result.sidRange.last);
       _error = null;

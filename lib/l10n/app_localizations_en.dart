@@ -1297,6 +1297,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get idRngReachableExcellentSidSearch => 'Search Results';
 
   @override
+  String get idRngReachableExcellentSidNoResults =>
+      'No reachable result was found for this TID/SID combination in the current Delay range. Try another SID range, or adjust the minimum and maximum Delay and search again.';
+
+  @override
   String get idRngQuickGuide => 'Guide';
 
   @override

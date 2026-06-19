@@ -5,6 +5,7 @@ import '../../data/gen4/named_resources.dart';
 import '../../l10n/app_localizations.dart';
 import '../egg_pid_search_job.dart';
 import '../search_results.dart';
+import '../widgets/screen_awake_scope.dart';
 
 class EggPidResultsPage extends StatefulWidget {
   const EggPidResultsPage({super.key, required this.request});
@@ -52,53 +53,55 @@ class _EggPidResultsPageState extends State<EggPidResultsPage> {
     final l10n = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(title: Text(l10n.eggPidResultsTitle)),
-      body: FutureBuilder<Gen4NamedResources>(
-        future: _names,
-        builder: (context, snapshot) {
-          return ListView(
-            padding: const EdgeInsets.fromLTRB(12, 12, 12, 16),
-            children: [
-              if (_state == Gen4SearchRunState.running) ...[
-                _SearchProgressBar(
-                  progress: _progress,
-                  onCancelSearch: _cancelSearch,
-                ),
-                const SizedBox(height: 12),
-              ] else if (_state == Gen4SearchRunState.failed ||
-                  _state == Gen4SearchRunState.cancelled ||
-                  _results.isEmpty) ...[
-                _StatusMessage(state: _state, error: _error),
-                const SizedBox(height: 12),
-              ],
-              if (_results.isNotEmpty) ...[
-                Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        l10n.resultCount(_formatInt(_results.length)),
-                        style: Theme.of(context).textTheme.labelLarge,
+      body: ScreenAwakeScope(
+        child: FutureBuilder<Gen4NamedResources>(
+          future: _names,
+          builder: (context, snapshot) {
+            return ListView(
+              padding: const EdgeInsets.fromLTRB(12, 12, 12, 16),
+              children: [
+                if (_state == Gen4SearchRunState.running) ...[
+                  _SearchProgressBar(
+                    progress: _progress,
+                    onCancelSearch: _cancelSearch,
+                  ),
+                  const SizedBox(height: 12),
+                ] else if (_state == Gen4SearchRunState.failed ||
+                    _state == Gen4SearchRunState.cancelled ||
+                    _results.isEmpty) ...[
+                  _StatusMessage(state: _state, error: _error),
+                  const SizedBox(height: 12),
+                ],
+                if (_results.isNotEmpty) ...[
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          l10n.resultCount(_formatInt(_results.length)),
+                          style: Theme.of(context).textTheme.labelLarge,
+                        ),
                       ),
-                    ),
-                    if (_resultLimitReached)
-                      Text(
-                        l10n.resultLimitReached,
-                        style: Theme.of(context).textTheme.labelSmall,
-                      ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                for (final result in _results) ...[
-                  _EggPidResultCard(
-                    result: result,
-                    names: snapshot.data,
-                    onTap: () => Navigator.of(context).pop(result),
+                      if (_resultLimitReached)
+                        Text(
+                          l10n.resultLimitReached,
+                          style: Theme.of(context).textTheme.labelSmall,
+                        ),
+                    ],
                   ),
                   const SizedBox(height: 8),
+                  for (final result in _results) ...[
+                    _EggPidResultCard(
+                      result: result,
+                      names: snapshot.data,
+                      onTap: () => Navigator.of(context).pop(result),
+                    ),
+                    const SizedBox(height: 8),
+                  ],
                 ],
               ],
-            ],
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }

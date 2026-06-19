@@ -7,6 +7,7 @@ import '../gen4_excellent_sid_targets.dart';
 import '../gen4_id_search_job.dart';
 import '../gen4_reachable_excellent_sid_search.dart';
 import '../search_results.dart';
+import '../widgets/screen_awake_scope.dart';
 
 const _reachableExcellentSidDisplayLimit = 200;
 
@@ -60,52 +61,54 @@ class _ReachableExcellentSidResultsPageState
         .toList(growable: false);
     return Scaffold(
       appBar: AppBar(title: Text(l10n.idRngReachableExcellentSidFinder)),
-      body: FutureBuilder<Gen4NamedResources>(
-        future: _namesFuture,
-        builder: (context, snapshot) {
-          return ListView(
-            padding: const EdgeInsets.fromLTRB(12, 12, 12, 16),
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      l10n.idRngReachableExcellentSidFinder,
-                      style: Theme.of(context).textTheme.titleLarge,
+      body: ScreenAwakeScope(
+        child: FutureBuilder<Gen4NamedResources>(
+          future: _namesFuture,
+          builder: (context, snapshot) {
+            return ListView(
+              padding: const EdgeInsets.fromLTRB(12, 12, 12, 16),
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        l10n.idRngReachableExcellentSidFinder,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
                     ),
-                  ),
-                  if (_results.isNotEmpty)
-                    Text(
-                      l10n.resultCount(displayed.length.toString()),
-                      style: Theme.of(context).textTheme.labelLarge,
-                    ),
-                ],
-              ),
-              if (_state == Gen4SearchRunState.running) ...[
-                const SizedBox(height: 10),
-                _SearchProgressBar(
-                  progress: _progress,
-                  onCancelSearch: _cancelSearch,
+                    if (_results.isNotEmpty)
+                      Text(
+                        l10n.resultCount(displayed.length.toString()),
+                        style: Theme.of(context).textTheme.labelLarge,
+                      ),
+                  ],
                 ),
-              ] else if (_results.isEmpty ||
-                  _state == Gen4SearchRunState.failed ||
-                  _state == Gen4SearchRunState.cancelled) ...[
-                const SizedBox(height: 12),
-                _StatusMessage(state: _state, error: _error),
-              ],
-              if (_results.isNotEmpty) ...[
-                const SizedBox(height: 12),
-                for (final result in displayed) ...[
-                  _ReachableExcellentSidCard(
-                    result: result,
-                    names: snapshot.data,
+                if (_state == Gen4SearchRunState.running) ...[
+                  const SizedBox(height: 10),
+                  _SearchProgressBar(
+                    progress: _progress,
+                    onCancelSearch: _cancelSearch,
                   ),
-                  const SizedBox(height: 8),
+                ] else if (_results.isEmpty ||
+                    _state == Gen4SearchRunState.failed ||
+                    _state == Gen4SearchRunState.cancelled) ...[
+                  const SizedBox(height: 12),
+                  _StatusMessage(state: _state, error: _error),
+                ],
+                if (_results.isNotEmpty) ...[
+                  const SizedBox(height: 12),
+                  for (final result in displayed) ...[
+                    _ReachableExcellentSidCard(
+                      result: result,
+                      names: snapshot.data,
+                    ),
+                    const SizedBox(height: 8),
+                  ],
                 ],
               ],
-            ],
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
@@ -346,7 +349,7 @@ class _StatusMessage extends StatelessWidget {
     final message = switch (state) {
       Gen4SearchRunState.idle => l10n.searchResultsPlaceholder,
       Gen4SearchRunState.running => l10n.searching,
-      Gen4SearchRunState.completed => l10n.noResults,
+      Gen4SearchRunState.completed => l10n.idRngReachableExcellentSidNoResults,
       Gen4SearchRunState.cancelled => l10n.searchCancelled,
       Gen4SearchRunState.failed => l10n.searchFailed,
     };

@@ -1279,6 +1279,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get idRngReachableExcellentSidSearch => '結果検索';
 
   @override
+  String get idRngReachableExcellentSidNoResults =>
+      '現在のTID/SIDの組み合わせは、このDelay範囲内では到達できる結果が見つかりません。別のSID範囲を試すか、最小/最大Delayを調整して再検索してください。';
+
+  @override
   String get idRngQuickGuide => '説明';
 
   @override

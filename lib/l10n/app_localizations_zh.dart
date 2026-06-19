@@ -1269,6 +1269,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get idRngReachableExcellentSidSearch => '检索结果';
 
   @override
+  String get idRngReachableExcellentSidNoResults =>
+      '当前TID/SID组合在此Delay范围内没有可到达结果。请尝试其他SID范围，或调整最小/最大Delay后重新检索。';
+
+  @override
   String get idRngQuickGuide => '说明';
 
   @override

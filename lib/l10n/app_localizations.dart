@@ -2500,6 +2500,12 @@ abstract class AppLocalizations {
   /// **'Search Results'**
   String get idRngReachableExcellentSidSearch;
 
+  /// No description provided for @idRngReachableExcellentSidNoResults.
+  ///
+  /// In en, this message translates to:
+  /// **'No reachable result was found for this TID/SID combination in the current Delay range. Try another SID range, or adjust the minimum and maximum Delay and search again.'**
+  String get idRngReachableExcellentSidNoResults;
+
   /// No description provided for @idRngQuickGuide.
   ///
   /// In en, this message translates to:

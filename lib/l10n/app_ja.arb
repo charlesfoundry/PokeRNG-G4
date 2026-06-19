@@ -575,6 +575,7 @@
   "idRngTidRequired": "TIDを入力してください。",
   "idRngReachableExcellentSidFinder": "SID検索",
   "idRngReachableExcellentSidSearch": "結果検索",
+  "idRngReachableExcellentSidNoResults": "現在のTID/SIDの組み合わせは、このDelay範囲内では到達できる結果が見つかりません。別のSID範囲を試すか、最小/最大Delayを調整して再検索してください。",
   "idRngQuickGuide": "説明",
   "idRngQuickGuideBody": "優秀SID検索を押し、表示されたPIDを見て、狙いたいSID範囲のカードを選ぶと自動で戻って入力されます。\n次に年を入力します。新規ゲームでは操作時間が必要なため、最小Delayは5500以上を推奨します。\n結果検索を押し、狙いたい結果を選ぶとID乱数ページに戻り、タイマーが表示されます。\nタイマーに従ってDSの時刻を設定し、ゲームを開始して主人公作成を終えたら、テレビ画面で待機します。カウントダウン終了の瞬間にAを押します。\n実際に出たTIDでタイマーを補正し、再度試行します。",
   "idRngExcellentSidSearch": "優秀SIDを検索",
