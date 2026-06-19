@@ -9,11 +9,8 @@ import '../gen4_id_search_job.dart';
 import '../gen4_reachable_excellent_sid_search.dart';
 import 'cute_charm_id_target_page.dart';
 import 'excellent_sid_finder_page.dart';
-import 'id_results_page.dart';
 import 'pid_target_finder_page.dart';
 import 'reachable_excellent_sid_results_page.dart';
-
-const _idSearchMaxStates = 30000000;
 
 class ReachableExcellentSidSelection {
   const ReachableExcellentSidSelection({
@@ -231,14 +228,6 @@ class _ReachableExcellentSidPageState extends State<ReachableExcellentSidPage> {
                       _searchSpaceText(l10n),
                       style: Theme.of(context).textTheme.labelSmall,
                     ),
-                    const SizedBox(height: 10),
-                    SizedBox(
-                      width: double.infinity,
-                      child: FilledButton(
-                        onPressed: _searchIds,
-                        child: Text(l10n.idRngSearchAll),
-                      ),
-                    ),
                     const SizedBox(height: 16),
                     Text(
                       l10n.idRngReachableExcellentSidFinder,
@@ -284,6 +273,20 @@ class _ReachableExcellentSidPageState extends State<ReachableExcellentSidPage> {
                   ],
                 ),
               ),
+              const SizedBox(height: 12),
+              _SurfaceCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      l10n.idRngQuickGuide,
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(l10n.idRngQuickGuideBody),
+                  ],
+                ),
+              ),
             ],
           );
         },
@@ -321,83 +324,6 @@ class _ReachableExcellentSidPageState extends State<ReachableExcellentSidPage> {
       parts.add('${l10n.idRngTargetPid}: $pid');
     }
     return parts.isEmpty ? l10n.none : parts.join(' · ');
-  }
-
-  Future<void> _searchIds() async {
-    final l10n = AppLocalizations.of(context);
-    final request = _buildIdSearchRequest(l10n);
-    if (request == null) {
-      return;
-    }
-    final selected = await Navigator.of(context).push<Gen4IdState>(
-      MaterialPageRoute(builder: (_) => IdResultsPage(request: request)),
-    );
-    if (!mounted || selected == null) {
-      return;
-    }
-    Navigator.of(context).pop(
-      ReachableExcellentSidSelection(year: _searchYearValue, state: selected),
-    );
-  }
-
-  Gen4IdSearchRequest? _buildIdSearchRequest(AppLocalizations l10n) {
-    final year = _parseOptionalInt(_yearController);
-    final minDelay = _parseOptionalInt(_minDelayController);
-    final maxDelay = _parseOptionalInt(_maxDelayController);
-    final tid = _parseOptionalInt(_tidController);
-    final minSid = _parseOptionalInt(_minSidController);
-    final maxSid = _parseOptionalInt(_maxSidController);
-    final tsv = _parseOptionalInt(_tsvController);
-    final pid = _parseOptionalPid(_pidController);
-    final sidRange = _parseOptionalSidRange(minSid: minSid, maxSid: maxSid);
-    if (year == null ||
-        minDelay == null ||
-        maxDelay == null ||
-        minDelay > maxDelay ||
-        year < 2000 ||
-        year > 2099 ||
-        !_validU16(tid) ||
-        sidRange == null ||
-        !_validTsv(tsv) ||
-        pid != null && (pid < 0 || pid > u32Mask)) {
-      setState(() => _error = l10n.idRngInvalidInput);
-      return null;
-    }
-    final rawMinDelay = _rawIdDelay(minDelay, year);
-    final rawMaxDelay = _rawIdDelay(maxDelay, year);
-    if (rawMinDelay < 0 || rawMaxDelay > 0xffff) {
-      setState(() => _error = l10n.idRngInvalidInput);
-      return null;
-    }
-    final targetTsvs = <int>{};
-    if (tsv != null) {
-      targetTsvs.add(tsv);
-    }
-    if (pid != null) {
-      targetTsvs.add(PokemonPid(pid).personalityShinyValue);
-    }
-    if (tid == null && sidRange.isEmpty && targetTsvs.isEmpty) {
-      setState(() => _error = l10n.idRngNeedFilter);
-      return null;
-    }
-    final searchSpace = (rawMaxDelay - rawMinDelay + 1) * 256 * 24;
-    if (searchSpace > _idSearchMaxStates) {
-      setState(
-        () => _error = l10n.searchSpaceTooLarge(_formatInt(_idSearchMaxStates)),
-      );
-      return null;
-    }
-    setState(() => _error = null);
-    return Gen4IdSearchRequest(
-      year: year,
-      minDelay: rawMinDelay,
-      maxDelay: rawMaxDelay,
-      filter: Gen4IdFilter(
-        tids: tid == null ? const {} : {tid},
-        sids: sidRange,
-        trainerShinyValues: targetTsvs,
-      ),
-    );
   }
 
   void _applyCuteCharmTarget(Gen4CuteCharmIdTarget target) {
@@ -746,28 +672,8 @@ int? _parseOptionalPid(TextEditingController controller) {
   return int.tryParse(text, radix: 16);
 }
 
-Set<int>? _parseOptionalSidRange({required int? minSid, required int? maxSid}) {
-  if (minSid == null && maxSid == null) {
-    return const {};
-  }
-  final resolvedMin = minSid ?? maxSid;
-  final resolvedMax = maxSid ?? minSid;
-  if (!_validU16(resolvedMin) ||
-      !_validU16(resolvedMax) ||
-      resolvedMin == null ||
-      resolvedMax == null ||
-      resolvedMin > resolvedMax) {
-    return null;
-  }
-  return {for (var sid = resolvedMin; sid <= resolvedMax; sid += 1) sid};
-}
-
 bool _validU16(int? value) {
   return value == null || value >= 0 && value <= 0xffff;
-}
-
-bool _validTsv(int? value) {
-  return value == null || value >= 0 && value <= 0x1fff;
 }
 
 String _seedHex(int seed) {

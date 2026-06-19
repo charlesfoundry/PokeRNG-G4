@@ -2383,8 +2383,20 @@ abstract class AppLocalizations {
   /// No description provided for @idRngReachableExcellentSidSearch.
   ///
   /// In en, this message translates to:
-  /// **'Search Reachable Excellent SID'**
+  /// **'Search SID'**
   String get idRngReachableExcellentSidSearch;
+
+  /// No description provided for @idRngQuickGuide.
+  ///
+  /// In en, this message translates to:
+  /// **'Guide'**
+  String get idRngQuickGuide;
+
+  /// No description provided for @idRngQuickGuideBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the TID you want. Min SID and Max SID can be left blank.\nTap Excellent SID Finder, review the displayed PIDs, choose the SID range you want, then tap a card to return and fill the fields automatically.\nEnter the year next. A minimum Delay of at least 5000 is recommended, because a new game usually needs that much time for setup.\nTap Search SID and choose the desired result. The page returns to ID RNG and shows the timer.\nUse the timer to set the DS time, start the game, finish character creation, then wait on the TV screen. Press A exactly when the timer countdown ends.\nUse the TID you actually received to calibrate the timer, then repeat the attempt.'**
+  String get idRngQuickGuideBody;
 
   /// No description provided for @idRngExcellentSidSearch.
   ///

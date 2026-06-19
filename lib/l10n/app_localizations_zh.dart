@@ -1206,7 +1206,14 @@ class AppLocalizationsZh extends AppLocalizations {
   String get idRngReachableExcellentSidFinder => '寻找SID';
 
   @override
-  String get idRngReachableExcellentSidSearch => '检索可达优秀SID';
+  String get idRngReachableExcellentSidSearch => '检索SID';
+
+  @override
+  String get idRngQuickGuide => '说明';
+
+  @override
+  String get idRngQuickGuideBody =>
+      '用户输入想要的TID，最大、最小SID可留空。\n点击寻找优秀SID，根据展示出来的PID，选择心仪的SID范围，点击卡片后会自动返回并填充数据。\n然后输入年份。最小Delay建议至少5000，再小的话新游戏通常来不及操作。\n点击检索SID，选择期望的结果后会回到ID乱数页并显示定时器。\n根据定时器设置DS时间、进入游戏、创建完成人物后，在电视机画面等待，在定时器倒计时结束瞬间按A。\n根据实际获得的TID校准定时器，然后重复操作。';
 
   @override
   String get idRngExcellentSidSearch => '检索优秀SID';
