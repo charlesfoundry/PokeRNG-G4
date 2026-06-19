@@ -1,0 +1,789 @@
+{
+  "@@locale": "zh",
+  "appTitle": "PokeRNG G4",
+  "target": "目标",
+  "search": "检索",
+  "egg": "孵蛋",
+  "eggHgssTitle": "HGSS算法孵蛋",
+  "eggHgssAlgorithmNote": "本页始终使用HGSS孵蛋算法。TID/SID默认读取当前游戏保存值，也可临时修改；实际生成蛋需要在HGSS中操作。",
+  "eggDpptTitle": "DPPt算法孵蛋",
+  "eggDpptAlgorithmNote": "本页是DPPt孵蛋页面的独立副本，后续只在这里接入DPPt专用生成蛋、领取蛋算法；HGSS孵蛋页面不会受影响。",
+  "eggDpptHeldFrameNote": "DPPt生成蛋阶段决定PID、性格、性别、特性和闪光。使用抛硬币确认Seed；抛硬币不会推进Egg Frame。",
+  "eggDpptPickupFrameNote": "DPPt领取蛋阶段决定个体值和遗传。DPPt使用原版遗传bug，本页会走独立的DPPt检索路径，不影响已验证的HGSS页面。",
+  "eggHgssOnlyTitle": "暂时只支持HGSS孵蛋",
+  "eggHgssOnlyBody": "DPPt孵蛋有独立的遗传机制，当前页面先只开放心金、魂银。",
+  "eggGenerateEggTab": "生成蛋",
+  "eggPickupEggTab": "领取蛋",
+  "eggDaycare": "寄放屋",
+  "eggGenderRatio": "性别比例",
+  "eggGenderRatioPercent": "{male}% ♂ : {female}% ♀",
+  "@eggGenderRatioPercent": {
+    "placeholders": {
+      "male": {
+        "type": "String"
+      },
+      "female": {
+        "type": "String"
+      }
+    }
+  },
+  "eggGenderRatioMaleOnly": "100% ♂",
+  "eggGenderRatioFemaleOnly": "100% ♀",
+  "eggMasuda": "国际孵蛋",
+  "eggParentsSettings": "孵蛋父母",
+  "eggParentA": "父母A个体值",
+  "eggParentB": "父母B个体值",
+  "eggHeldStage": "蛋PID",
+  "eggFrameOneNote": "简单模式固定只支持Egg Frame 1。命中这个Seed后，让老爷爷第一次生成蛋即可。",
+  "eggPhoneFrameNote": "生成蛋阶段决定PID、性格、性别、特性和闪光。Egg Frame是老爷爷生成蛋时使用的PID帧；Elm/Irwin电话只用于确认Seed，不自动等同于Egg Frame推进。",
+  "eggPickupFrameNote": "领取蛋阶段决定个体值和遗传。生成个体时会按年份、Delay范围和领取帧范围检索。反向查找默认Seed已经命中，只在已选择或已校验的领取Seed内查找不同领取帧。",
+  "eggPhoneCalls": "电话次数",
+  "eggMinFrame": "最小Egg Frame",
+  "eggMaxFrame": "最大Egg Frame",
+  "eggTargetEggFrame": "Egg Frame",
+  "eggPickupStage": "领取蛋",
+  "eggHeldSeed": "PID Seed",
+  "eggPickupSeed": "领取Seed",
+  "eggSearchPid": "生成PID",
+  "eggPidResultsTitle": "蛋PID结果",
+  "eggSearchIvs": "生成个体",
+  "eggObservedIvs": "实际个体值",
+  "eggObservedStats": "实际能力值（1级）",
+  "eggSelectHatchedPokemon": "请选择孵出的宝可梦。",
+  "eggObservedStatsInputError": "请填写孵出宝可梦的1级实际能力值。",
+  "eggObservedStatsNoIvRanges": "宝可梦、性格、能力值或个性不匹配，请检查输入。",
+  "eggPickupReverseSeedRequired": "请先选择目标领取结果，或通过检索Seed确认命中的领取Seed。",
+  "eggReversePickupSearch": "反向查找领取",
+  "eggPickupResultsTitle": "领取个体结果",
+  "eggLockedEgg": "已锁定的蛋",
+  "eggLockedPid": "锁定PID",
+  "eggLockedEggNote": "领取蛋只使用这里的PID身份信息。生成蛋时的Delay和Egg Frame不参与领取个体；领取Seed和领取帧独立决定个体值与遗传。",
+  "eggNoPickupTargetSelected": "尚未选择生成个体结果。",
+  "eggNoSeedTimeSelected": "尚未选择Seed时间。",
+  "eggTimerRequiresSeedTime": "选择Seed时间后显示定时器。",
+  "eggNoPidResults": "没有匹配的PID。",
+  "eggResultLimitReached": "已显示前 {count} 个结果，请缩小范围。",
+  "@eggResultLimitReached": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "eggNoIvResults": "没有匹配的领取结果。",
+  "eggSelectPidFirst": "请先在上方选择一个蛋PID。",
+  "eggSelectedPid": "已选择PID",
+  "eggSelectedSeedTime": "已选择Seed时间",
+  "eggObservedPid": "实机PID反查",
+  "eggReversePidSearch": "反向查询PID",
+  "eggSelectedHitDelay": "已选择命中Delay",
+  "eggMinIvsOptional": "最低个体值（可留空）",
+  "eggPidAdvance": "PID帧",
+  "eggPickupAdvance": "领取帧",
+  "eggInheritance": "遗传",
+  "results": "结果",
+  "calibrate": "校准",
+  "tools": "工具",
+  "settings": "设置",
+  "cancel": "取消",
+  "ok": "确定",
+  "language": "语言",
+  "languageSystem": "跟随系统",
+  "languageChinese": "中文",
+  "languageEnglish": "English",
+  "languageJapanese": "日本語",
+  "gameVersion": "游戏版本",
+  "gameDiamond": "钻石",
+  "gamePearl": "珍珠",
+  "gamePlatinum": "白金",
+  "gameHeartGold": "心金",
+  "gameSoulSilver": "魂银",
+  "trainerProfile": "训练家资料",
+  "trainerId": "TID",
+  "secretId": "SID",
+  "timerDefaults": "定时器默认值",
+  "delayWindow": "Delay范围",
+  "secondWindow": "秒数范围",
+  "hgssPhoneCaller": "HGSS电话文字",
+  "maxPhoneCallSkip": "最大初始帧",
+  "phoneCallerElm": "ウツギはかせ",
+  "phoneCallerIrwin": "ジャグラーのマイク",
+  "save": "保存",
+  "settingsInputError": "请输入0到65535之间的数值。",
+  "settingsTimerInputError": "请检查Delay、秒数、初始帧默认值。",
+  "settingsEggParentInputError": "请检查父母个体值，需要输入0到31之间的数值。",
+  "settingsEggLockedPidInputError": "请检查锁定PID，需要留空或输入8位十六进制PID。",
+  "about": "关于",
+  "aboutPlaceholder": "关于内容以后补充。",
+  "searchMode": "检索模式",
+  "timeFinder": "时间检索",
+  "generator": "生成器",
+  "generatorPlaceholder": "生成器设置会在时间检索接好后补充。",
+  "pokemon": "宝可梦",
+  "location": "地点",
+  "timeCondition": "时间",
+  "gbaCartridge": "GBA卡带",
+  "queryLocations": "查询地点",
+  "noMatchingLocations": "当前时间和卡带条件下没有匹配来源。",
+  "noAvailableLocationForGame": "当前游戏没有这只宝可梦的可用来源。",
+  "filters": "筛选",
+  "method": "Method",
+  "nature": "性格",
+  "ability": "特性",
+  "abilitySlot": "特性 {slot}: {name}",
+  "@abilitySlot": {
+    "placeholders": {
+      "slot": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "gender": "性别",
+  "genderMale": "♂",
+  "genderFemale": "♀",
+  "genderGenderless": "-",
+  "hiddenPower": "觉醒力量",
+  "levelShort": "等级",
+  "minLevel": "最低等级",
+  "maxLevel": "最高等级",
+  "minPower": "最低威力",
+  "maxPower": "最高威力",
+  "slot": "槽位",
+  "lead": "队首",
+  "syncNature": "同步性格",
+  "shiny": "闪光",
+  "notShiny": "非闪光",
+  "hpIv": "HP IV",
+  "atkIv": "Atk IV",
+  "defIv": "Def IV",
+  "spaIv": "SpA IV",
+  "spdIv": "SpD IV",
+  "speIv": "Spe IV",
+  "searchRange": "检索范围",
+  "year": "年份",
+  "minDelay": "最小Delay",
+  "maxDelay": "最大Delay",
+  "minAdvance": "最小帧",
+  "maxAdvance": "最大帧",
+  "second": "秒",
+  "forceSecond": "固定秒数",
+  "searchSpaceInvalid": "检索量：范围无效",
+  "searchSpaceStates": "检索量：{states} states",
+  "@searchSpaceStates": {
+    "placeholders": {
+      "states": {
+        "type": "String"
+      }
+    }
+  },
+  "searchSpaceTooLarge": "请缩小到 {max} 以下",
+  "@searchSpaceTooLarge": {
+    "placeholders": {
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "searching": "检索中...",
+  "searchComplete": "检索完成。",
+  "searchResultsPlaceholder": "检索结果会显示在这里。",
+  "noResults": "没有结果。",
+  "searchCancelled": "检索已取消。",
+  "searchFailed": "检索失败。",
+  "resultLimitReached": "已达到结果上限。",
+  "sendToCalibration": "发送到校准",
+  "saveTarget": "保存目标",
+  "targetSaved": "目标已保存",
+  "targetAlreadySaved": "这个目标已经保存过。",
+  "savedTargets": "目标记录",
+  "helpSection": "说明",
+  "tutorialsTitle": "教程",
+  "tutorialsOpen": "查看教程",
+  "tutorialCategoryBasics": "基础",
+  "tutorialCategoryStarter": "初始",
+  "tutorialCategoryStationary": "定点",
+  "tutorialCategoryWild": "野生",
+  "tutorialCategoryEgg": "孵蛋",
+  "leadAbilityHelpTitle": "DP/Pt/HGSS队首特性",
+  "wildSweetScentHelpTitle": "HGSS甜甜香气",
+  "noSavedTargets": "在结果页点击某个结果，可以保存目标。",
+  "deleteTarget": "删除目标",
+  "resultCount": "{count} 个结果",
+  "@resultCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "searchProgress": "{scanned} / {total}",
+  "@searchProgress": {
+    "placeholders": {
+      "scanned": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "seed": "Seed",
+  "pid": "PID",
+  "delay": "Delay",
+  "advance": "帧",
+  "hour": "小时",
+  "time": "时间",
+  "ivs": "个体值",
+  "stats": "能力值",
+  "hpStat": "HP",
+  "atkStat": "攻击",
+  "defStat": "防御",
+  "spaStat": "特攻",
+  "spdStat": "特防",
+  "speStat": "速度",
+  "month": "月份",
+  "day": "日期",
+  "minute": "分钟",
+  "calibrateSeedCheck": "Seed校验",
+  "calibrateCoinFlips": "DPPt硬币",
+  "calibratePhoneCalls": "HGSS电话",
+  "calibrateParameterHelp": "目标Delay/目标秒来自搜索结果，是这次要命中的seed。校准Delay/校准秒来自设置页，是你的机器和按键节奏基准，不是额外等待时间。",
+  "calibrateQuickGuide": "简易流程：先用硬币或电话反查seed，确认自己实际命中的秒和Delay；秒长期偏差时更新校准秒，Delay偏差时用Hit Delay重算校准Delay。正式命中目标时不要再校验seed，按定时器进游戏后直接操作目标，捕获后再反查实际命中结果。",
+  "calibrationTarget": "本次目标",
+  "noCalibrationTarget": "没有校准目标。请从结果页点击一个目标发送到校准页。",
+  "seedToTime": "获取Seed时间",
+  "seedToTimeTitle": "Seed to Time",
+  "seedToTimeSearch": "获取时间",
+  "seedToTimeInvalidFilter": "年份请输入2000到2099，月份请输入1到12，日期请输入1到31。",
+  "noSeedTimeResults": "没有符合条件的时间。",
+  "selectedSeedTime": "已选择Seed时间",
+  "seedSearch": "检索Seed",
+  "seedSearchTitle": "Seed检索",
+  "selectedSeedHit": "已选择命中Seed",
+  "selectedSeedHitHelp": "该结果的Delay已填入定时器的实际Delay。点击应用校准后，会更新校准Delay，并按命中秒偏差微调校准秒。",
+  "initialAdvance": "环境帧",
+  "currentAdvance": "当前帧",
+  "targetAdvance": "目标帧",
+  "remainingAdvance": "推进帧",
+  "advanceOffset": "Offset",
+  "initialAdvanceFilter": "初始环境帧",
+  "advanceOffsetHelp": "DPPt用捕获后的反向查找计算offset。HGSS可以直接用电话计算offset；反向查找仍然可用。",
+  "chatotPitches": "喋喋不休音准",
+  "chatotPitchHigh": "高",
+  "chatotPitchLow": "低",
+  "chatotTotalAdvances": "喋喋不休: {count}次",
+  "@chatotTotalAdvances": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "advanceAhead": "后{count}帧",
+  "@advanceAhead": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "targetAction": "目标",
+  "advanceOneFrame": "推进",
+  "pressA": "按A",
+  "timerTimingHelpTitle": "DP/Pt/HGSS定时器按键时机",
+  "eggHeldHelpTitle": "HGSS生成蛋",
+  "eggPickupHelpTitle": "HGSS领取蛋",
+  "chatotAdvanceHelpTitle": "Pt/HGSS聒噪鸟与目标帧",
+  "hgssStationaryHelpTitle": "HGSS定点闪",
+  "honeyTreeHelpTitle": "Pt甜甜蜜树闪",
+  "platinumStarterHelpTitle": "Pt初始闪",
+  "calibratedSecondCurrent": "当前校准秒：{second}",
+  "@calibratedSecondCurrent": {
+    "placeholders": {
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "calibratedSecondHit": "命中秒：{second}",
+  "@calibratedSecondHit": {
+    "placeholders": {
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "calibrateTargetTime": "目标时间",
+  "calibrateSearchWindow": "校验范围",
+  "calibrateTargetDelay": "目标Delay",
+  "calibrateDelayWindow": "Delay +/-",
+  "calibrateSecondWindow": "秒 +/-",
+  "calibrateObservedSequence": "实际序列",
+  "calibratePhoneCallerHelp": "当前电话文字：{caller}。如需修改，请前往设置页面。",
+  "@calibratePhoneCallerHelp": {
+    "placeholders": {
+      "caller": {
+        "type": "String"
+      }
+    }
+  },
+  "calibrateNoSequence": "按实际结果顺序点击。",
+  "calibrateInvalidTarget": "请修正目标时间和范围。",
+  "calibrateTargetSeedTimeRequired": "请先点击获取Seed时间，选择能生成目标seed的时间后再检索Seed。",
+  "calibrateNoMatches": "没有匹配的seed。",
+  "coinMagikarp": "鲤鱼王",
+  "coinPokeBall": "精灵球",
+  "coinMagikarpShort": "鲤",
+  "coinPokeBallShort": "球",
+  "phoneElmShort": "E",
+  "phoneKantoShort": "K",
+  "phonePokerusShort": "P",
+  "phoneElmMessage": "E - ポケモンの　しんかというのは",
+  "phoneKantoMessage": "K - カントーには　まだ　ぼくの",
+  "phonePokerusMessage": "P - ポケルスが　くっついた",
+  "phoneIrwinElmMessage": "E - きみの　かつやくを　きいて",
+  "phoneIrwinKantoMessage": "K - でんわ　うれしいなあ!",
+  "phoneIrwinPokerusMessage": "P - げんきかい?",
+  "matches": "匹配结果",
+  "undo": "撤销",
+  "clear": "清空",
+  "retailTimer": "实机定时器",
+  "timerPreparation": "准备阶段",
+  "timerFirstCountdown": "第一段计时",
+  "timerSecondCountdown": "第二段计时",
+  "timerCurrentCountdown": "倒计时",
+  "timerReady": "等待开始",
+  "timerFinished": "完成",
+  "timerStart": "开始",
+  "timerStop": "停止",
+  "timerTargetDelay": "目标Delay",
+  "timerTargetSecond": "目标秒",
+  "timerCalibratedDelay": "校准Delay",
+  "timerCalibratedSecond": "校准秒",
+  "idRngSettings": "ID乱数设置",
+  "idRngCalibratedDelay": "ID校准Delay",
+  "eggRngSettings": "孵蛋乱数设置",
+  "eggRngCalibratedDelay": "孵蛋校准Delay",
+  "timerDelayHit": "实际Delay",
+  "timerApplyCalibration": "应用校准",
+  "timerCalibrationAppliedTitle": "校准已应用",
+  "timerCalibrationDelayChange": "校准 Delay: {before} -> {after}",
+  "@timerCalibrationDelayChange": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "after": {
+        "type": "String"
+      }
+    }
+  },
+  "timerCalibrationSecondChange": "校准秒: {before} -> {after}",
+  "@timerCalibrationSecondChange": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "after": {
+        "type": "String"
+      }
+    }
+  },
+  "timerCalibrationFirstCountdownChange": "第一阶段: {before} -> {after}",
+  "@timerCalibrationFirstCountdownChange": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "after": {
+        "type": "String"
+      }
+    }
+  },
+  "timerCalibrationSecondCountdownChange": "第二阶段: {before} -> {after}",
+  "@timerCalibrationSecondCountdownChange": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "after": {
+        "type": "String"
+      }
+    }
+  },
+  "timerConsole": "机型",
+  "timerConsoleGba": "GBA",
+  "timerConsoleNdsSlot1": "NDS - Slot 1",
+  "timerConsoleNdsSlot2": "NDS - Slot 2",
+  "timerConsoleDsi": "DSi",
+  "timerConsole3ds": "3DS",
+  "timerConsoleCustom": "自定义",
+  "timerCustomFrameRate": "自定义帧率",
+  "timerMinimumLength": "最短计时",
+  "timerPrecisionCalibration": "精确校准",
+  "timerMinutesBeforeTarget": "把NDS时间设置到目标时间前{minutes}分钟",
+  "@timerMinutesBeforeTarget": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "timerNdsSetTime": "把NDS时间设置为{time}",
+  "@timerNdsSetTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "timerPhase": "第{phase}段",
+  "@timerPhase": {
+    "placeholders": {
+      "phase": {
+        "type": "String"
+      }
+    }
+  },
+  "timerInputError": "请检查定时器参数。",
+  "timerWebSoundUnsupported": "Web 版本的定时器暂时不支持倒计时提示音。",
+  "reverseHitFeedback": "反查反馈",
+  "reverseHitSeedMatched": "Seed已命中",
+  "reverseHitSeedMissed": "Seed未命中",
+  "reverseHitTargetAdvance": "目标帧",
+  "reverseHitActualAdvance": "实际帧",
+  "reverseHitAdvanceDelta": "帧差：{delta}",
+  "@reverseHitAdvanceDelta": {
+    "placeholders": {
+      "delta": {
+        "type": "String"
+      }
+    }
+  },
+  "observedHit": "实际命中",
+  "starterObservedHit": "御三家命中",
+  "characteristic": "个性",
+  "characteristicOptions": "非常喜欢吃东西|经常睡午觉|常常打瞌睡|经常乱扔东西|喜欢悠然自在|以力气大为傲|喜欢胡闹|有点容易生气|喜欢打架|血气方刚|身体强壮|抗打能力强|顽强不屈|能吃苦耐劳|善于忍耐|喜欢比谁跑得快|对声音敏感|冒冒失失|有点容易得意忘形|逃得快|好奇心强|喜欢恶作剧|做事万无一失|经常思考|一丝不苟|性格强势|有一点点爱慕虚荣|争强好胜|不服输|有一点点固执",
+  "reverseHitSearch": "反向查找宝可梦",
+  "reverseHitTitle": "反向查找",
+  "reverseHitNoResults": "没有匹配结果。",
+  "reverseHitTargetSeed": "目标Seed",
+  "reverseHitNearbySeed": "附近Seed",
+  "searchDisabledSelectPokemon": "请先选择宝可梦。",
+  "searchDisabledQueryLocations": "选择宝可梦后，请先查询地点。",
+  "searchDisabledSelectLocation": "请选择地点。",
+  "searchDisabledInvalidRange": "请修正检索范围。",
+  "searchDisabledSearchSpaceTooLarge": "请把检索量缩小到 {max} 以下。",
+  "@searchDisabledSearchSpaceTooLarge": {
+    "placeholders": {
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "searchDisabledInvalidIvs": "个体值请输入0到31之间的数值。",
+  "searchDisabledIvRangeTooLarge": "请把个体组合缩小到 {max} 以下。",
+  "@searchDisabledIvRangeTooLarge": {
+    "placeholders": {
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "searchDisabledInvalidHiddenPower": "觉醒力量威力请输入30到70之间的数值。",
+  "searchDisabledUnsupportedSource": "这个来源暂时还不能检索。",
+  "searchDisabledDelayYearOverflow": "Delay范围超出了当前年份可用的seed范围。",
+  "searchDisabledAlreadyRunning": "检索正在运行。",
+  "any": "任意",
+  "none": "无",
+  "gbaRuby": "红宝石",
+  "gbaSapphire": "蓝宝石",
+  "gbaEmerald": "绿宝石",
+  "gbaFireRed": "火红",
+  "gbaLeafGreen": "叶绿",
+  "leadNone": "无",
+  "leadSynchronize": "同步",
+  "leadCuteCharmMale": "迷人之躯♂",
+  "leadCuteCharmFemale": "迷人之躯♀",
+  "leadCompoundEyes": "复眼",
+  "leadPressure": "压迫感",
+  "leadSuctionCups": "吸盘",
+  "leadArenaTrap": "沙穴",
+  "leadMagnetPull": "磁力",
+  "leadStatic": "静电",
+  "typeFighting": "格斗",
+  "typeFlying": "飞行",
+  "typePoison": "毒",
+  "typeGround": "地面",
+  "typeRock": "岩石",
+  "typeBug": "虫",
+  "typeGhost": "幽灵",
+  "typeSteel": "钢",
+  "typeFire": "火",
+  "typeWater": "水",
+  "typeGrass": "草",
+  "typeElectric": "电",
+  "typePsychic": "超能力",
+  "typeIce": "冰",
+  "typeDragon": "龙",
+  "typeDark": "恶",
+  "idRng": "ID乱数",
+  "idRngTarget": "目标ID",
+  "idRngSearch": "检索ID",
+  "idRngSearchAll": "检索ID（全部）",
+  "idRngResults": "ID结果",
+  "idRngTimer": "ID定时器",
+  "idRngHitCheck": "实际ID校验",
+  "idRngMinSid": "最小SID",
+  "idRngMaxSid": "最大SID",
+  "idRngTargetPid": "目标PID",
+  "idRngTargetTsv": "目标TSV",
+  "idRngExtraTargetFilters": "额外目标条件",
+  "cuteCharmIdTarget": "迷人之躯ID目标",
+  "idRngPidTargetFinder": "PID目标检索",
+  "idRngExcellentSidFinder": "寻找优秀SID",
+  "idRngReachableExcellentSidFinder": "寻找SID",
+  "idRngReachableExcellentSidSearch": "检索可达优秀SID",
+  "idRngExcellentSidSearch": "检索优秀SID",
+  "idRngExcellentSidResults": "最佳目标TSV组",
+  "idRngIncludeNeutralNatures": "显示平衡性格",
+  "idRngSortByNatureCount": "性格最多",
+  "idRngSortByTargetCount": "结果最多",
+  "idRngExcellentSidGroup": "TSV {tsv}",
+  "@idRngExcellentSidGroup": {
+    "placeholders": {
+      "tsv": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngPidTargetCount": "{count}个目标",
+  "@idRngPidTargetCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngNatureCount": "{count}种性格",
+  "@idRngNatureCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSidRangeShort": "SID {range}",
+  "@idRngSidRangeShort": {
+    "placeholders": {
+      "range": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngPidTargetNatures": "目标性格",
+  "idRngPidTargetMinIvs": "最低个体值",
+  "idRngPidTargetSearch": "检索PID目标",
+  "idRngPidTargetResults": "PID目标结果",
+  "idRngPidTargetNoResults": "没有PID目标。",
+  "idRngPidTargetInvalidInput": "请检查性格和个体值筛选。",
+  "idRngPidTargetGroup": "PSV {psv} · {count}个目标",
+  "@idRngPidTargetGroup": {
+    "placeholders": {
+      "psv": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngPidTargetGroupWithSid": "PSV {psv} · {count}个目标 · SID {sidRange}",
+  "@idRngPidTargetGroupWithSid": {
+    "placeholders": {
+      "psv": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      },
+      "sidRange": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngPidTargetResult": "PID {pid} · {nature} · 个体值 {ivs} · 特性 {ability}",
+  "@idRngPidTargetResult": {
+    "placeholders": {
+      "pid": {
+        "type": "String"
+      },
+      "nature": {
+        "type": "String"
+      },
+      "ivs": {
+        "type": "String"
+      },
+      "ability": {
+        "type": "String"
+      }
+    }
+  },
+  "genderRatio": "性别比例",
+  "cuteCharmIdSummary": "PID {pid} · TSV {tsv} · 特性 {ability} · 目标性别 {gender}",
+  "@cuteCharmIdSummary": {
+    "placeholders": {
+      "pid": {
+        "type": "String"
+      },
+      "tsv": {
+        "type": "String"
+      },
+      "ability": {
+        "type": "String"
+      },
+      "gender": {
+        "type": "String"
+      }
+    }
+  },
+  "cuteCharmApplyIdTarget": "应用到ID检索",
+  "idRngSearchSpace": "检索量：{states} seeds",
+  "@idRngSearchSpace": {
+    "placeholders": {
+      "states": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngNeedFilter": "至少输入TID、SID、TSV或PID。",
+  "idRngInvalidInput": "请检查ID乱数参数。",
+  "idRngPidSummary": "PSV {psv} · 性格 {nature}",
+  "@idRngPidSummary": {
+    "placeholders": {
+      "psv": {
+        "type": "String"
+      },
+      "nature": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSidRange": "可闪SID：{range}",
+  "@idRngSidRange": {
+    "placeholders": {
+      "range": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSidCandidates": "SID候选：{values}",
+  "@idRngSidCandidates": {
+    "placeholders": {
+      "values": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSelectedState": "已选择ID结果",
+  "idRngSelectResultFirst": "请先选择一个ID结果。",
+  "idRngNoSeedTime": "请先获取并选择Seed时间。",
+  "idRngResultSubtitle": "TID {tid} · SID {sid} · TSV {tsv}",
+  "@idRngResultSubtitle": {
+    "placeholders": {
+      "tid": {
+        "type": "String"
+      },
+      "sid": {
+        "type": "String"
+      },
+      "tsv": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSearchHit": "反查命中Delay",
+  "idRngHitDelayWindow": "Delay偏差",
+  "idRngHitResults": "ID命中结果",
+  "idRngSelectedHit": "已选择命中ID",
+  "idRngNoHit": "没有找到匹配的TID/SID。",
+  "idRngHitHelp": "该结果的Delay已填入ID定时器的实际Delay。点击应用校准后，仅更新ID校准Delay，不会改动遇敌定时器Delay。",
+  "gen4TargetCategoryWild": "野生",
+  "gen4TargetCategoryStationary": "定点",
+  "gen4TargetCategoryLegend": "传说",
+  "gen4TargetCategoryGift": "礼物",
+  "gen4TargetCategoryStarter": "御三家",
+  "gen4TargetCategoryFossil": "化石",
+  "gen4TargetCategoryGameCorner": "游戏中心",
+  "gen4TargetCategoryEvent": "事件",
+  "gen4TargetCategoryRoamer": "游走",
+  "gen4TargetWildGrass": "草丛",
+  "gen4TargetWildSurfing": "冲浪",
+  "gen4TargetWildOldRod": "破旧钓竿",
+  "gen4TargetWildGoodRod": "好钓竿",
+  "gen4TargetWildSuperRod": "厉害钓竿",
+  "gen4TargetWildRockSmash": "碎岩",
+  "gen4TargetWildBugCatchingContest": "捕虫大会",
+  "gen4TargetWildHeadbutt": "撞树",
+  "gen4TargetWildHeadbuttAlt": "撞树候补",
+  "gen4TargetWildHeadbuttSpecial": "特殊撞树",
+  "gen4TargetWildHoneyTree": "甜甜蜜树",
+  "gen4TargetTimeMorning": "早晨",
+  "gen4TargetTimeDay": "白天",
+  "gen4TargetTimeNight": "夜晚",
+  "gen4TargetMethodMethod1": "Method 1",
+  "gen4TargetMethodMethodJ": "Method J",
+  "gen4TargetMethodMethodK": "Method K",
+  "gen4TargetMethodHoneyTree": "甜甜蜜树",
+  "gen4TargetMethodPokeRadar": "宝可追踪",
+  "gen4TargetMethodPokeRadarShiny": "宝可追踪闪光",
+  "gen4TargetStaticStarter": "御三家",
+  "gen4TargetStaticFossil": "化石",
+  "gen4TargetStaticGift": "礼物",
+  "gen4TargetStaticGameCorner": "游戏中心",
+  "gen4TargetStaticStationary": "定点",
+  "gen4TargetStaticLegend": "传说",
+  "gen4TargetStaticEvent": "事件",
+  "gen4TargetStaticRoamer": "游走",
+  "gen4TargetShinyRandom": "随机闪光",
+  "gen4TargetShinyAlways": "必定闪光",
+  "gen4TargetShinyNever": "锁定不闪",
+  "gen4TargetModifierSwarm": "大量出现",
+  "gen4TargetModifierDay": "白天槽位",
+  "gen4TargetModifierNight": "夜晚槽位",
+  "gen4TargetModifierRadar": "宝可追踪",
+  "gen4TargetModifierRuby": "插入红宝石",
+  "gen4TargetModifierSapphire": "插入蓝宝石",
+  "gen4TargetModifierEmerald": "插入绿宝石",
+  "gen4TargetModifierFireRed": "插入火红",
+  "gen4TargetModifierLeafGreen": "插入叶绿",
+  "gen4TargetModifierFeebasTile": "丑丑鱼格子",
+  "gen4TargetModifierHoennSound": "丰缘音乐",
+  "gen4TargetModifierSinnohSound": "神奥音乐",
+  "gen4TargetModifierFishNight": "夜晚钓鱼",
+  "gen4TargetModifierFishSwarm": "钓鱼大量出现",
+  "gen4TargetModifierSafariBlocks": "狩猎地带摆设",
+  "gen4TargetModifierUnknown": "特殊槽位",
+  "gen4TargetLevel": "{level}级",
+  "@gen4TargetLevel": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "gen4TargetLevelRange": "{minLevel}-{maxLevel}级",
+  "@gen4TargetLevelRange": {
+    "placeholders": {
+      "minLevel": {
+        "type": "int"
+      },
+      "maxLevel": {
+        "type": "int"
+      }
+    }
+  }
+}

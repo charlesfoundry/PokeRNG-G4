@@ -1,0 +1,2017 @@
+{
+  "source": {
+    "path": "Core/Resources/EncounterTables/Gen4/encounters.json"
+  },
+  "encounters": [
+    {
+      "game": "diamond",
+      "type": "starter",
+      "description": "Turtwig @ Lake Verity / Route 201",
+      "species": 387,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "starter",
+      "description": "Turtwig @ Lake Verity / Route 201",
+      "species": 387,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "starter",
+      "description": "Turtwig @ Lake Verity / Route 201",
+      "species": 387,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "starter",
+      "description": "Chimchar @ Lake Verity / Route 201",
+      "species": 390,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "starter",
+      "description": "Chimchar @ Lake Verity / Route 201",
+      "species": 390,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "starter",
+      "description": "Chimchar @ Lake Verity / Route 201",
+      "species": 390,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "starter",
+      "description": "Piplup @ Lake Verity / Route 201",
+      "species": 393,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "starter",
+      "description": "Piplup @ Lake Verity / Route 201",
+      "species": 393,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "starter",
+      "description": "Piplup @ Lake Verity / Route 201",
+      "species": 393,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "starter",
+      "description": "Bulbasaur @ Pallet Town",
+      "species": 1,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "starter",
+      "description": "Bulbasaur @ Pallet Town",
+      "species": 1,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "starter",
+      "description": "Charmander @ Pallet Town",
+      "species": 4,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "starter",
+      "description": "Charmander @ Pallet Town",
+      "species": 4,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "starter",
+      "description": "Squirtle @ Pallet Town",
+      "species": 7,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "starter",
+      "description": "Squirtle @ Pallet Town",
+      "species": 7,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "starter",
+      "description": "Chikorita @ New Bark Town",
+      "species": 152,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "starter",
+      "description": "Chikorita @ New Bark Town",
+      "species": 152,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "starter",
+      "description": "Cyndaquil @ New Bark Town",
+      "species": 155,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "starter",
+      "description": "Cyndaquil @ New Bark Town",
+      "species": 155,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "starter",
+      "description": "Totodile @ New Bark Town",
+      "species": 158,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "starter",
+      "description": "Totodile @ New Bark Town",
+      "species": 158,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "starter",
+      "description": "Treecko @ Saffron City",
+      "species": 252,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "starter",
+      "description": "Treecko @ Saffron City",
+      "species": 252,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "starter",
+      "description": "Torchic @ Saffron City",
+      "species": 255,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "starter",
+      "description": "Torchic @ Saffron City",
+      "species": 255,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "starter",
+      "description": "Mudkip @ Saffron City",
+      "species": 258,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "starter",
+      "description": "Mudkip @ Saffron City",
+      "species": 258,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "fossil",
+      "description": "Omanyte @ Mining Museum ",
+      "species": 138,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "fossil",
+      "description": "Omanyte @ Mining Museum ",
+      "species": 138,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "fossil",
+      "description": "Omanyte @ Mining Museum ",
+      "species": 138,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "fossil",
+      "description": "Omanyte @ Mining Museum ",
+      "species": 138,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "fossil",
+      "description": "Omanyte @ Mining Museum ",
+      "species": 138,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "fossil",
+      "description": "Kabuto @ Mining Museum ",
+      "species": 140,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "fossil",
+      "description": "Kabuto @ Mining Museum ",
+      "species": 140,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "fossil",
+      "description": "Kabuto @ Mining Museum ",
+      "species": 140,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "fossil",
+      "description": "Kabuto @ Mining Museum ",
+      "species": 140,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "fossil",
+      "description": "Kabuto @ Mining Museum ",
+      "species": 140,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "fossil",
+      "description": "Aerodactyl @ Mining Museum ",
+      "species": 142,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "fossil",
+      "description": "Aerodactyl @ Mining Museum ",
+      "species": 142,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "fossil",
+      "description": "Aerodactyl @ Mining Museum ",
+      "species": 142,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "fossil",
+      "description": "Aerodactyl @ Mining Museum ",
+      "species": 142,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "fossil",
+      "description": "Aerodactyl @ Mining Museum ",
+      "species": 142,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "fossil",
+      "description": "Lileep @ Mining Museum ",
+      "species": 345,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "fossil",
+      "description": "Lileep @ Mining Museum ",
+      "species": 345,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "fossil",
+      "description": "Lileep @ Mining Museum ",
+      "species": 345,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "fossil",
+      "description": "Lileep @ Mining Museum ",
+      "species": 345,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "fossil",
+      "description": "Lileep @ Mining Museum ",
+      "species": 345,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "fossil",
+      "description": "Anorith @ Mining Museum ",
+      "species": 347,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "fossil",
+      "description": "Anorith @ Mining Museum ",
+      "species": 347,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "fossil",
+      "description": "Anorith @ Mining Museum ",
+      "species": 347,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "fossil",
+      "description": "Anorith @ Mining Museum ",
+      "species": 347,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "fossil",
+      "description": "Anorith @ Mining Museum ",
+      "species": 347,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "fossil",
+      "description": "Cranidos @ Mining Museum ",
+      "species": 408,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "fossil",
+      "description": "Cranidos @ Mining Museum ",
+      "species": 408,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "fossil",
+      "description": "Cranidos @ Mining Museum ",
+      "species": 408,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "fossil",
+      "description": "Cranidos @ Mining Museum ",
+      "species": 408,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "fossil",
+      "description": "Cranidos @ Mining Museum ",
+      "species": 408,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "fossil",
+      "description": "Shieldon @ Mining Museum ",
+      "species": 410,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "fossil",
+      "description": "Shieldon @ Mining Museum ",
+      "species": 410,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "fossil",
+      "description": "Shieldon @ Mining Museum ",
+      "species": 410,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "fossil",
+      "description": "Shieldon @ Mining Museum ",
+      "species": 410,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "fossil",
+      "description": "Shieldon @ Mining Museum ",
+      "species": 410,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "gift",
+      "description": "Eevee @ Hearthome City",
+      "species": 133,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "gift",
+      "description": "Eevee @ Hearthome City",
+      "species": 133,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "gift",
+      "description": "Eevee @ Hearthome City",
+      "species": 133,
+      "form": 0,
+      "level": 20,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "gift",
+      "description": "Porygon @ Veilstone City",
+      "species": 137,
+      "form": 0,
+      "level": 25,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "gift",
+      "description": "Togepi egg @ Cynthia",
+      "species": 175,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "gift",
+      "description": "Happiny egg @ Traveling Man",
+      "species": 440,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "gift",
+      "description": "Happiny egg @ Traveling Man",
+      "species": 440,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "gift",
+      "description": "Riolu egg @ Riley",
+      "species": 447,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "gift",
+      "description": "Riolu egg @ Riley",
+      "species": 447,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "gift",
+      "description": "Riolu egg @ Riley",
+      "species": 447,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gift",
+      "description": "Tentacool @ Cianwood City",
+      "species": 72,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gift",
+      "description": "Tentacool @ Cianwood City",
+      "species": 72,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gift",
+      "description": "Eevee @ Goldenrod City",
+      "species": 133,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gift",
+      "description": "Eevee @ Goldenrod City",
+      "species": 133,
+      "form": 0,
+      "level": 5,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gift",
+      "description": "Dratini @ Dragon",
+      "species": 147,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gift",
+      "description": "Dratini @ Dragon",
+      "species": 147,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gift",
+      "description": "Tyrogue @ Mt. Mortar",
+      "species": 236,
+      "form": 0,
+      "level": 10,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gift",
+      "description": "Tyrogue @ Mt. Mortar",
+      "species": 236,
+      "form": 0,
+      "level": 10,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gift",
+      "description": "Togepi Egg @ Mr. Pokemon",
+      "species": 175,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gift",
+      "description": "Togepi Egg @ Mr. Pokemon",
+      "species": 175,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gift",
+      "description": "Mareep Egg @ Primo",
+      "species": 179,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gift",
+      "description": "Mareep Egg @ Primo",
+      "species": 179,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gift",
+      "description": "Wooper Egg @ Primo",
+      "species": 194,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gift",
+      "description": "Wooper Egg @ Primo",
+      "species": 194,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gift",
+      "description": "Slugma Egg @ Primo",
+      "species": 218,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gift",
+      "description": "Slugma Egg @ Primo",
+      "species": 218,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gameCorner",
+      "description": "Mr. Mime @ Celadon City Game Corner",
+      "species": 122,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gameCorner",
+      "description": "Mr. Mime @ Celadon City Game Corner",
+      "species": 122,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gameCorner",
+      "description": "Eevee @ Celadon City Game Corner",
+      "species": 133,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gameCorner",
+      "description": "Eevee @ Celadon City Game Corner",
+      "species": 133,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gameCorner",
+      "description": "Porygon @ Celadon City Game Corner",
+      "species": 137,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gameCorner",
+      "description": "Porygon @ Celadon City Game Corner",
+      "species": 137,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gameCorner",
+      "description": "Abra @ Goldenrod City Game Corner",
+      "species": 63,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gameCorner",
+      "description": "Abra @ Goldenrod City Game Corner",
+      "species": 63,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gameCorner",
+      "description": "Ekans @ Goldenrod City Game Corner",
+      "species": 23,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gameCorner",
+      "description": "Sandshrew @ Goldenrod City Game Corner",
+      "species": 27,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "gameCorner",
+      "description": "Dratini @ Goldenrod City Game Corner",
+      "species": 147,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "gameCorner",
+      "description": "Dratini @ Goldenrod City Game Corner",
+      "species": 147,
+      "form": 0,
+      "level": 15,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "stationary",
+      "description": "Drifloon @ Valley Windworks",
+      "species": 425,
+      "form": 0,
+      "level": 22,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "stationary",
+      "description": "Drifloon @ Valley Windworks",
+      "species": 425,
+      "form": 0,
+      "level": 22,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "stationary",
+      "description": "Drifloon @ Valley Windworks",
+      "species": 425,
+      "form": 0,
+      "level": 15,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "stationary",
+      "description": "Rotom @ Old Chateau",
+      "species": 479,
+      "form": 0,
+      "level": 15,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "stationary",
+      "description": "Rotom @ Old Chateau",
+      "species": 479,
+      "form": 0,
+      "level": 15,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "stationary",
+      "description": "Rotom @ Old Chateau",
+      "species": 479,
+      "form": 0,
+      "level": 20,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "stationary",
+      "description": "Spiritomb @ Route 209",
+      "species": 442,
+      "form": 0,
+      "level": 25,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "stationary",
+      "description": "Spiritomb @ Route 209",
+      "species": 442,
+      "form": 0,
+      "level": 25,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "stationary",
+      "description": "Spiritomb @ Route 209",
+      "species": 442,
+      "form": 0,
+      "level": 25,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "stationary",
+      "description": "Voltorb @ Team Rocket HQ Trap Floor",
+      "species": 100,
+      "form": 0,
+      "level": 23,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "stationary",
+      "description": "Voltorb @ Team Rocket HQ Trap Floor",
+      "species": 100,
+      "form": 0,
+      "level": 23,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "stationary",
+      "description": "Geodude @ Team Rocket HQ Trap Floor",
+      "species": 74,
+      "form": 0,
+      "level": 21,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "stationary",
+      "description": "Geodude @ Team Rocket HQ Trap Floor",
+      "species": 74,
+      "form": 0,
+      "level": 21,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "stationary",
+      "description": "Koffing @ Team Rocket HQ Trap Floor",
+      "species": 109,
+      "form": 0,
+      "level": 21,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "stationary",
+      "description": "Koffing @ Team Rocket HQ Trap Floor",
+      "species": 109,
+      "form": 0,
+      "level": 21,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "stationary",
+      "description": "Gyrados @ Lake of Rage",
+      "species": 130,
+      "form": 0,
+      "level": 30,
+      "method": "method1",
+      "shiny": "always"
+    },
+    {
+      "game": "soulSilver",
+      "type": "stationary",
+      "description": "Gyrados @ Lake of Rage",
+      "species": 130,
+      "form": 0,
+      "level": 30,
+      "method": "method1",
+      "shiny": "always"
+    },
+    {
+      "game": "heartGold",
+      "type": "stationary",
+      "description": "Lapras @ Union Cave",
+      "species": 131,
+      "form": 0,
+      "level": 20,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "stationary",
+      "description": "Lapras @ Union Cave",
+      "species": 131,
+      "form": 0,
+      "level": 20,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "stationary",
+      "description": "Electrode @ Team Rocket HQ",
+      "species": 101,
+      "form": 0,
+      "level": 23,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "stationary",
+      "description": "Electrode @ Team Rocket HQ",
+      "species": 101,
+      "form": 0,
+      "level": 23,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "stationary",
+      "description": "Snorlax @ Route 11 ",
+      "species": 143,
+      "form": 0,
+      "level": 50,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "stationary",
+      "description": "Snorlax @ Route 11 ",
+      "species": 143,
+      "form": 0,
+      "level": 50,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "stationary",
+      "description": "Sudowoodo @ Route 36",
+      "species": 185,
+      "form": 0,
+      "level": 20,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "stationary",
+      "description": "Sudowoodo @ Route 36",
+      "species": 185,
+      "form": 0,
+      "level": 20,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "legend",
+      "description": "Regirock @ Rock Peak Ruins",
+      "species": 377,
+      "form": 0,
+      "level": 30,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "legend",
+      "description": "Regice @ Iceberg Ruins",
+      "species": 378,
+      "form": 0,
+      "level": 30,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "legend",
+      "description": "Registeel @ Iron Ruins",
+      "species": 379,
+      "form": 0,
+      "level": 30,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "legend",
+      "description": "Uxie @ Acuity Cavern",
+      "species": 480,
+      "form": 0,
+      "level": 50,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "legend",
+      "description": "Uxie @ Acuity Cavern",
+      "species": 480,
+      "form": 0,
+      "level": 50,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "legend",
+      "description": "Uxie @ Acuity Cavern",
+      "species": 480,
+      "form": 0,
+      "level": 50,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "legend",
+      "description": "Azelf @ Valor Cavern",
+      "species": 482,
+      "form": 0,
+      "level": 50,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "legend",
+      "description": "Azelf @ Valor Cavern",
+      "species": 482,
+      "form": 0,
+      "level": 50,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "legend",
+      "description": "Azelf @ Valor Cavern",
+      "species": 482,
+      "form": 0,
+      "level": 50,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "legend",
+      "description": "Diagla @ Spear Pillar",
+      "species": 483,
+      "form": 0,
+      "level": 47,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "legend",
+      "description": "Palkia @ Spear Pillar",
+      "species": 484,
+      "form": 0,
+      "level": 47,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "legend",
+      "description": "Diagla @ Spear Pillar",
+      "species": 483,
+      "form": 0,
+      "level": 70,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "legend",
+      "description": "Palkia @ Spear Pillar",
+      "species": 484,
+      "form": 0,
+      "level": 70,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "legend",
+      "description": "Heatran @ Stark Mountain",
+      "species": 485,
+      "form": 0,
+      "level": 70,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "legend",
+      "description": "Heatran @ Stark Mountain",
+      "species": 485,
+      "form": 0,
+      "level": 70,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "legend",
+      "description": "Heatran @ Stark Mountain",
+      "species": 485,
+      "form": 0,
+      "level": 50,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "legend",
+      "description": "Regigigas @ Snowpoint Temple",
+      "species": 486,
+      "form": 0,
+      "level": 70,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "legend",
+      "description": "Regigigas @ Snowpoint Temple",
+      "species": 486,
+      "form": 0,
+      "level": 70,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "legend",
+      "description": "Regigigas @ Snowpoint Temple",
+      "species": 486,
+      "form": 0,
+      "level": 1,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "legend",
+      "description": "Giratina @ Turnback Cave",
+      "species": 487,
+      "form": 0,
+      "level": 70,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "legend",
+      "description": "Giratina @ Turnback Cave",
+      "species": 487,
+      "form": 0,
+      "level": 70,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "legend",
+      "description": "Giratina @ Turnback Cave",
+      "species": 487,
+      "form": 0,
+      "level": 47,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "legend",
+      "description": "Giratina @ Distortion World",
+      "species": 487,
+      "form": 1,
+      "level": 47,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "legend",
+      "description": "Articuno @ Seafoam Islands",
+      "species": 144,
+      "form": 0,
+      "level": 50,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "legend",
+      "description": "Articuno @ Seafoam Islands",
+      "species": 144,
+      "form": 0,
+      "level": 50,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "legend",
+      "description": "Zapdos @ Route 10",
+      "species": 145,
+      "form": 0,
+      "level": 50,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "legend",
+      "description": "Zapdos @ Route 10",
+      "species": 145,
+      "form": 0,
+      "level": 50,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "legend",
+      "description": "Moltres @ Mt. Silver Cave",
+      "species": 146,
+      "form": 0,
+      "level": 50,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "legend",
+      "description": "Moltres @ Mt. Silver Cave",
+      "species": 146,
+      "form": 0,
+      "level": 50,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "legend",
+      "description": "Mewtwo @ Cerulean Cave",
+      "species": 150,
+      "form": 0,
+      "level": 70,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "legend",
+      "description": "Mewtwo @ Cerulean Cave",
+      "species": 150,
+      "form": 0,
+      "level": 70,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "legend",
+      "description": "Suicune @ Route 25 ",
+      "species": 245,
+      "form": 0,
+      "level": 40,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "legend",
+      "description": "Suicune @ Route 25 ",
+      "species": 245,
+      "form": 0,
+      "level": 40,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "legend",
+      "description": "Lugia @ Whirl Islands",
+      "species": 249,
+      "form": 0,
+      "level": 70,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "legend",
+      "description": "Lugia @ Whirl Islands",
+      "species": 249,
+      "form": 0,
+      "level": 45,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "legend",
+      "description": "Ho-Oh @ Bell Tower",
+      "species": 250,
+      "form": 0,
+      "level": 45,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "legend",
+      "description": "Ho-Oh @ Bell Tower",
+      "species": 250,
+      "form": 0,
+      "level": 70,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "legend",
+      "description": "Latios @ Pewter City",
+      "species": 381,
+      "form": 0,
+      "level": 40,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "legend",
+      "description": "Latias @ Pewter City",
+      "species": 380,
+      "form": 0,
+      "level": 40,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "legend",
+      "description": "Kyogre @ Embedded Tower",
+      "species": 382,
+      "form": 0,
+      "level": 50,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "legend",
+      "description": "Groudon @ Embedded Tower",
+      "species": 383,
+      "form": 0,
+      "level": 50,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "legend",
+      "description": "Rayquaza @ Embedded Tower",
+      "species": 384,
+      "form": 0,
+      "level": 50,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "legend",
+      "description": "Rayquaza @ Embedded Tower",
+      "species": 384,
+      "form": 0,
+      "level": 50,
+      "method": "methodK",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "legend",
+      "description": "Dialga @ Sinjoh Ruins",
+      "species": 483,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "legend",
+      "description": "Dialga @ Sinjoh Ruins",
+      "species": 483,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "legend",
+      "description": "Palkia @ Sinjoh Ruins",
+      "species": 484,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "legend",
+      "description": "Palkia @ Sinjoh Ruins",
+      "species": 484,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "legend",
+      "description": "Giratina @ Sinjoh Ruins",
+      "species": 487,
+      "form": 1,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "legend",
+      "description": "Giratina @ Sinjoh Ruins",
+      "species": 487,
+      "form": 1,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "event",
+      "description": "Manaphy @ Pokemon Ranger",
+      "species": 490,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "never"
+    },
+    {
+      "game": "pearl",
+      "type": "event",
+      "description": "Manaphy @ Pokemon Ranger",
+      "species": 490,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "never"
+    },
+    {
+      "game": "platinum",
+      "type": "event",
+      "description": "Manaphy @ Pokemon Ranger",
+      "species": 490,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "never"
+    },
+    {
+      "game": "heartGold",
+      "type": "event",
+      "description": "Manaphy @ Pokemon Ranger",
+      "species": 490,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "never"
+    },
+    {
+      "game": "soulSilver",
+      "type": "event",
+      "description": "Manaphy @ Pokemon Ranger",
+      "species": 490,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "never"
+    },
+    {
+      "game": "diamond",
+      "type": "event",
+      "description": "Manaphy @ Pokemon Ranger",
+      "species": 490,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "event",
+      "description": "Manaphy @ Pokemon Ranger",
+      "species": 490,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "event",
+      "description": "Manaphy @ Pokemon Ranger",
+      "species": 490,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "event",
+      "description": "Manaphy @ Pokemon Ranger",
+      "species": 490,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "event",
+      "description": "Manaphy @ Pokemon Ranger",
+      "species": 490,
+      "form": 0,
+      "level": 1,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "event",
+      "description": "Darkrai @ Newmoon Island",
+      "species": 491,
+      "form": 0,
+      "level": 50,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "event",
+      "description": "Shaymin @ Flower Paradise",
+      "species": 492,
+      "form": 0,
+      "level": 30,
+      "method": "methodJ",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "roamer",
+      "description": "Mesprit",
+      "species": 481,
+      "form": 0,
+      "level": 50,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "roamer",
+      "description": "Mesprit",
+      "species": 481,
+      "form": 0,
+      "level": 50,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "roamer",
+      "description": "Mesprit",
+      "species": 481,
+      "form": 0,
+      "level": 50,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "diamond",
+      "type": "roamer",
+      "description": "Cresselia",
+      "species": 488,
+      "form": 0,
+      "level": 50,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "pearl",
+      "type": "roamer",
+      "description": "Cresselia",
+      "species": 488,
+      "form": 0,
+      "level": 50,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "roamer",
+      "description": "Cresselia",
+      "species": 488,
+      "form": 0,
+      "level": 50,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "roamer",
+      "description": "Articuno",
+      "species": 144,
+      "form": 0,
+      "level": 60,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "roamer",
+      "description": "Zapdos",
+      "species": 145,
+      "form": 0,
+      "level": 60,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "platinum",
+      "type": "roamer",
+      "description": "Moltres",
+      "species": 146,
+      "form": 0,
+      "level": 60,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "roamer",
+      "description": "Raikou",
+      "species": 243,
+      "form": 0,
+      "level": 40,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "roamer",
+      "description": "Raikou",
+      "species": 243,
+      "form": 0,
+      "level": 40,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "roamer",
+      "description": "Entei",
+      "species": 244,
+      "form": 0,
+      "level": 40,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "roamer",
+      "description": "Entei",
+      "species": 244,
+      "form": 0,
+      "level": 40,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "heartGold",
+      "type": "roamer",
+      "description": "Latias",
+      "species": 380,
+      "form": 0,
+      "level": 35,
+      "method": "method1",
+      "shiny": "random"
+    },
+    {
+      "game": "soulSilver",
+      "type": "roamer",
+      "description": "Latios",
+      "species": 381,
+      "form": 0,
+      "level": 35,
+      "method": "method1",
+      "shiny": "random"
+    }
+  ]
+}

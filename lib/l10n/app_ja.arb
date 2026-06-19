@@ -1,0 +1,789 @@
+{
+  "@@locale": "ja",
+  "appTitle": "PokeRNG G4",
+  "target": "ターゲット",
+  "search": "検索",
+  "egg": "タマゴ",
+  "eggHgssTitle": "HGSSタマゴ乱数アルゴリズム",
+  "eggHgssAlgorithmNote": "このページは常にHGSSのタマゴ乱数アルゴリズムを使用します。TID/SIDは現在のゲームの保存値を初期表示し、一時的に変更できます。実際のタマゴ生成はHGSSで行います。",
+  "eggDpptTitle": "DPPtタマゴ乱数アルゴリズム",
+  "eggDpptAlgorithmNote": "これはDPPtタマゴ乱数用の独立したコピーです。DPPt専用のタマゴ生成・受取アルゴリズムはここに接続し、検証済みのHGSSページは変更しません。",
+  "eggDpptHeldFrameNote": "DPPtのタマゴ生成ではPID、性格、性別、特性、色違いが決まります。Seed確認にはコイントスを使います。コイントスではEgg Frameは進みません。",
+  "eggDpptPickupFrameNote": "DPPtのタマゴ受取では個体値と遺伝が決まります。DPPtは初期版の遺伝バグを使うため、このページは検証済みHGSSページとは別のDPPt経路で検索します。",
+  "eggHgssOnlyTitle": "HGSSタマゴ乱数のみ対応",
+  "eggHgssOnlyBody": "DPPtのタマゴは別の遺伝処理です。現在このページはハートゴールド・ソウルシルバー専用です。",
+  "eggGenerateEggTab": "タマゴ生成",
+  "eggPickupEggTab": "タマゴ受取",
+  "eggDaycare": "育て屋",
+  "eggGenderRatio": "性別比",
+  "eggGenderRatioPercent": "{male}% ♂ : {female}% ♀",
+  "@eggGenderRatioPercent": {
+    "placeholders": {
+      "male": {
+        "type": "String"
+      },
+      "female": {
+        "type": "String"
+      }
+    }
+  },
+  "eggGenderRatioMaleOnly": "100% ♂",
+  "eggGenderRatioFemaleOnly": "100% ♀",
+  "eggMasuda": "国際孵化",
+  "eggParentsSettings": "タマゴの親",
+  "eggParentA": "親A個体値",
+  "eggParentB": "親B個体値",
+  "eggHeldStage": "タマゴPID",
+  "eggFrameOneNote": "簡易モードではEgg Frame 1のみ対応します。このSeedを狙い、育て屋じいさんに最初のタマゴを生成させます。",
+  "eggPhoneFrameNote": "タマゴ生成ではPID、性格、性別、特性、色違いが決まります。Egg Frameは育て屋じいさんがタマゴを生成するときのPID消費です。ウツギ/マイクの電話はSeed確認用で、Egg Frame消費として自動扱いしません。",
+  "eggPickupFrameNote": "タマゴ受取では個体値と遺伝が決まります。個体生成では年、Delay範囲、受取消費範囲で検索します。逆算はSeed命中済みとして、選択済みまたは確認済みの受取Seed内の受取消費だけを検索します。",
+  "eggPhoneCalls": "電話回数",
+  "eggMinFrame": "最小Egg Frame",
+  "eggMaxFrame": "最大Egg Frame",
+  "eggTargetEggFrame": "Egg Frame",
+  "eggPickupStage": "受取",
+  "eggHeldSeed": "PID Seed",
+  "eggPickupSeed": "受取Seed",
+  "eggSearchPid": "PID生成",
+  "eggPidResultsTitle": "タマゴPID結果",
+  "eggSearchIvs": "個体生成",
+  "eggObservedIvs": "実測個体値",
+  "eggObservedStats": "実測能力値（Lv.1）",
+  "eggSelectHatchedPokemon": "孵化したポケモンを選択してください。",
+  "eggObservedStatsInputError": "孵化したポケモンのLv.1実測能力値を入力してください。",
+  "eggObservedStatsNoIvRanges": "ポケモン、性格、能力値、または個性が一致しません。入力を確認してください。",
+  "eggPickupReverseSeedRequired": "先に目標の受取結果を選択するか、Seed検索で命中した受取Seedを確認してください。",
+  "eggReversePickupSearch": "受取を逆算",
+  "eggPickupResultsTitle": "受取個体結果",
+  "eggLockedEgg": "固定済みタマゴ",
+  "eggLockedPid": "固定PID",
+  "eggLockedEggNote": "タマゴ受取ではこのPIDの情報だけを使います。タマゴ生成時のDelayとEgg Frameは受取個体乱数には関与せず、受取Seedと受取消費が個体値と遺伝を別に決めます。",
+  "eggNoPickupTargetSelected": "個体生成結果がまだ選択されていません。",
+  "eggNoSeedTimeSelected": "Seed時刻がまだ選択されていません。",
+  "eggTimerRequiresSeedTime": "Seed時刻を選択するとタイマーを表示します。",
+  "eggNoPidResults": "一致するPIDがありません。",
+  "eggResultLimitReached": "先頭の{count}件を表示しています。範囲を絞ってください。",
+  "@eggResultLimitReached": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "eggNoIvResults": "一致する受取結果がありません。",
+  "eggSelectPidFirst": "先に上のタマゴPIDを選択してください。",
+  "eggSelectedPid": "選択中PID",
+  "eggSelectedSeedTime": "選択中Seed時刻",
+  "eggObservedPid": "実機PID逆算",
+  "eggReversePidSearch": "PIDを逆算",
+  "eggSelectedHitDelay": "選択中の命中Delay",
+  "eggMinIvsOptional": "最低個体値（空欄可）",
+  "eggPidAdvance": "PID消費",
+  "eggPickupAdvance": "受取消費",
+  "eggInheritance": "遺伝",
+  "results": "結果",
+  "calibrate": "調整",
+  "tools": "ツール",
+  "settings": "設定",
+  "cancel": "キャンセル",
+  "ok": "OK",
+  "language": "言語",
+  "languageSystem": "システム",
+  "languageChinese": "中文",
+  "languageEnglish": "English",
+  "languageJapanese": "日本語",
+  "gameVersion": "ゲーム",
+  "gameDiamond": "ダイヤモンド",
+  "gamePearl": "パール",
+  "gamePlatinum": "プラチナ",
+  "gameHeartGold": "ハートゴールド",
+  "gameSoulSilver": "ソウルシルバー",
+  "trainerProfile": "トレーナー",
+  "trainerId": "TID",
+  "secretId": "SID",
+  "timerDefaults": "タイマー初期値",
+  "delayWindow": "Delay範囲",
+  "secondWindow": "秒範囲",
+  "hgssPhoneCaller": "HGSS電話文",
+  "maxPhoneCallSkip": "最大初期消費",
+  "phoneCallerElm": "ウツギはかせ",
+  "phoneCallerIrwin": "ジャグラーのマイク",
+  "save": "保存",
+  "settingsInputError": "0から65535までの値を入力してください。",
+  "settingsTimerInputError": "Delay、秒、初期消費の初期値を確認してください。",
+  "settingsEggParentInputError": "親の個体値を確認してください。0から31までの値を入力してください。",
+  "settingsEggLockedPidInputError": "固定PIDを確認してください。空欄、または8桁の16進数PIDを入力してください。",
+  "about": "このアプリについて",
+  "aboutPlaceholder": "内容は後で追加します。",
+  "searchMode": "検索モード",
+  "timeFinder": "タイムファインダー",
+  "generator": "ジェネレーター",
+  "generatorPlaceholder": "ジェネレーターの項目はタイムファインダー接続後に追加します。",
+  "pokemon": "ポケモン",
+  "location": "場所",
+  "timeCondition": "時間",
+  "gbaCartridge": "GBAカートリッジ",
+  "queryLocations": "場所を検索",
+  "noMatchingLocations": "現在の時間とカートリッジ条件に一致する入手先がありません。",
+  "noAvailableLocationForGame": "現在のゲームではこのポケモンの入手先がありません。",
+  "filters": "条件",
+  "method": "Method",
+  "nature": "性格",
+  "ability": "特性",
+  "abilitySlot": "特性 {slot}: {name}",
+  "@abilitySlot": {
+    "placeholders": {
+      "slot": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "gender": "性別",
+  "genderMale": "♂",
+  "genderFemale": "♀",
+  "genderGenderless": "-",
+  "hiddenPower": "めざめるパワー",
+  "levelShort": "Lv.",
+  "minLevel": "最小レベル",
+  "maxLevel": "最大レベル",
+  "minPower": "最小威力",
+  "maxPower": "最大威力",
+  "slot": "スロット",
+  "lead": "先頭",
+  "syncNature": "シンクロ性格",
+  "shiny": "色違い",
+  "notShiny": "通常色",
+  "hpIv": "HP IV",
+  "atkIv": "Atk IV",
+  "defIv": "Def IV",
+  "spaIv": "SpA IV",
+  "spdIv": "SpD IV",
+  "speIv": "Spe IV",
+  "searchRange": "検索範囲",
+  "year": "年",
+  "minDelay": "最小Delay",
+  "maxDelay": "最大Delay",
+  "minAdvance": "最小消費",
+  "maxAdvance": "最大消費",
+  "second": "秒",
+  "forceSecond": "秒を固定",
+  "searchSpaceInvalid": "検索量: 範囲が無効です",
+  "searchSpaceStates": "検索量: {states} states",
+  "@searchSpaceStates": {
+    "placeholders": {
+      "states": {
+        "type": "String"
+      }
+    }
+  },
+  "searchSpaceTooLarge": "{max}以下に絞ってください",
+  "@searchSpaceTooLarge": {
+    "placeholders": {
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "searching": "検索中...",
+  "searchComplete": "検索完了。",
+  "searchResultsPlaceholder": "検索結果はここに表示されます。",
+  "noResults": "結果がありません。",
+  "searchCancelled": "検索をキャンセルしました。",
+  "searchFailed": "検索に失敗しました。",
+  "resultLimitReached": "結果の上限に達しました。",
+  "sendToCalibration": "調整へ送る",
+  "saveTarget": "目標を保存",
+  "targetSaved": "目標を保存しました",
+  "targetAlreadySaved": "この目標は保存済みです。",
+  "savedTargets": "保存した目標",
+  "helpSection": "説明",
+  "tutorialsTitle": "チュートリアル",
+  "tutorialsOpen": "チュートリアルを見る",
+  "tutorialCategoryBasics": "基礎",
+  "tutorialCategoryStarter": "御三家",
+  "tutorialCategoryStationary": "固定",
+  "tutorialCategoryWild": "野生",
+  "tutorialCategoryEgg": "タマゴ",
+  "leadAbilityHelpTitle": "DP/Pt/HGSS先頭特性",
+  "wildSweetScentHelpTitle": "HGSSあまいかおり",
+  "noSavedTargets": "結果ページで結果をタップして目標を保存できます。",
+  "deleteTarget": "目標を削除",
+  "resultCount": "{count}件",
+  "@resultCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "searchProgress": "{scanned} / {total}",
+  "@searchProgress": {
+    "placeholders": {
+      "scanned": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "seed": "Seed",
+  "pid": "PID",
+  "delay": "Delay",
+  "advance": "消費",
+  "hour": "時",
+  "time": "時刻",
+  "ivs": "個体値",
+  "stats": "能力値",
+  "hpStat": "HP",
+  "atkStat": "こうげき",
+  "defStat": "ぼうぎょ",
+  "spaStat": "とくこう",
+  "spdStat": "とくぼう",
+  "speStat": "すばやさ",
+  "month": "月",
+  "day": "日",
+  "minute": "分",
+  "calibrateSeedCheck": "Seed確認",
+  "calibrateCoinFlips": "DPPtコイン",
+  "calibratePhoneCalls": "HGSS電話",
+  "calibrateParameterHelp": "目標Delayと目標秒は検索結果から入り、今回狙うseedを表します。校準Delayと校準秒は設定ページの値で、本体と入力タイミングの基準です。追加で待つ秒数ではありません。",
+  "calibrateQuickGuide": "簡易手順：まずコイントスまたは電話でseedを逆算し、実際に当たった秒とDelayを確認します。秒が安定してずれる場合は校準秒を更新し、DelayのずれはHit Delayで校準Delayを再計算します。本番では先にseed確認をせず、タイマー通りに起動して目標操作を行い、捕獲後に実際の命中結果を逆算します。",
+  "calibrationTarget": "今回の目標",
+  "noCalibrationTarget": "校準目標がありません。結果ページから目標を校準ページへ送ってください。",
+  "seedToTime": "Seed時間を取得",
+  "seedToTimeTitle": "Seed to Time",
+  "seedToTimeSearch": "時間を取得",
+  "seedToTimeInvalidFilter": "年は2000から2099、月は1から12、日は1から31で入力してください。",
+  "noSeedTimeResults": "一致する時間がありません。",
+  "selectedSeedTime": "選択したSeed時間",
+  "seedSearch": "Seed検索",
+  "seedSearchTitle": "Seed検索",
+  "selectedSeedHit": "選択した命中Seed",
+  "selectedSeedHitHelp": "この結果のDelayはタイマーの命中Delayに入力されました。調整を反映すると、校準Delayを更新し、命中秒のずれで校準秒を微調整します。",
+  "initialAdvance": "初期消費",
+  "currentAdvance": "現在消費",
+  "targetAdvance": "目標消費",
+  "remainingAdvance": "残り消費",
+  "advanceOffset": "Offset",
+  "initialAdvanceFilter": "初期消費",
+  "advanceOffsetHelp": "DPPtは捕獲後の逆算でoffsetを計算します。HGSSは電話で直接offsetを計算できます。逆算もそのまま使えます。",
+  "chatotPitches": "ペラップ音程",
+  "chatotPitchHigh": "高",
+  "chatotPitchLow": "低",
+  "chatotTotalAdvances": "ペラップ: {count}回",
+  "@chatotTotalAdvances": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "advanceAhead": "あと{count}消費",
+  "@advanceAhead": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "targetAction": "目標",
+  "advanceOneFrame": "消費",
+  "pressA": "Aを押す",
+  "timerTimingHelpTitle": "DP/Pt/HGSSタイマー入力のタイミング",
+  "eggHeldHelpTitle": "HGSSタマゴ生成",
+  "eggPickupHelpTitle": "HGSSタマゴ受取",
+  "chatotAdvanceHelpTitle": "Pt/HGSSペラップと目標消費",
+  "hgssStationaryHelpTitle": "HGSS固定シンボル色違い",
+  "honeyTreeHelpTitle": "Ptあまいミツの木色違い",
+  "platinumStarterHelpTitle": "Pt御三家色違い",
+  "calibratedSecondCurrent": "現在の校準秒：{second}",
+  "@calibratedSecondCurrent": {
+    "placeholders": {
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "calibratedSecondHit": "命中秒：{second}",
+  "@calibratedSecondHit": {
+    "placeholders": {
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "calibrateTargetTime": "目標時刻",
+  "calibrateSearchWindow": "確認範囲",
+  "calibrateTargetDelay": "目標Delay",
+  "calibrateDelayWindow": "Delay +/-",
+  "calibrateSecondWindow": "秒 +/-",
+  "calibrateObservedSequence": "実測順",
+  "calibratePhoneCallerHelp": "現在の電話文：{caller}。変更は設定ページで行います。",
+  "@calibratePhoneCallerHelp": {
+    "placeholders": {
+      "caller": {
+        "type": "String"
+      }
+    }
+  },
+  "calibrateNoSequence": "実際の結果を順番に押してください。",
+  "calibrateInvalidTarget": "目標時刻と範囲を修正してください。",
+  "calibrateTargetSeedTimeRequired": "先にSeed時間を取得し、目標seedを生成する時間を選択してからSeed検索してください。",
+  "calibrateNoMatches": "一致するseedがありません。",
+  "coinMagikarp": "コイキング",
+  "coinPokeBall": "モンスターボール",
+  "coinMagikarpShort": "コ",
+  "coinPokeBallShort": "球",
+  "phoneElmShort": "E",
+  "phoneKantoShort": "K",
+  "phonePokerusShort": "P",
+  "phoneElmMessage": "E - ポケモンの　しんかというのは",
+  "phoneKantoMessage": "K - カントーには　まだ　ぼくの",
+  "phonePokerusMessage": "P - ポケルスが　くっついた",
+  "phoneIrwinElmMessage": "E - きみの　かつやくを　きいて",
+  "phoneIrwinKantoMessage": "K - でんわ　うれしいなあ!",
+  "phoneIrwinPokerusMessage": "P - げんきかい?",
+  "matches": "一致結果",
+  "undo": "戻す",
+  "clear": "消去",
+  "retailTimer": "実機タイマー",
+  "timerPreparation": "準備",
+  "timerFirstCountdown": "1回目タイマー",
+  "timerSecondCountdown": "2回目タイマー",
+  "timerCurrentCountdown": "カウント",
+  "timerReady": "待機中",
+  "timerFinished": "完了",
+  "timerStart": "開始",
+  "timerStop": "停止",
+  "timerTargetDelay": "目標Delay",
+  "timerTargetSecond": "目標秒",
+  "timerCalibratedDelay": "調整済みDelay",
+  "timerCalibratedSecond": "調整済み秒",
+  "idRngSettings": "ID乱数設定",
+  "idRngCalibratedDelay": "ID調整済みDelay",
+  "eggRngSettings": "タマゴ乱数設定",
+  "eggRngCalibratedDelay": "タマゴ調整済みDelay",
+  "timerDelayHit": "命中Delay",
+  "timerApplyCalibration": "調整を反映",
+  "timerCalibrationAppliedTitle": "調整を反映しました",
+  "timerCalibrationDelayChange": "校準 Delay: {before} -> {after}",
+  "@timerCalibrationDelayChange": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "after": {
+        "type": "String"
+      }
+    }
+  },
+  "timerCalibrationSecondChange": "校準秒: {before} -> {after}",
+  "@timerCalibrationSecondChange": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "after": {
+        "type": "String"
+      }
+    }
+  },
+  "timerCalibrationFirstCountdownChange": "第1段階: {before} -> {after}",
+  "@timerCalibrationFirstCountdownChange": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "after": {
+        "type": "String"
+      }
+    }
+  },
+  "timerCalibrationSecondCountdownChange": "第2段階: {before} -> {after}",
+  "@timerCalibrationSecondCountdownChange": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "after": {
+        "type": "String"
+      }
+    }
+  },
+  "timerConsole": "本体",
+  "timerConsoleGba": "GBA",
+  "timerConsoleNdsSlot1": "NDS - Slot 1",
+  "timerConsoleNdsSlot2": "NDS - Slot 2",
+  "timerConsoleDsi": "DSi",
+  "timerConsole3ds": "3DS",
+  "timerConsoleCustom": "カスタム",
+  "timerCustomFrameRate": "カスタムフレームレート",
+  "timerMinimumLength": "最短時間",
+  "timerPrecisionCalibration": "精密調整",
+  "timerMinutesBeforeTarget": "目標時刻の{minutes}分前に時計を設定",
+  "@timerMinutesBeforeTarget": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "timerNdsSetTime": "NDSの時計を{time}に設定",
+  "@timerNdsSetTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "timerPhase": "Phase {phase}",
+  "@timerPhase": {
+    "placeholders": {
+      "phase": {
+        "type": "String"
+      }
+    }
+  },
+  "timerInputError": "タイマーの値を確認してください。",
+  "timerWebSoundUnsupported": "Web版タイマーは現在、カウントダウン音に対応していません。",
+  "reverseHitFeedback": "逆算フィードバック",
+  "reverseHitSeedMatched": "Seed命中",
+  "reverseHitSeedMissed": "Seed不一致",
+  "reverseHitTargetAdvance": "目標フレーム",
+  "reverseHitActualAdvance": "実際フレーム",
+  "reverseHitAdvanceDelta": "フレーム差：{delta}",
+  "@reverseHitAdvanceDelta": {
+    "placeholders": {
+      "delta": {
+        "type": "String"
+      }
+    }
+  },
+  "observedHit": "実際の命中",
+  "starterObservedHit": "御三家命中",
+  "characteristic": "個性",
+  "characteristicOptions": "たべるのが だいすき|ひるねを よくする|いねむりが おおい|ものを よく ちらかす|のんびりするのが すき|ちからが じまん|あばれることが すき|ちょっと おこりっぽい|ケンカを するのが すき|ちのけが おおい|からだが じょうぶ|うたれ づよい|ねばり づよい|しんぼう づよい|がまん づよい|かけっこが すき|ものおとに びんかん|おっちょこちょい|すこし おちょうしもの|にげるのが はやい|こうきしんが つよい|イタズラが すき|ぬけめが ない|かんがえごとが おおい|とても きちょうめん|きが つよい|ちょっぴり みえっぱり|まけんきが つよい|まけずぎらい|ちょっぴり ごうじょう",
+  "reverseHitSearch": "ポケモンを逆算",
+  "reverseHitTitle": "逆算",
+  "reverseHitNoResults": "一致する結果がありません。",
+  "reverseHitTargetSeed": "目標Seed",
+  "reverseHitNearbySeed": "近くのSeed",
+  "searchDisabledSelectPokemon": "先にポケモンを選択してください。",
+  "searchDisabledQueryLocations": "ポケモンを選んだ後、場所を検索してください。",
+  "searchDisabledSelectLocation": "場所を選択してください。",
+  "searchDisabledInvalidRange": "検索範囲の値を修正してください。",
+  "searchDisabledSearchSpaceTooLarge": "検索量を{max}以下に絞ってください。",
+  "@searchDisabledSearchSpaceTooLarge": {
+    "placeholders": {
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "searchDisabledInvalidIvs": "個体値は0から31までの値を入力してください。",
+  "searchDisabledIvRangeTooLarge": "個体値の組み合わせを{max}以下に絞ってください。",
+  "@searchDisabledIvRangeTooLarge": {
+    "placeholders": {
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "searchDisabledInvalidHiddenPower": "めざめるパワーの威力は30から70までの値を入力してください。",
+  "searchDisabledUnsupportedSource": "この入手先はまだ検索できません。",
+  "searchDisabledDelayYearOverflow": "Delay範囲がこの年の有効なseed範囲外です。",
+  "searchDisabledAlreadyRunning": "検索を実行中です。",
+  "any": "任意",
+  "none": "なし",
+  "gbaRuby": "ルビー",
+  "gbaSapphire": "サファイア",
+  "gbaEmerald": "エメラルド",
+  "gbaFireRed": "ファイアレッド",
+  "gbaLeafGreen": "リーフグリーン",
+  "leadNone": "なし",
+  "leadSynchronize": "シンクロ",
+  "leadCuteCharmMale": "メロメロボディ♂",
+  "leadCuteCharmFemale": "メロメロボディ♀",
+  "leadCompoundEyes": "ふくがん",
+  "leadPressure": "プレッシャー",
+  "leadSuctionCups": "きゅうばん",
+  "leadArenaTrap": "ありじごく",
+  "leadMagnetPull": "じりょく",
+  "leadStatic": "せいでんき",
+  "typeFighting": "かくとう",
+  "typeFlying": "ひこう",
+  "typePoison": "どく",
+  "typeGround": "じめん",
+  "typeRock": "いわ",
+  "typeBug": "むし",
+  "typeGhost": "ゴースト",
+  "typeSteel": "はがね",
+  "typeFire": "ほのお",
+  "typeWater": "みず",
+  "typeGrass": "くさ",
+  "typeElectric": "でんき",
+  "typePsychic": "エスパー",
+  "typeIce": "こおり",
+  "typeDragon": "ドラゴン",
+  "typeDark": "あく",
+  "idRng": "ID乱数",
+  "idRngTarget": "目標ID",
+  "idRngSearch": "ID検索",
+  "idRngSearchAll": "ID検索（全て）",
+  "idRngResults": "ID結果",
+  "idRngTimer": "IDタイマー",
+  "idRngHitCheck": "実際ID確認",
+  "idRngMinSid": "最小SID",
+  "idRngMaxSid": "最大SID",
+  "idRngTargetPid": "目標PID",
+  "idRngTargetTsv": "目標TSV",
+  "idRngExtraTargetFilters": "追加目標条件",
+  "cuteCharmIdTarget": "メロメロボディID目標",
+  "idRngPidTargetFinder": "PID目標検索",
+  "idRngExcellentSidFinder": "優秀SID検索",
+  "idRngReachableExcellentSidFinder": "SID検索",
+  "idRngReachableExcellentSidSearch": "到達可能な優秀SIDを検索",
+  "idRngExcellentSidSearch": "優秀SIDを検索",
+  "idRngExcellentSidResults": "最良目標TSVグループ",
+  "idRngIncludeNeutralNatures": "無補正性格を表示",
+  "idRngSortByNatureCount": "性格最多",
+  "idRngSortByTargetCount": "結果最多",
+  "idRngExcellentSidGroup": "TSV {tsv}",
+  "@idRngExcellentSidGroup": {
+    "placeholders": {
+      "tsv": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngPidTargetCount": "{count}件",
+  "@idRngPidTargetCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngNatureCount": "{count}性格",
+  "@idRngNatureCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSidRangeShort": "SID {range}",
+  "@idRngSidRangeShort": {
+    "placeholders": {
+      "range": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngPidTargetNatures": "目標性格",
+  "idRngPidTargetMinIvs": "最低IV",
+  "idRngPidTargetSearch": "PID目標を検索",
+  "idRngPidTargetResults": "PID目標結果",
+  "idRngPidTargetNoResults": "PID目標がありません。",
+  "idRngPidTargetInvalidInput": "性格とIV条件を確認してください。",
+  "idRngPidTargetGroup": "PSV {psv} · {count}件",
+  "@idRngPidTargetGroup": {
+    "placeholders": {
+      "psv": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngPidTargetGroupWithSid": "PSV {psv} · {count}件 · SID {sidRange}",
+  "@idRngPidTargetGroupWithSid": {
+    "placeholders": {
+      "psv": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      },
+      "sidRange": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngPidTargetResult": "PID {pid} · {nature} · IV {ivs} · 特性 {ability}",
+  "@idRngPidTargetResult": {
+    "placeholders": {
+      "pid": {
+        "type": "String"
+      },
+      "nature": {
+        "type": "String"
+      },
+      "ivs": {
+        "type": "String"
+      },
+      "ability": {
+        "type": "String"
+      }
+    }
+  },
+  "genderRatio": "性別比",
+  "cuteCharmIdSummary": "PID {pid} · TSV {tsv} · 特性 {ability} · 目標性別 {gender}",
+  "@cuteCharmIdSummary": {
+    "placeholders": {
+      "pid": {
+        "type": "String"
+      },
+      "tsv": {
+        "type": "String"
+      },
+      "ability": {
+        "type": "String"
+      },
+      "gender": {
+        "type": "String"
+      }
+    }
+  },
+  "cuteCharmApplyIdTarget": "ID検索に反映",
+  "idRngSearchSpace": "検索量: {states} seeds",
+  "@idRngSearchSpace": {
+    "placeholders": {
+      "states": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngNeedFilter": "TID、SID、TSV、PIDのいずれかを入力してください。",
+  "idRngInvalidInput": "ID乱数の値を確認してください。",
+  "idRngPidSummary": "PSV {psv} · 性格 {nature}",
+  "@idRngPidSummary": {
+    "placeholders": {
+      "psv": {
+        "type": "String"
+      },
+      "nature": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSidRange": "色違いSID: {range}",
+  "@idRngSidRange": {
+    "placeholders": {
+      "range": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSidCandidates": "SID候補: {values}",
+  "@idRngSidCandidates": {
+    "placeholders": {
+      "values": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSelectedState": "選択したID結果",
+  "idRngSelectResultFirst": "先にID結果を選択してください。",
+  "idRngNoSeedTime": "先にSeed時間を取得して選択してください。",
+  "idRngResultSubtitle": "TID {tid} · SID {sid} · TSV {tsv}",
+  "@idRngResultSubtitle": {
+    "placeholders": {
+      "tid": {
+        "type": "String"
+      },
+      "sid": {
+        "type": "String"
+      },
+      "tsv": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSearchHit": "命中Delayを逆算",
+  "idRngHitDelayWindow": "Delay +/-",
+  "idRngHitResults": "ID命中結果",
+  "idRngSelectedHit": "選択した命中ID",
+  "idRngNoHit": "一致するTID/SIDがありません。",
+  "idRngHitHelp": "この結果のDelayはIDタイマーの命中Delayに入力されました。調整を反映するとID調整済みDelayのみ更新し、遭遇用タイマーのDelayは変更しません。",
+  "gen4TargetCategoryWild": "野生",
+  "gen4TargetCategoryStationary": "固定",
+  "gen4TargetCategoryLegend": "伝説",
+  "gen4TargetCategoryGift": "もらう",
+  "gen4TargetCategoryStarter": "最初のポケモン",
+  "gen4TargetCategoryFossil": "化石",
+  "gen4TargetCategoryGameCorner": "ゲームコーナー",
+  "gen4TargetCategoryEvent": "イベント",
+  "gen4TargetCategoryRoamer": "徘徊",
+  "gen4TargetWildGrass": "草むら",
+  "gen4TargetWildSurfing": "なみのり",
+  "gen4TargetWildOldRod": "ボロのつりざお",
+  "gen4TargetWildGoodRod": "いいつりざお",
+  "gen4TargetWildSuperRod": "すごいつりざお",
+  "gen4TargetWildRockSmash": "いわくだき",
+  "gen4TargetWildBugCatchingContest": "虫取り大会",
+  "gen4TargetWildHeadbutt": "ずつき",
+  "gen4TargetWildHeadbuttAlt": "ずつき別枠",
+  "gen4TargetWildHeadbuttSpecial": "特別なずつき",
+  "gen4TargetWildHoneyTree": "あまいミツの木",
+  "gen4TargetTimeMorning": "朝",
+  "gen4TargetTimeDay": "昼",
+  "gen4TargetTimeNight": "夜",
+  "gen4TargetMethodMethod1": "Method 1",
+  "gen4TargetMethodMethodJ": "Method J",
+  "gen4TargetMethodMethodK": "Method K",
+  "gen4TargetMethodHoneyTree": "あまいミツの木",
+  "gen4TargetMethodPokeRadar": "ポケトレ",
+  "gen4TargetMethodPokeRadarShiny": "ポケトレ色違い",
+  "gen4TargetStaticStarter": "最初のポケモン",
+  "gen4TargetStaticFossil": "化石",
+  "gen4TargetStaticGift": "もらう",
+  "gen4TargetStaticGameCorner": "ゲームコーナー",
+  "gen4TargetStaticStationary": "固定",
+  "gen4TargetStaticLegend": "伝説",
+  "gen4TargetStaticEvent": "イベント",
+  "gen4TargetStaticRoamer": "徘徊",
+  "gen4TargetShinyRandom": "色違いランダム",
+  "gen4TargetShinyAlways": "色違い固定",
+  "gen4TargetShinyNever": "色違い不可",
+  "gen4TargetModifierSwarm": "大量発生",
+  "gen4TargetModifierDay": "昼の枠",
+  "gen4TargetModifierNight": "夜の枠",
+  "gen4TargetModifierRadar": "ポケトレ",
+  "gen4TargetModifierRuby": "ルビー挿入",
+  "gen4TargetModifierSapphire": "サファイア挿入",
+  "gen4TargetModifierEmerald": "エメラルド挿入",
+  "gen4TargetModifierFireRed": "ファイアレッド挿入",
+  "gen4TargetModifierLeafGreen": "リーフグリーン挿入",
+  "gen4TargetModifierFeebasTile": "ヒンバスのマス",
+  "gen4TargetModifierHoennSound": "ホウエンサウンド",
+  "gen4TargetModifierSinnohSound": "シンオウサウンド",
+  "gen4TargetModifierFishNight": "夜の釣り",
+  "gen4TargetModifierFishSwarm": "釣り大量発生",
+  "gen4TargetModifierSafariBlocks": "サファリブロック",
+  "gen4TargetModifierUnknown": "特殊枠",
+  "gen4TargetLevel": "Lv. {level}",
+  "@gen4TargetLevel": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "gen4TargetLevelRange": "Lv. {minLevel}-{maxLevel}",
+  "@gen4TargetLevelRange": {
+    "placeholders": {
+      "minLevel": {
+        "type": "int"
+      },
+      "maxLevel": {
+        "type": "int"
+      }
+    }
+  }
+}

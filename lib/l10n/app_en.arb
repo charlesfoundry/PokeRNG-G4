@@ -1,0 +1,789 @@
+{
+  "@@locale": "en",
+  "appTitle": "PokeRNG G4",
+  "target": "Target",
+  "search": "Search",
+  "egg": "Egg",
+  "eggHgssTitle": "HGSS Egg RNG Algorithm",
+  "eggHgssAlgorithmNote": "This page always uses the HGSS egg algorithm. TID/SID default to the current game's saved values and can be changed temporarily; the egg must be generated in HGSS.",
+  "eggDpptTitle": "DPPt Egg RNG Algorithm",
+  "eggDpptAlgorithmNote": "This is an isolated copy for DPPt egg RNG. DPPt-specific egg generation and pickup algorithms will be wired here without changing the verified HGSS egg page.",
+  "eggDpptHeldFrameNote": "The DPPt egg generation stage decides PID, nature, gender, ability, and shininess. Use coin flips to verify the seed; coin flips do not advance Egg Frame.",
+  "eggDpptPickupFrameNote": "The DPPt egg pickup stage decides IVs and inheritance. DPPt uses the original inheritance bug, so this page intentionally searches a separate DPPt path from the verified HGSS page.",
+  "eggHgssOnlyTitle": "HGSS egg RNG only",
+  "eggHgssOnlyBody": "DPPt eggs use a separate inheritance path. This page is currently limited to HeartGold and SoulSilver.",
+  "eggGenerateEggTab": "Generate egg",
+  "eggPickupEggTab": "Pick up egg",
+  "eggDaycare": "Daycare",
+  "eggGenderRatio": "Gender ratio",
+  "eggGenderRatioPercent": "{male}% ♂ : {female}% ♀",
+  "@eggGenderRatioPercent": {
+    "placeholders": {
+      "male": {
+        "type": "String"
+      },
+      "female": {
+        "type": "String"
+      }
+    }
+  },
+  "eggGenderRatioMaleOnly": "100% ♂",
+  "eggGenderRatioFemaleOnly": "100% ♀",
+  "eggMasuda": "Masuda method",
+  "eggParentsSettings": "Egg parents",
+  "eggParentA": "Parent A IVs",
+  "eggParentB": "Parent B IVs",
+  "eggHeldStage": "Egg PID",
+  "eggFrameOneNote": "Simple mode only supports Egg Frame 1. Hit this seed, then make the Day-Care Man generate the first egg.",
+  "eggPhoneFrameNote": "The egg generation stage decides PID, nature, gender, ability, and shininess. Egg Frame is the PID frame used when the Day-Care Man generates the egg; Elm/Irwin calls only verify the seed and are not automatically treated as Egg Frame advances.",
+  "eggPickupFrameNote": "The egg pickup stage decides IVs and inheritance. Generate IVs searches by year, Delay range, and Pickup Advance range. Reverse search assumes the Seed was hit and only searches Pickup Advances inside the selected or verified Pickup Seed.",
+  "eggPhoneCalls": "Phone calls",
+  "eggMinFrame": "Min Egg Frame",
+  "eggMaxFrame": "Max Egg Frame",
+  "eggTargetEggFrame": "Egg Frame",
+  "eggPickupStage": "Egg pickup",
+  "eggHeldSeed": "PID Seed",
+  "eggPickupSeed": "Pickup Seed",
+  "eggSearchPid": "Generate PID",
+  "eggPidResultsTitle": "Egg PID Results",
+  "eggSearchIvs": "Generate IVs",
+  "eggObservedIvs": "Observed IVs",
+  "eggObservedStats": "Observed stats (Lv. 1)",
+  "eggSelectHatchedPokemon": "Select the hatched Pokemon.",
+  "eggObservedStatsInputError": "Enter the hatched Pokemon's observed level 1 stats.",
+  "eggObservedStatsNoIvRanges": "Pokemon, nature, stats, or characteristic do not match. Check the inputs.",
+  "eggPickupReverseSeedRequired": "Select a target pickup result first, or verify the hit Pickup Seed with Seed Search.",
+  "eggReversePickupSearch": "Reverse Search Pickup",
+  "eggPickupResultsTitle": "Egg IV Results",
+  "eggLockedEgg": "Locked egg",
+  "eggLockedPid": "Locked PID",
+  "eggLockedEggNote": "Egg pickup only uses this PID identity. The Delay and Egg Frame used to generate the egg do not participate in pickup IV RNG; Pickup Seed and Pickup Advance independently decide IVs and inheritance.",
+  "eggNoPickupTargetSelected": "No generated IV result selected yet.",
+  "eggNoSeedTimeSelected": "No Seed Time selected yet.",
+  "eggTimerRequiresSeedTime": "Select a Seed Time to show the timer.",
+  "eggNoPidResults": "No matching PID.",
+  "eggResultLimitReached": "Showing the first {count} results. Narrow the range.",
+  "@eggResultLimitReached": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "eggNoIvResults": "No matching pickup result.",
+  "eggSelectPidFirst": "Select an egg PID above first.",
+  "eggSelectedPid": "Selected PID",
+  "eggSelectedSeedTime": "Selected Seed Time",
+  "eggObservedPid": "Observed PID Reverse Search",
+  "eggReversePidSearch": "Reverse Search PID",
+  "eggSelectedHitDelay": "Selected Hit Delay",
+  "eggMinIvsOptional": "Minimum IVs (optional)",
+  "eggPidAdvance": "PID adv.",
+  "eggPickupAdvance": "Pickup adv.",
+  "eggInheritance": "Inheritance",
+  "results": "Results",
+  "calibrate": "Calibrate",
+  "tools": "Tools",
+  "settings": "Settings",
+  "cancel": "Cancel",
+  "ok": "OK",
+  "language": "Language",
+  "languageSystem": "System",
+  "languageChinese": "中文",
+  "languageEnglish": "English",
+  "languageJapanese": "日本語",
+  "gameVersion": "Game Version",
+  "gameDiamond": "Diamond",
+  "gamePearl": "Pearl",
+  "gamePlatinum": "Platinum",
+  "gameHeartGold": "HeartGold",
+  "gameSoulSilver": "SoulSilver",
+  "trainerProfile": "Trainer Profile",
+  "trainerId": "TID",
+  "secretId": "SID",
+  "timerDefaults": "Timer Defaults",
+  "delayWindow": "Delay Window",
+  "secondWindow": "Second Window",
+  "hgssPhoneCaller": "HGSS Phone Text",
+  "maxPhoneCallSkip": "Max Initial Advance",
+  "phoneCallerElm": "Professor Elm",
+  "phoneCallerIrwin": "Juggler Irwin",
+  "save": "Save",
+  "settingsInputError": "Enter a value from 0 to 65535.",
+  "settingsTimerInputError": "Check delay, second, and initial advance defaults.",
+  "settingsEggParentInputError": "Check parent IVs. Each value must be from 0 to 31.",
+  "settingsEggLockedPidInputError": "Check the locked PID. Leave it empty or enter an 8-digit hexadecimal PID.",
+  "about": "About",
+  "aboutPlaceholder": "About content will be added later.",
+  "searchMode": "Search Mode",
+  "timeFinder": "Time Finder",
+  "generator": "Generator",
+  "generatorPlaceholder": "Generator controls will be added after Time Finder is wired.",
+  "pokemon": "Pokemon",
+  "location": "Location",
+  "timeCondition": "Time",
+  "gbaCartridge": "GBA Cartridge",
+  "queryLocations": "Query Locations",
+  "noMatchingLocations": "No matching source for the current time and cartridge filters.",
+  "noAvailableLocationForGame": "No available source for this Pokemon in the current game.",
+  "filters": "Filters",
+  "method": "Method",
+  "nature": "Nature",
+  "ability": "Ability",
+  "abilitySlot": "Ability {slot}: {name}",
+  "@abilitySlot": {
+    "placeholders": {
+      "slot": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "gender": "Gender",
+  "genderMale": "Male",
+  "genderFemale": "Female",
+  "genderGenderless": "-",
+  "hiddenPower": "Hidden Power",
+  "levelShort": "Lv.",
+  "minLevel": "Min Level",
+  "maxLevel": "Max Level",
+  "minPower": "Min Power",
+  "maxPower": "Max Power",
+  "slot": "Slot",
+  "lead": "Lead",
+  "syncNature": "Sync Nature",
+  "shiny": "Shiny",
+  "notShiny": "Not Shiny",
+  "hpIv": "HP IV",
+  "atkIv": "Atk IV",
+  "defIv": "Def IV",
+  "spaIv": "SpA IV",
+  "spdIv": "SpD IV",
+  "speIv": "Spe IV",
+  "searchRange": "Search Range",
+  "year": "Year",
+  "minDelay": "Min Delay",
+  "maxDelay": "Max Delay",
+  "minAdvance": "Min Advance",
+  "maxAdvance": "Max Advance",
+  "second": "Second",
+  "forceSecond": "Force Second",
+  "searchSpaceInvalid": "Search space: invalid range",
+  "searchSpaceStates": "Search space: {states} states",
+  "@searchSpaceStates": {
+    "placeholders": {
+      "states": {
+        "type": "String"
+      }
+    }
+  },
+  "searchSpaceTooLarge": "narrow to {max} or fewer",
+  "@searchSpaceTooLarge": {
+    "placeholders": {
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "searching": "Searching...",
+  "searchComplete": "Search complete.",
+  "searchResultsPlaceholder": "Search results will appear here.",
+  "noResults": "No results.",
+  "searchCancelled": "Search cancelled.",
+  "searchFailed": "Search failed.",
+  "resultLimitReached": "Result limit reached.",
+  "sendToCalibration": "Send to calibration",
+  "saveTarget": "Save target",
+  "targetSaved": "Target saved",
+  "targetAlreadySaved": "This target is already saved.",
+  "savedTargets": "Saved targets",
+  "helpSection": "Help",
+  "tutorialsTitle": "Tutorials",
+  "tutorialsOpen": "View tutorials",
+  "tutorialCategoryBasics": "Basics",
+  "tutorialCategoryStarter": "Starters",
+  "tutorialCategoryStationary": "Stationary",
+  "tutorialCategoryWild": "Wild",
+  "tutorialCategoryEgg": "Eggs",
+  "leadAbilityHelpTitle": "DP/Pt/HGSS Lead Abilities",
+  "wildSweetScentHelpTitle": "HGSS Sweet Scent",
+  "noSavedTargets": "Tap a result on the results page to save a target.",
+  "deleteTarget": "Delete target",
+  "resultCount": "{count} results",
+  "@resultCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "searchProgress": "{scanned} / {total}",
+  "@searchProgress": {
+    "placeholders": {
+      "scanned": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "seed": "Seed",
+  "pid": "PID",
+  "delay": "Delay",
+  "advance": "Advance",
+  "hour": "Hour",
+  "time": "Time",
+  "ivs": "IVs",
+  "stats": "Stats",
+  "hpStat": "HP",
+  "atkStat": "Atk",
+  "defStat": "Def",
+  "spaStat": "SpA",
+  "spdStat": "SpD",
+  "speStat": "Spe",
+  "month": "Month",
+  "day": "Day",
+  "minute": "Minute",
+  "calibrateSeedCheck": "Seed Check",
+  "calibrateCoinFlips": "DPPt Coin Flips",
+  "calibratePhoneCalls": "HGSS Phone Calls",
+  "calibrateParameterHelp": "Target Delay and Target Second come from the selected result and identify the seed for this run. Calibrated Delay and Calibrated Second come from Settings and describe your console and input timing; they are not extra waiting time.",
+  "calibrateQuickGuide": "Quick guide: first verify the seed with coin flips or phone calls, then compare the second and delay you actually hit. Update Calibrated Second when the second is consistently off, and use Hit Delay to recalculate Calibrated Delay. For a formal target run, do not verify the seed first; follow the timer, perform the target action, then reverse-check the Pokemon afterward.",
+  "calibrationTarget": "Current Target",
+  "noCalibrationTarget": "No calibration target. Send a target from the results page.",
+  "seedToTime": "Get Seed Time",
+  "seedToTimeTitle": "Seed to Time",
+  "seedToTimeSearch": "Get Time",
+  "seedToTimeInvalidFilter": "Year must be 2000 to 2099, month 1 to 12, and day 1 to 31.",
+  "noSeedTimeResults": "No matching time.",
+  "selectedSeedTime": "Selected Seed Time",
+  "seedSearch": "Search Seed",
+  "seedSearchTitle": "Seed Search",
+  "selectedSeedHit": "Selected Seed Hit",
+  "selectedSeedHitHelp": "This result has filled Delay Hit in the timer. Tap Apply Calibration to update Calibrated Delay and adjust Calibrated Second by the hit-second offset.",
+  "initialAdvance": "Initial Advance",
+  "currentAdvance": "Current Advance",
+  "targetAdvance": "Target Advance",
+  "remainingAdvance": "Remaining Advance",
+  "advanceOffset": "Offset",
+  "initialAdvanceFilter": "Initial Advance",
+  "advanceOffsetHelp": "DPPt: use reverse search after catching the Pokemon to calculate offset. HGSS: phone calls can calculate offset directly; reverse search is still available.",
+  "chatotPitches": "Chatot Pitches",
+  "chatotPitchHigh": "High",
+  "chatotPitchLow": "Low",
+  "chatotTotalAdvances": "Chatot cries: {count}",
+  "@chatotTotalAdvances": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "advanceAhead": "Next +{count}",
+  "@advanceAhead": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "targetAction": "Target",
+  "advanceOneFrame": "Advance",
+  "pressA": "Press A",
+  "timerTimingHelpTitle": "DP/Pt/HGSS Timer Input Timing",
+  "eggHeldHelpTitle": "HGSS Egg Generation",
+  "eggPickupHelpTitle": "HGSS Egg Pickup",
+  "chatotAdvanceHelpTitle": "Pt/HGSS Chatot and Target Frames",
+  "hgssStationaryHelpTitle": "HGSS Stationary Shiny",
+  "honeyTreeHelpTitle": "Pt Honey Tree Shiny",
+  "platinumStarterHelpTitle": "Pt Starter Shiny",
+  "calibratedSecondCurrent": "Current calibrated second: {second}",
+  "@calibratedSecondCurrent": {
+    "placeholders": {
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "calibratedSecondHit": "Hit second: {second}",
+  "@calibratedSecondHit": {
+    "placeholders": {
+      "second": {
+        "type": "String"
+      }
+    }
+  },
+  "calibrateTargetTime": "Target Time",
+  "calibrateSearchWindow": "Search Window",
+  "calibrateTargetDelay": "Target Delay",
+  "calibrateDelayWindow": "Delay +/-",
+  "calibrateSecondWindow": "Second +/-",
+  "calibrateObservedSequence": "Observed Sequence",
+  "calibratePhoneCallerHelp": "Current phone text: {caller}. Change it in Settings.",
+  "@calibratePhoneCallerHelp": {
+    "placeholders": {
+      "caller": {
+        "type": "String"
+      }
+    }
+  },
+  "calibrateNoSequence": "Tap results in order.",
+  "calibrateInvalidTarget": "Fix the target time and window values.",
+  "calibrateTargetSeedTimeRequired": "Tap Get Seed Time and select a time that generates the target seed before searching seed.",
+  "calibrateNoMatches": "No matching seed.",
+  "coinMagikarp": "Magikarp",
+  "coinPokeBall": "Poke Ball",
+  "coinMagikarpShort": "M",
+  "coinPokeBallShort": "P",
+  "phoneElmShort": "E",
+  "phoneKantoShort": "K",
+  "phonePokerusShort": "P",
+  "phoneElmMessage": "E - There are so many different ways that Pokémon evolve...",
+  "phoneKantoMessage": "K - I expect there are some Pokémon in the Kanto region...",
+  "phonePokerusMessage": "P - It seems that Pokémon that have been infected with Pokérus...",
+  "phoneIrwinElmMessage": "E - Hearing about your escapades rocks my soul...",
+  "phoneIrwinKantoMessage": "K - I'm so glad you called...",
+  "phoneIrwinPokerusMessage": "P - How are you? What are you doing?",
+  "matches": "Matches",
+  "undo": "Undo",
+  "clear": "Clear",
+  "retailTimer": "Retail Timer",
+  "timerPreparation": "Preparation",
+  "timerFirstCountdown": "First Timer",
+  "timerSecondCountdown": "Second Timer",
+  "timerCurrentCountdown": "Countdown",
+  "timerReady": "Ready",
+  "timerFinished": "Finished",
+  "timerStart": "Start",
+  "timerStop": "Stop",
+  "timerTargetDelay": "Target Delay",
+  "timerTargetSecond": "Target Second",
+  "timerCalibratedDelay": "Calibrated Delay",
+  "timerCalibratedSecond": "Calibrated Second",
+  "idRngSettings": "ID RNG Settings",
+  "idRngCalibratedDelay": "ID Calibrated Delay",
+  "eggRngSettings": "Egg RNG Settings",
+  "eggRngCalibratedDelay": "Egg Calibrated Delay",
+  "timerDelayHit": "Delay Hit",
+  "timerApplyCalibration": "Apply Calibration",
+  "timerCalibrationAppliedTitle": "Calibration Applied",
+  "timerCalibrationDelayChange": "Calibrated Delay: {before} -> {after}",
+  "@timerCalibrationDelayChange": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "after": {
+        "type": "String"
+      }
+    }
+  },
+  "timerCalibrationSecondChange": "Calibrated Second: {before} -> {after}",
+  "@timerCalibrationSecondChange": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "after": {
+        "type": "String"
+      }
+    }
+  },
+  "timerCalibrationFirstCountdownChange": "First Timer: {before} -> {after}",
+  "@timerCalibrationFirstCountdownChange": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "after": {
+        "type": "String"
+      }
+    }
+  },
+  "timerCalibrationSecondCountdownChange": "Second Timer: {before} -> {after}",
+  "@timerCalibrationSecondCountdownChange": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "after": {
+        "type": "String"
+      }
+    }
+  },
+  "timerConsole": "Console",
+  "timerConsoleGba": "GBA",
+  "timerConsoleNdsSlot1": "NDS - Slot 1",
+  "timerConsoleNdsSlot2": "NDS - Slot 2",
+  "timerConsoleDsi": "DSi",
+  "timerConsole3ds": "3DS",
+  "timerConsoleCustom": "Custom",
+  "timerCustomFrameRate": "Custom Frame Rate",
+  "timerMinimumLength": "Minimum Length",
+  "timerPrecisionCalibration": "Precision Calibration",
+  "timerMinutesBeforeTarget": "Set clock {minutes} min before target",
+  "@timerMinutesBeforeTarget": {
+    "placeholders": {
+      "minutes": {
+        "type": "String"
+      }
+    }
+  },
+  "timerNdsSetTime": "Set NDS time to {time}",
+  "@timerNdsSetTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "timerPhase": "Phase {phase}",
+  "@timerPhase": {
+    "placeholders": {
+      "phase": {
+        "type": "String"
+      }
+    }
+  },
+  "timerInputError": "Check timer values.",
+  "timerWebSoundUnsupported": "The web timer does not support countdown audio yet.",
+  "reverseHitFeedback": "Reverse Hit Feedback",
+  "reverseHitSeedMatched": "Seed Hit",
+  "reverseHitSeedMissed": "Seed Missed",
+  "reverseHitTargetAdvance": "Target Adv",
+  "reverseHitActualAdvance": "Actual Adv",
+  "reverseHitAdvanceDelta": "Advance delta: {delta}",
+  "@reverseHitAdvanceDelta": {
+    "placeholders": {
+      "delta": {
+        "type": "String"
+      }
+    }
+  },
+  "observedHit": "Observed Hit",
+  "starterObservedHit": "Starter Hit",
+  "characteristic": "Characteristic",
+  "characteristicOptions": "Loves to eat|Takes plenty of siestas|Nods off a lot|Scatters things often|Likes to relax|Proud of its power|Likes to thrash about|A little quick tempered|Likes to fight|Quick tempered|Sturdy body|Capable of taking hits|Highly persistent|Good endurance|Good perseverance|Likes to run|Alert to sounds|Impetuous and silly|Somewhat of a clown|Quick to flee|Highly curious|Mischievous|Thoroughly cunning|Often lost in thought|Very finicky|Strong willed|Somewhat vain|Strongly defiant|Hates to lose|Somewhat stubborn",
+  "reverseHitSearch": "Reverse Search Pokemon",
+  "reverseHitTitle": "Reverse Search",
+  "reverseHitNoResults": "No matching results.",
+  "reverseHitTargetSeed": "Target Seed",
+  "reverseHitNearbySeed": "Nearby Seed",
+  "searchDisabledSelectPokemon": "Select a Pokemon first.",
+  "searchDisabledQueryLocations": "Query locations after choosing a Pokemon.",
+  "searchDisabledSelectLocation": "Select a location.",
+  "searchDisabledInvalidRange": "Fix the search range values.",
+  "searchDisabledSearchSpaceTooLarge": "Narrow the search space to {max} or fewer states.",
+  "@searchDisabledSearchSpaceTooLarge": {
+    "placeholders": {
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "searchDisabledInvalidIvs": "Enter IV values from 0 to 31.",
+  "searchDisabledIvRangeTooLarge": "Narrow IV ranges to {max} or fewer combinations.",
+  "@searchDisabledIvRangeTooLarge": {
+    "placeholders": {
+      "max": {
+        "type": "String"
+      }
+    }
+  },
+  "searchDisabledInvalidHiddenPower": "Enter Hidden Power strength from 30 to 70.",
+  "searchDisabledUnsupportedSource": "This source cannot be searched yet.",
+  "searchDisabledDelayYearOverflow": "Delay range is outside this year's valid seed range.",
+  "searchDisabledAlreadyRunning": "A search is already running.",
+  "any": "Any",
+  "none": "None",
+  "gbaRuby": "Ruby",
+  "gbaSapphire": "Sapphire",
+  "gbaEmerald": "Emerald",
+  "gbaFireRed": "FireRed",
+  "gbaLeafGreen": "LeafGreen",
+  "leadNone": "None",
+  "leadSynchronize": "Synchronize",
+  "leadCuteCharmMale": "Cute Charm Male",
+  "leadCuteCharmFemale": "Cute Charm Female",
+  "leadCompoundEyes": "CompoundEyes",
+  "leadPressure": "Pressure",
+  "leadSuctionCups": "Suction Cups",
+  "leadArenaTrap": "Arena Trap",
+  "leadMagnetPull": "Magnet Pull",
+  "leadStatic": "Static",
+  "typeFighting": "Fighting",
+  "typeFlying": "Flying",
+  "typePoison": "Poison",
+  "typeGround": "Ground",
+  "typeRock": "Rock",
+  "typeBug": "Bug",
+  "typeGhost": "Ghost",
+  "typeSteel": "Steel",
+  "typeFire": "Fire",
+  "typeWater": "Water",
+  "typeGrass": "Grass",
+  "typeElectric": "Electric",
+  "typePsychic": "Psychic",
+  "typeIce": "Ice",
+  "typeDragon": "Dragon",
+  "typeDark": "Dark",
+  "idRng": "ID RNG",
+  "idRngTarget": "Target ID",
+  "idRngSearch": "Search IDs",
+  "idRngSearchAll": "Search IDs (All)",
+  "idRngResults": "ID Results",
+  "idRngTimer": "ID Timer",
+  "idRngHitCheck": "Actual ID Check",
+  "idRngMinSid": "Min SID",
+  "idRngMaxSid": "Max SID",
+  "idRngTargetPid": "Target PID",
+  "idRngTargetTsv": "Target TSV",
+  "idRngExtraTargetFilters": "Extra Target Filters",
+  "cuteCharmIdTarget": "Cute Charm ID Target",
+  "idRngPidTargetFinder": "PID Target Finder",
+  "idRngExcellentSidFinder": "Excellent SID Finder",
+  "idRngReachableExcellentSidFinder": "Find SID",
+  "idRngReachableExcellentSidSearch": "Search Reachable Excellent SID",
+  "idRngExcellentSidSearch": "Search Excellent SID",
+  "idRngExcellentSidResults": "Best Target TSV Groups",
+  "idRngIncludeNeutralNatures": "Show neutral natures",
+  "idRngSortByNatureCount": "Most Natures",
+  "idRngSortByTargetCount": "Most Targets",
+  "idRngExcellentSidGroup": "TSV {tsv}",
+  "@idRngExcellentSidGroup": {
+    "placeholders": {
+      "tsv": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngPidTargetCount": "{count} targets",
+  "@idRngPidTargetCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngNatureCount": "{count} natures",
+  "@idRngNatureCount": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSidRangeShort": "SID {range}",
+  "@idRngSidRangeShort": {
+    "placeholders": {
+      "range": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngPidTargetNatures": "Target Natures",
+  "idRngPidTargetMinIvs": "Minimum IVs",
+  "idRngPidTargetSearch": "Search PID Targets",
+  "idRngPidTargetResults": "PID Target Results",
+  "idRngPidTargetNoResults": "No PID targets.",
+  "idRngPidTargetInvalidInput": "Check the nature and IV filters.",
+  "idRngPidTargetGroup": "PSV {psv} · {count} targets",
+  "@idRngPidTargetGroup": {
+    "placeholders": {
+      "psv": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngPidTargetGroupWithSid": "PSV {psv} · {count} targets · SID {sidRange}",
+  "@idRngPidTargetGroupWithSid": {
+    "placeholders": {
+      "psv": {
+        "type": "String"
+      },
+      "count": {
+        "type": "String"
+      },
+      "sidRange": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngPidTargetResult": "PID {pid} · {nature} · IVs {ivs} · Ability {ability}",
+  "@idRngPidTargetResult": {
+    "placeholders": {
+      "pid": {
+        "type": "String"
+      },
+      "nature": {
+        "type": "String"
+      },
+      "ivs": {
+        "type": "String"
+      },
+      "ability": {
+        "type": "String"
+      }
+    }
+  },
+  "genderRatio": "Gender Ratio",
+  "cuteCharmIdSummary": "PID {pid} · TSV {tsv} · Ability {ability} · Target Gender {gender}",
+  "@cuteCharmIdSummary": {
+    "placeholders": {
+      "pid": {
+        "type": "String"
+      },
+      "tsv": {
+        "type": "String"
+      },
+      "ability": {
+        "type": "String"
+      },
+      "gender": {
+        "type": "String"
+      }
+    }
+  },
+  "cuteCharmApplyIdTarget": "Apply to ID Search",
+  "idRngSearchSpace": "Search space: {states} seeds",
+  "@idRngSearchSpace": {
+    "placeholders": {
+      "states": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngNeedFilter": "Enter at least one TID, SID, TSV, or PID filter.",
+  "idRngInvalidInput": "Check the ID RNG parameters.",
+  "idRngPidSummary": "PSV {psv} · Nature {nature}",
+  "@idRngPidSummary": {
+    "placeholders": {
+      "psv": {
+        "type": "String"
+      },
+      "nature": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSidRange": "Shiny SID: {range}",
+  "@idRngSidRange": {
+    "placeholders": {
+      "range": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSidCandidates": "SID Candidates: {values}",
+  "@idRngSidCandidates": {
+    "placeholders": {
+      "values": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSelectedState": "Selected ID Result",
+  "idRngSelectResultFirst": "Select an ID result first.",
+  "idRngNoSeedTime": "Get and select a seed time first.",
+  "idRngResultSubtitle": "TID {tid} · SID {sid} · TSV {tsv}",
+  "@idRngResultSubtitle": {
+    "placeholders": {
+      "tid": {
+        "type": "String"
+      },
+      "sid": {
+        "type": "String"
+      },
+      "tsv": {
+        "type": "String"
+      }
+    }
+  },
+  "idRngSearchHit": "Reverse Hit Delay",
+  "idRngHitDelayWindow": "Delay +/-",
+  "idRngHitResults": "ID Hit Results",
+  "idRngSelectedHit": "Selected ID Hit",
+  "idRngNoHit": "No matching TID/SID.",
+  "idRngHitHelp": "This result has filled Delay Hit in the ID timer. Tap Apply Calibration to update ID Calibrated Delay only; the encounter timer delay is not changed.",
+  "gen4TargetCategoryWild": "Wild",
+  "gen4TargetCategoryStationary": "Stationary",
+  "gen4TargetCategoryLegend": "Legendary",
+  "gen4TargetCategoryGift": "Gift",
+  "gen4TargetCategoryStarter": "Starter",
+  "gen4TargetCategoryFossil": "Fossil",
+  "gen4TargetCategoryGameCorner": "Game Corner",
+  "gen4TargetCategoryEvent": "Event",
+  "gen4TargetCategoryRoamer": "Roamer",
+  "gen4TargetWildGrass": "Grass",
+  "gen4TargetWildSurfing": "Surfing",
+  "gen4TargetWildOldRod": "Old Rod",
+  "gen4TargetWildGoodRod": "Good Rod",
+  "gen4TargetWildSuperRod": "Super Rod",
+  "gen4TargetWildRockSmash": "Rock Smash",
+  "gen4TargetWildBugCatchingContest": "Bug-Catching Contest",
+  "gen4TargetWildHeadbutt": "Headbutt",
+  "gen4TargetWildHeadbuttAlt": "Headbutt Alt",
+  "gen4TargetWildHeadbuttSpecial": "Headbutt Special",
+  "gen4TargetWildHoneyTree": "Honey Tree",
+  "gen4TargetTimeMorning": "Morning",
+  "gen4TargetTimeDay": "Day",
+  "gen4TargetTimeNight": "Night",
+  "gen4TargetMethodMethod1": "Method 1",
+  "gen4TargetMethodMethodJ": "Method J",
+  "gen4TargetMethodMethodK": "Method K",
+  "gen4TargetMethodHoneyTree": "Honey Tree",
+  "gen4TargetMethodPokeRadar": "Poke Radar",
+  "gen4TargetMethodPokeRadarShiny": "Poke Radar Shiny",
+  "gen4TargetStaticStarter": "Starter",
+  "gen4TargetStaticFossil": "Fossil",
+  "gen4TargetStaticGift": "Gift",
+  "gen4TargetStaticGameCorner": "Game Corner",
+  "gen4TargetStaticStationary": "Stationary",
+  "gen4TargetStaticLegend": "Legendary",
+  "gen4TargetStaticEvent": "Event",
+  "gen4TargetStaticRoamer": "Roamer",
+  "gen4TargetShinyRandom": "Random shiny",
+  "gen4TargetShinyAlways": "Always shiny",
+  "gen4TargetShinyNever": "Shiny locked",
+  "gen4TargetModifierSwarm": "Swarm",
+  "gen4TargetModifierDay": "Day slot",
+  "gen4TargetModifierNight": "Night slot",
+  "gen4TargetModifierRadar": "Poke Radar",
+  "gen4TargetModifierRuby": "Ruby inserted",
+  "gen4TargetModifierSapphire": "Sapphire inserted",
+  "gen4TargetModifierEmerald": "Emerald inserted",
+  "gen4TargetModifierFireRed": "FireRed inserted",
+  "gen4TargetModifierLeafGreen": "LeafGreen inserted",
+  "gen4TargetModifierFeebasTile": "Feebas tile",
+  "gen4TargetModifierHoennSound": "Hoenn Sound",
+  "gen4TargetModifierSinnohSound": "Sinnoh Sound",
+  "gen4TargetModifierFishNight": "Night fishing",
+  "gen4TargetModifierFishSwarm": "Fishing swarm",
+  "gen4TargetModifierSafariBlocks": "Safari blocks",
+  "gen4TargetModifierUnknown": "Special slot",
+  "gen4TargetLevel": "Lv. {level}",
+  "@gen4TargetLevel": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "gen4TargetLevelRange": "Lv. {minLevel}-{maxLevel}",
+  "@gen4TargetLevelRange": {
+    "placeholders": {
+      "minLevel": {
+        "type": "int"
+      },
+      "maxLevel": {
+        "type": "int"
+      }
+    }
+  }
+}
