@@ -828,10 +828,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get honeyTreeHelpTitle => 'Pt Honey Tree Shiny';
 
   @override
+  String get diamondPearlStarterHelpTitle => 'DP Starter Shiny';
+
+  @override
   String get platinumStarterHelpTitle => 'Pt Starter Shiny';
 
   @override
-  String get platinumIdRngHelpTitle => 'Pt ID RNG';
+  String get platinumIdRngHelpTitle => 'DP/Pt ID RNG';
 
   @override
   String calibratedSecondCurrent(String second) {

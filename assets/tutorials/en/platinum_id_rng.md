@@ -1,8 +1,8 @@
-# Pt ID RNG
+# DP/Pt ID RNG
 
 ## Goal
 
-Pt ID RNG is used to start a new save with a target **TID/SID** pair.
+DP/Pt ID RNG is used to start a new save with a target **TID/SID** pair.
 
 If that TID/SID pair matches useful PID targets, those PIDs can become shiny later in the save.
 
@@ -51,7 +51,7 @@ It is not the full theoretical excellent SID list from the previous step; it is 
 Recommendations:
 
 - The year is the year you want to use when creating the DS save.
-- Use a minimum Delay of at least **5000**.
+- Use a minimum Delay of at least **5500**.
 - Very low Delay targets are usually not practical because new-game setup takes time.
 - If the search is slow, narrow the Min Delay and Max Delay range.
 

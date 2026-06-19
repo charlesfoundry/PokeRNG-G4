@@ -28,7 +28,11 @@ These NPCs can advance frames, so the goal is: **open the briefcase as fast as p
 4. After loading, immediately mash A.
 5. Open the briefcase as fast as possible.
 
-With this operation, the result is usually the **frame 1** starter, because opening the briefcase itself consumes 1 frame.
+With this operation, the result usually lands on a very low frame, often around **frame 1**.
+
+Do not treat “opening the briefcase always advances 1 frame” as a fixed rule. The briefcase event, NPC movement or turning, and your input speed after loading can all shift the actual hit frame.
+
+Use the reverse search result as the actual frame.
 
 ## Reverse Search
 
@@ -44,7 +48,7 @@ Enter these into the starter reverse search on the calibration page:
 
 Recommended initial range:
 
-- frame range: 1 to 5
+- frame range: 0 to 5
 - delay range: +/-300
 
 If you mashed A immediately after loading, NPCs usually should not reach a higher frame.
@@ -60,7 +64,9 @@ If you mashed A immediately after loading, NPCs usually should not reach a highe
 
 ## Troubleshooting
 
-If the reverse search result is not frame 1, it usually means:
+If the reverse search result is not frame 1, that does not always mean the attempt was wrong. It may simply be the actual offset caused by the briefcase event and NPC behavior.
+
+If the reverse search result is much higher than expected, it usually means:
 
 - A was not pressed fast enough after loading.
 - Or an NPC advanced frames first.

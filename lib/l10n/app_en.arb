@@ -328,8 +328,9 @@
   "chatotAdvanceHelpTitle": "Pt/HGSS Chatot and Target Frames",
   "hgssStationaryHelpTitle": "HGSS Stationary Shiny",
   "honeyTreeHelpTitle": "Pt Honey Tree Shiny",
+  "diamondPearlStarterHelpTitle": "DP Starter Shiny",
   "platinumStarterHelpTitle": "Pt Starter Shiny",
-  "platinumIdRngHelpTitle": "Pt ID RNG",
+  "platinumIdRngHelpTitle": "DP/Pt ID RNG",
   "calibratedSecondCurrent": "Current calibrated second: {second}",
   "@calibratedSecondCurrent": {
     "placeholders": {

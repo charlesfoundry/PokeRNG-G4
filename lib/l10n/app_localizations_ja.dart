@@ -818,10 +818,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get honeyTreeHelpTitle => 'Ptあまいミツの木色違い';
 
   @override
+  String get diamondPearlStarterHelpTitle => 'DP御三家色違い';
+
+  @override
   String get platinumStarterHelpTitle => 'Pt御三家色違い';
 
   @override
-  String get platinumIdRngHelpTitle => 'Pt ID乱数';
+  String get platinumIdRngHelpTitle => 'DP/Pt ID乱数';
 
   @override
   String calibratedSecondCurrent(String second) {

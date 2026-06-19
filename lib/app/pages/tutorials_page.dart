@@ -221,6 +221,10 @@ List<_TutorialSection> _tutorialSections(AppLocalizations l10n) {
       title: l10n.tutorialCategoryStarter,
       topics: [
         _TutorialTopic(
+          title: l10n.diamondPearlStarterHelpTitle,
+          assetName: 'diamond_pearl_starter',
+        ),
+        _TutorialTopic(
           title: l10n.platinumStarterHelpTitle,
           assetName: 'platinum_starter',
         ),

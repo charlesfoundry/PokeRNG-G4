@@ -1,8 +1,8 @@
-# Pt乱数ID
+# DP/Pt乱数ID
 
 ## 目标
 
-Pt 的 ID 乱数目标，是在新游戏中获得指定的 **TID/SID**。
+DP/Pt 的 ID 乱数目标，是在新游戏中获得指定的 **TID/SID**。
 
 如果这组 TID/SID 对应优秀 PID，就能让后续遇到的特定 PID 变成闪光。
 

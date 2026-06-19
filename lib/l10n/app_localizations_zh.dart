@@ -809,10 +809,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get honeyTreeHelpTitle => 'Pt甜甜蜜树闪';
 
   @override
+  String get diamondPearlStarterHelpTitle => 'DP初始闪';
+
+  @override
   String get platinumStarterHelpTitle => 'Pt初始闪';
 
   @override
-  String get platinumIdRngHelpTitle => 'Pt乱数ID';
+  String get platinumIdRngHelpTitle => 'DP/Pt乱数ID';
 
   @override
   String calibratedSecondCurrent(String second) {

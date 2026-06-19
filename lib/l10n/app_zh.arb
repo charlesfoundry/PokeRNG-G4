@@ -328,8 +328,9 @@
   "chatotAdvanceHelpTitle": "Pt/HGSS聒噪鸟与目标帧",
   "hgssStationaryHelpTitle": "HGSS定点闪",
   "honeyTreeHelpTitle": "Pt甜甜蜜树闪",
+  "diamondPearlStarterHelpTitle": "DP初始闪",
   "platinumStarterHelpTitle": "Pt初始闪",
-  "platinumIdRngHelpTitle": "Pt乱数ID",
+  "platinumIdRngHelpTitle": "DP/Pt乱数ID",
   "calibratedSecondCurrent": "当前校准秒：{second}",
   "@calibratedSecondCurrent": {
     "placeholders": {
