@@ -547,6 +547,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get tutorialCategoryBasics => '基礎';
 
   @override
+  String get tutorialCategoryId => 'ID';
+
+  @override
   String get tutorialCategoryStarter => '御三家';
 
   @override
@@ -756,6 +759,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get platinumStarterHelpTitle => 'Pt御三家色違い';
+
+  @override
+  String get platinumIdRngHelpTitle => 'Pt ID乱数';
 
   @override
   String calibratedSecondCurrent(String second) {

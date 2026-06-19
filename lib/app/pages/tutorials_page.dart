@@ -156,6 +156,15 @@ List<_TutorialSection> _tutorialSections(AppLocalizations l10n) {
       ],
     ),
     _TutorialSection(
+      title: l10n.tutorialCategoryId,
+      topics: [
+        _TutorialTopic(
+          title: l10n.platinumIdRngHelpTitle,
+          assetName: 'platinum_id_rng',
+        ),
+      ],
+    ),
+    _TutorialSection(
       title: l10n.tutorialCategoryStarter,
       topics: [
         _TutorialTopic(

@@ -212,6 +212,7 @@
   "tutorialsTitle": "チュートリアル",
   "tutorialsOpen": "チュートリアルを見る",
   "tutorialCategoryBasics": "基礎",
+  "tutorialCategoryId": "ID",
   "tutorialCategoryStarter": "御三家",
   "tutorialCategoryStationary": "固定",
   "tutorialCategoryWild": "野生",
@@ -309,6 +310,7 @@
   "hgssStationaryHelpTitle": "HGSS固定シンボル色違い",
   "honeyTreeHelpTitle": "Ptあまいミツの木色違い",
   "platinumStarterHelpTitle": "Pt御三家色違い",
+  "platinumIdRngHelpTitle": "Pt ID乱数",
   "calibratedSecondCurrent": "現在の校準秒：{second}",
   "@calibratedSecondCurrent": {
     "placeholders": {

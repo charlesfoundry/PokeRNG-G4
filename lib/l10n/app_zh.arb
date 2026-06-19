@@ -212,6 +212,7 @@
   "tutorialsTitle": "教程",
   "tutorialsOpen": "查看教程",
   "tutorialCategoryBasics": "基础",
+  "tutorialCategoryId": "ID",
   "tutorialCategoryStarter": "初始",
   "tutorialCategoryStationary": "定点",
   "tutorialCategoryWild": "野生",
@@ -309,6 +310,7 @@
   "hgssStationaryHelpTitle": "HGSS定点闪",
   "honeyTreeHelpTitle": "Pt甜甜蜜树闪",
   "platinumStarterHelpTitle": "Pt初始闪",
+  "platinumIdRngHelpTitle": "Pt乱数ID",
   "calibratedSecondCurrent": "当前校准秒：{second}",
   "@calibratedSecondCurrent": {
     "placeholders": {

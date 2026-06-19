@@ -212,6 +212,7 @@
   "tutorialsTitle": "Tutorials",
   "tutorialsOpen": "View tutorials",
   "tutorialCategoryBasics": "Basics",
+  "tutorialCategoryId": "ID",
   "tutorialCategoryStarter": "Starters",
   "tutorialCategoryStationary": "Stationary",
   "tutorialCategoryWild": "Wild",
@@ -309,6 +310,7 @@
   "hgssStationaryHelpTitle": "HGSS Stationary Shiny",
   "honeyTreeHelpTitle": "Pt Honey Tree Shiny",
   "platinumStarterHelpTitle": "Pt Starter Shiny",
+  "platinumIdRngHelpTitle": "Pt ID RNG",
   "calibratedSecondCurrent": "Current calibrated second: {second}",
   "@calibratedSecondCurrent": {
     "placeholders": {

@@ -539,6 +539,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get tutorialCategoryBasics => '基础';
 
   @override
+  String get tutorialCategoryId => 'ID';
+
+  @override
   String get tutorialCategoryStarter => '初始';
 
   @override
@@ -747,6 +750,9 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get platinumStarterHelpTitle => 'Pt初始闪';
+
+  @override
+  String get platinumIdRngHelpTitle => 'Pt乱数ID';
 
   @override
   String calibratedSecondCurrent(String second) {

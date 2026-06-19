@@ -1126,6 +1126,12 @@ abstract class AppLocalizations {
   /// **'Basics'**
   String get tutorialCategoryBasics;
 
+  /// No description provided for @tutorialCategoryId.
+  ///
+  /// In en, this message translates to:
+  /// **'ID'**
+  String get tutorialCategoryId;
+
   /// No description provided for @tutorialCategoryStarter.
   ///
   /// In en, this message translates to:
@@ -1521,6 +1527,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Pt Starter Shiny'**
   String get platinumStarterHelpTitle;
+
+  /// No description provided for @platinumIdRngHelpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Pt ID RNG'**
+  String get platinumIdRngHelpTitle;
 
   /// No description provided for @calibratedSecondCurrent.
   ///
