@@ -16,6 +16,12 @@ class TutorialsPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(12, 12, 12, 16),
         children: [
+          const SizedBox(height: 4),
+          _TutorialNoticeCard(
+            title: l10n.tutorialNoticeTitle,
+            body: l10n.tutorialNoticeBody,
+          ),
+          const SizedBox(height: 4),
           for (final section in sections) ...[
             Padding(
               padding: const EdgeInsets.fromLTRB(2, 12, 2, 8),
@@ -30,6 +36,36 @@ class TutorialsPage extends StatelessWidget {
             ],
           ],
         ],
+      ),
+    );
+  }
+}
+
+class _TutorialNoticeCard extends StatelessWidget {
+  const _TutorialNoticeCard({required this.title, required this.body});
+
+  final String title;
+  final String body;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(color: theme.colorScheme.outlineVariant),
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(title, style: theme.textTheme.titleSmall),
+            const SizedBox(height: 6),
+            Text(body, style: theme.textTheme.bodyMedium),
+          ],
+        ),
       ),
     );
   }
@@ -147,6 +183,10 @@ List<_TutorialSection> _tutorialSections(AppLocalizations l10n) {
     _TutorialSection(
       title: l10n.tutorialCategoryBasics,
       topics: [
+        _TutorialTopic(
+          title: l10n.delayParityHelpTitle,
+          assetName: 'delay_parity',
+        ),
         _TutorialTopic(title: l10n.timerTimingHelpTitle, assetName: 'timer'),
         _TutorialTopic(
           title: l10n.leadAbilityHelpTitle,

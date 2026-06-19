@@ -551,6 +551,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tutorialsOpen => 'View tutorials';
 
   @override
+  String get tutorialNoticeTitle => 'Before You Start';
+
+  @override
+  String get tutorialNoticeBody =>
+      'The tutorials below document workflows the author has verified through real play. A missing game or scenario does not mean the app does not support it; it may simply need further testing.';
+
+  @override
   String get tutorialCategoryBasics => 'Basics';
 
   @override
@@ -747,6 +754,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pressA => 'Press A';
+
+  @override
+  String get delayParityHelpTitle => 'Switching Delay Parity';
 
   @override
   String get timerTimingHelpTitle => 'DP/Pt/HGSS Timer Input Timing';

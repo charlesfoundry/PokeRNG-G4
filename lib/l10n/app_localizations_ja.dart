@@ -544,6 +544,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get tutorialsOpen => 'チュートリアルを見る';
 
   @override
+  String get tutorialNoticeTitle => 'はじめに';
+
+  @override
+  String get tutorialNoticeBody =>
+      '下のチュートリアルは、作者が実機手順で確認済みの乱数です。載っていないゲームや場面でも、App が対応していないとは限りません。まだ追加検証が必要な場合があります。';
+
+  @override
   String get tutorialCategoryBasics => '基礎';
 
   @override
@@ -738,6 +745,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get pressA => 'Aを押す';
+
+  @override
+  String get delayParityHelpTitle => 'Delayの奇偶切り替え';
 
   @override
   String get timerTimingHelpTitle => 'DP/Pt/HGSSタイマー入力のタイミング';

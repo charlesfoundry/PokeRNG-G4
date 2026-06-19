@@ -1120,6 +1120,18 @@ abstract class AppLocalizations {
   /// **'View tutorials'**
   String get tutorialsOpen;
 
+  /// No description provided for @tutorialNoticeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Before You Start'**
+  String get tutorialNoticeTitle;
+
+  /// No description provided for @tutorialNoticeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The tutorials below document workflows the author has verified through real play. A missing game or scenario does not mean the app does not support it; it may simply need further testing.'**
+  String get tutorialNoticeBody;
+
   /// No description provided for @tutorialCategoryBasics.
   ///
   /// In en, this message translates to:
@@ -1485,6 +1497,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Press A'**
   String get pressA;
+
+  /// No description provided for @delayParityHelpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Switching Delay Parity'**
+  String get delayParityHelpTitle;
 
   /// No description provided for @timerTimingHelpTitle.
   ///
