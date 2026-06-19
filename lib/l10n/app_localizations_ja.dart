@@ -1295,6 +1295,18 @@ class AppLocalizationsJa extends AppLocalizations {
   String get idRngIncludeNeutralNatures => '無補正性格を表示';
 
   @override
+  String get idRngExcellentSidMethodHelp =>
+      'Method 1：御三家・ギフト系。Method J：DP/Ptの固定伝説系。';
+
+  @override
+  String get idRngExcellentSidMethodHelpDppt =>
+      'Method 1：御三家・ギフト・化石系。Method J：DP/Ptの固定伝説系。';
+
+  @override
+  String get idRngExcellentSidMethodHelpHgss =>
+      'Method 1：御三家・ギフト・化石系。Method K：HGSSの固定伝説系。';
+
+  @override
   String get idRngSortByNatureCount => '性格最多';
 
   @override

@@ -2530,6 +2530,24 @@ abstract class AppLocalizations {
   /// **'Show neutral natures'**
   String get idRngIncludeNeutralNatures;
 
+  /// No description provided for @idRngExcellentSidMethodHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Method 1: starters and gifts. Method J: DP/Pt stationary legends.'**
+  String get idRngExcellentSidMethodHelp;
+
+  /// No description provided for @idRngExcellentSidMethodHelpDppt.
+  ///
+  /// In en, this message translates to:
+  /// **'Method 1: starters, gifts, and fossils. Method J: DP/Pt stationary legends.'**
+  String get idRngExcellentSidMethodHelpDppt;
+
+  /// No description provided for @idRngExcellentSidMethodHelpHgss.
+  ///
+  /// In en, this message translates to:
+  /// **'Method 1: starters, gifts, and fossils. Method K: HGSS stationary legends.'**
+  String get idRngExcellentSidMethodHelpHgss;
+
   /// No description provided for @idRngSortByNatureCount.
   ///
   /// In en, this message translates to:

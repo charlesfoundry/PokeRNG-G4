@@ -1285,6 +1285,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get idRngIncludeNeutralNatures => '显示平衡性格';
 
   @override
+  String get idRngExcellentSidMethodHelp =>
+      'Method 1：御三家、礼物类。Method J：DP/Pt 定点传说类。';
+
+  @override
+  String get idRngExcellentSidMethodHelpDppt =>
+      'Method 1：御三家、礼物、化石类。Method J：DP/Pt 定点传说类。';
+
+  @override
+  String get idRngExcellentSidMethodHelpHgss =>
+      'Method 1：御三家、礼物、化石类。Method K：HGSS 定点传说类。';
+
+  @override
   String get idRngSortByNatureCount => '性格最多';
 
   @override

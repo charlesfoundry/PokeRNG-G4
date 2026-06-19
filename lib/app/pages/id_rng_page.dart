@@ -242,6 +242,7 @@ class _IdRngPageState extends State<IdRngPage> {
         .push<ReachableExcellentSidSelection>(
           MaterialPageRoute(
             builder: (_) => ReachableExcellentSidPage(
+              game: widget.profile.game,
               tid: _selectedState?.tid,
               year: _selectedYear ?? _currentYear(),
               minDelay: 5000,

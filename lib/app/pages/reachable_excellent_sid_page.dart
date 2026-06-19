@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../core/gen4/gen4.dart';
+import '../../data/gen4/gen4_game.dart';
 import '../../data/gen4/named_resources.dart';
 import '../../l10n/app_localizations.dart';
 import '../gen4_excellent_sid_targets.dart';
@@ -27,12 +28,14 @@ class ReachableExcellentSidSelection {
 class ReachableExcellentSidPage extends StatefulWidget {
   const ReachableExcellentSidPage({
     super.key,
+    required this.game,
     required this.tid,
     required this.year,
     required this.minDelay,
     required this.maxDelay,
   });
 
+  final Gen4GameVersion game;
   final int? tid;
   final int year;
   final int minDelay;
@@ -62,7 +65,6 @@ class _ReachableExcellentSidPageState extends State<ReachableExcellentSidPage> {
   Gen4CuteCharmLead _cuteCharmLead = Gen4CuteCharmLead.male;
   int _cuteCharmGenderRatio = 127;
   int _cuteCharmNatureId = Nature.adamant.index;
-  bool _includeNeutralNatures = false;
   bool _extraFiltersExpanded = false;
   String? _error;
   Future<Gen4NamedResources>? _namesFuture;
@@ -245,18 +247,6 @@ class _ReachableExcellentSidPageState extends State<ReachableExcellentSidPage> {
                       ],
                     ),
                     const SizedBox(height: 8),
-                    SwitchListTile.adaptive(
-                      contentPadding: EdgeInsets.zero,
-                      title: Text(l10n.idRngIncludeNeutralNatures),
-                      value: _includeNeutralNatures,
-                      onChanged: (value) {
-                        setState(() {
-                          _includeNeutralNatures = value;
-                          _error = null;
-                        });
-                      },
-                    ),
-                    const SizedBox(height: 10),
                     FilledButton(
                       onPressed: _searchReachableExcellentSid,
                       child: Text(l10n.idRngReachableExcellentSidSearch),
@@ -380,8 +370,10 @@ class _ReachableExcellentSidPageState extends State<ReachableExcellentSidPage> {
   Future<void> _openExcellentSidFinderPage() async {
     final result = await Navigator.of(context).push<ExcellentSidSelection>(
       MaterialPageRoute(
-        builder: (_) =>
-            ExcellentSidFinderPage(tid: _parseOptionalInt(_tidController)),
+        builder: (_) => ExcellentSidFinderPage(
+          game: widget.game,
+          tid: _parseOptionalInt(_tidController),
+        ),
       ),
     );
     if (!mounted || result == null) {
@@ -456,7 +448,6 @@ class _ReachableExcellentSidPageState extends State<ReachableExcellentSidPage> {
     try {
       final groups = excellentSidTargetGroups(
         minIv: minIv,
-        includeNeutralNatures: _includeNeutralNatures,
         sort: ExcellentSidSort.natureCount,
       );
       return ReachableExcellentSidRequest(

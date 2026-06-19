@@ -1313,6 +1313,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get idRngIncludeNeutralNatures => 'Show neutral natures';
 
   @override
+  String get idRngExcellentSidMethodHelp =>
+      'Method 1: starters and gifts. Method J: DP/Pt stationary legends.';
+
+  @override
+  String get idRngExcellentSidMethodHelpDppt =>
+      'Method 1: starters, gifts, and fossils. Method J: DP/Pt stationary legends.';
+
+  @override
+  String get idRngExcellentSidMethodHelpHgss =>
+      'Method 1: starters, gifts, and fossils. Method K: HGSS stationary legends.';
+
+  @override
   String get idRngSortByNatureCount => 'Most Natures';
 
   @override

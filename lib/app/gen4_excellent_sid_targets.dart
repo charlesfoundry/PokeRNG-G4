@@ -1,12 +1,5 @@
 import '../core/gen4/gen4.dart';
 
-const standardExcellentNatures = {
-  Nature.adamant,
-  Nature.modest,
-  Nature.timid,
-  Nature.jolly,
-};
-
 final Set<Nature> attackLoweringNatures = Nature.values
     .where((nature) => !nature.isNeutral && nature.loweredStatIndex == 0)
     .toSet();
@@ -15,23 +8,16 @@ enum ExcellentSidSort { natureCount, targetCount }
 
 List<Gen4PidTargetGroup> excellentSidTargetGroups({
   required int minIv,
-  required bool includeNeutralNatures,
   required ExcellentSidSort sort,
 }) {
   final targets = [
-    ...standardExcellentTargets(
-      minIv,
-      includeNeutralNatures: includeNeutralNatures,
-    ),
+    ...standardExcellentTargets(minIv),
     ...attackFlexibleExcellentTargets(minIv),
   ];
   return groupExcellentSidTargets(targets, sort);
 }
 
-List<Gen4PidTarget> standardExcellentTargets(
-  int minIv, {
-  required bool includeNeutralNatures,
-}) {
+List<Gen4PidTarget> standardExcellentTargets(int minIv) {
   final minIvs = Ivs(
     hp: minIv,
     attack: minIv,
@@ -40,14 +26,9 @@ List<Gen4PidTarget> standardExcellentTargets(
     specialDefense: minIv,
     speed: minIv,
   );
-  final natures = {
-    ...standardExcellentNatures,
-    if (includeNeutralNatures)
-      ...Nature.values.where((nature) => nature.isNeutral),
-  };
   return Gen4PidTargetSearcher(
     minIvs: minIvs,
-    natures: natures,
+    natures: Nature.values.toSet(),
     maxIvCombinations: 200000,
   ).searchMethod1();
 }
