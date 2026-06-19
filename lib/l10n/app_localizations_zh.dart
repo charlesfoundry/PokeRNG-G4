@@ -21,6 +21,20 @@ class AppLocalizationsZh extends AppLocalizations {
   String get egg => '孵蛋';
 
   @override
+  String get eggCrossSaveTitle => '为别的存档生成闪光蛋';
+
+  @override
+  String get eggCrossSaveNoteBefore =>
+      '在第四世代孵蛋时，可以临时输入另一个存档的TID/SID来乱数生成蛋。把这颗蛋传给那个存档后，';
+
+  @override
+  String get eggCrossSaveNoteEmphasis => '必须在那个存档孵化';
+
+  @override
+  String get eggCrossSaveNoteAfter =>
+      '，才能获得属于那个训练家ID的闪光宝可梦。需要注意，破壳动画在领取蛋时已经决定；如果这颗蛋对领取蛋的存档ID不闪，即使之后传给目标存档孵化，孵化动画仍会显示原色。孵化后进入队伍查看详情，即可确认它是闪光宝可梦。';
+
+  @override
   String get eggHgssTitle => 'HGSS算法孵蛋';
 
   @override
@@ -339,6 +353,33 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get projectUrlCopied => '项目地址已复制';
+
+  @override
+  String get supportDeveloper => '支持作者';
+
+  @override
+  String get supportDescription => '可通过自愿内购支持后续开发。';
+
+  @override
+  String get supportNoUnlock => '购买不会解锁额外功能。';
+
+  @override
+  String get supportUnavailable => '支持作者暂不可用。';
+
+  @override
+  String get supportThanks => '感谢支持。';
+
+  @override
+  String get supportCancelled => '已取消购买。';
+
+  @override
+  String get supportPending => '购买正在等待批准。';
+
+  @override
+  String get supportFailed => '购买失败，请稍后再试。';
+
+  @override
+  String get retry => '重试';
 
   @override
   String get searchMode => '检索模式';

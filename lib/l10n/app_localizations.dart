@@ -124,6 +124,30 @@ abstract class AppLocalizations {
   /// **'Egg'**
   String get egg;
 
+  /// No description provided for @eggCrossSaveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Generate shiny eggs for another save'**
+  String get eggCrossSaveTitle;
+
+  /// No description provided for @eggCrossSaveNoteBefore.
+  ///
+  /// In en, this message translates to:
+  /// **'In Gen 4 egg RNG, you can temporarily enter another save file\'s TID/SID when generating the egg. After transferring that egg to that save, it '**
+  String get eggCrossSaveNoteBefore;
+
+  /// No description provided for @eggCrossSaveNoteEmphasis.
+  ///
+  /// In en, this message translates to:
+  /// **'must be hatched on that save'**
+  String get eggCrossSaveNoteEmphasis;
+
+  /// No description provided for @eggCrossSaveNoteAfter.
+  ///
+  /// In en, this message translates to:
+  /// **' to become a shiny Pokemon with that save\'s trainer ID. The hatching animation is already decided when the egg is picked up; if the egg is not shiny for the save that picked it up, the animation may still show the normal color even after the egg is transferred and hatched on the target save. Check the Pokemon details in your party after hatching to confirm that it is shiny.'**
+  String get eggCrossSaveNoteAfter;
+
   /// No description provided for @eggHgssTitle.
   ///
   /// In en, this message translates to:
@@ -741,6 +765,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Project URL copied'**
   String get projectUrlCopied;
+
+  /// No description provided for @supportDeveloper.
+  ///
+  /// In en, this message translates to:
+  /// **'Support developer'**
+  String get supportDeveloper;
+
+  /// No description provided for @supportDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Optional in-app purchases can support ongoing development.'**
+  String get supportDescription;
+
+  /// No description provided for @supportNoUnlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases do not unlock extra features.'**
+  String get supportNoUnlock;
+
+  /// No description provided for @supportUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Support purchases are unavailable.'**
+  String get supportUnavailable;
+
+  /// No description provided for @supportThanks.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you for your support.'**
+  String get supportThanks;
+
+  /// No description provided for @supportCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase cancelled.'**
+  String get supportCancelled;
+
+  /// No description provided for @supportPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase is pending approval.'**
+  String get supportPending;
+
+  /// No description provided for @supportFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase failed. Please try again later.'**
+  String get supportFailed;
+
+  /// No description provided for @retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
 
   /// No description provided for @searchMode.
   ///

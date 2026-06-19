@@ -21,6 +21,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get egg => 'Egg';
 
   @override
+  String get eggCrossSaveTitle => 'Generate shiny eggs for another save';
+
+  @override
+  String get eggCrossSaveNoteBefore =>
+      'In Gen 4 egg RNG, you can temporarily enter another save file\'s TID/SID when generating the egg. After transferring that egg to that save, it ';
+
+  @override
+  String get eggCrossSaveNoteEmphasis => 'must be hatched on that save';
+
+  @override
+  String get eggCrossSaveNoteAfter =>
+      ' to become a shiny Pokemon with that save\'s trainer ID. The hatching animation is already decided when the egg is picked up; if the egg is not shiny for the save that picked it up, the animation may still show the normal color even after the egg is transferred and hatched on the target save. Check the Pokemon details in your party after hatching to confirm that it is shiny.';
+
+  @override
   String get eggHgssTitle => 'HGSS Egg RNG Algorithm';
 
   @override
@@ -351,6 +365,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get projectUrlCopied => 'Project URL copied';
+
+  @override
+  String get supportDeveloper => 'Support developer';
+
+  @override
+  String get supportDescription =>
+      'Optional in-app purchases can support ongoing development.';
+
+  @override
+  String get supportNoUnlock => 'Purchases do not unlock extra features.';
+
+  @override
+  String get supportUnavailable => 'Support purchases are unavailable.';
+
+  @override
+  String get supportThanks => 'Thank you for your support.';
+
+  @override
+  String get supportCancelled => 'Purchase cancelled.';
+
+  @override
+  String get supportPending => 'Purchase is pending approval.';
+
+  @override
+  String get supportFailed => 'Purchase failed. Please try again later.';
+
+  @override
+  String get retry => 'Retry';
 
   @override
   String get searchMode => 'Search Mode';

@@ -21,6 +21,20 @@ class AppLocalizationsJa extends AppLocalizations {
   String get egg => 'タマゴ';
 
   @override
+  String get eggCrossSaveTitle => '別のセーブ用の色違いタマゴを生成';
+
+  @override
+  String get eggCrossSaveNoteBefore =>
+      '第4世代のタマゴ乱数では、別のセーブデータのTID/SIDを一時的に入力してタマゴを生成できます。そのタマゴを相手のセーブに渡した場合、';
+
+  @override
+  String get eggCrossSaveNoteEmphasis => '必ずそのセーブで孵化する必要があります';
+
+  @override
+  String get eggCrossSaveNoteAfter =>
+      '。そうすると、そのトレーナーIDの色違いポケモンになります。なお、孵化演出はタマゴ受取時に決まっています。タマゴを受け取ったセーブのIDでは色違いにならない場合、あとで対象のセーブへ渡して孵化しても、孵化演出は通常色のまま表示されることがあります。孵化後に手持ちの詳細を確認すれば、色違いであることを確認できます。';
+
+  @override
   String get eggHgssTitle => 'HGSSタマゴ乱数アルゴリズム';
 
   @override
@@ -347,6 +361,33 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get projectUrlCopied => 'プロジェクトURLをコピーしました';
+
+  @override
+  String get supportDeveloper => '開発者を支援';
+
+  @override
+  String get supportDescription => '任意のアプリ内課金で継続開発を支援できます。';
+
+  @override
+  String get supportNoUnlock => '購入しても追加機能は解放されません。';
+
+  @override
+  String get supportUnavailable => '支援購入は現在利用できません。';
+
+  @override
+  String get supportThanks => 'ご支援ありがとうございます。';
+
+  @override
+  String get supportCancelled => '購入をキャンセルしました。';
+
+  @override
+  String get supportPending => '購入は承認待ちです。';
+
+  @override
+  String get supportFailed => '購入に失敗しました。あとでもう一度お試しください。';
+
+  @override
+  String get retry => '再試行';
 
   @override
   String get searchMode => '検索モード';

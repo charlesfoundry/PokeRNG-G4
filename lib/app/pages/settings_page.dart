@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -14,6 +15,32 @@ const _projectUrl = 'https://github.com/charlesfoundry/PokeRNG-G4';
 const _privacyPolicyUrl =
     'https://github.com/charlesfoundry/PokeRNG-G4/blob/main/PRIVACY.md';
 const _appLicense = 'GPL-3.0-only';
+const _supportPurchaseChannel = MethodChannel('pokerng_g4/support_purchase');
+const _supportProductIds = [
+  'pokerngg4.support.snack',
+  'pokerngg4.support.coffee',
+  'pokerngg4.support.meal',
+];
+
+class _SupportProduct {
+  const _SupportProduct({
+    required this.id,
+    required this.displayName,
+    required this.price,
+  });
+
+  factory _SupportProduct.fromPlatform(Map<dynamic, dynamic> json) {
+    return _SupportProduct(
+      id: json['id'] as String,
+      displayName: json['displayName'] as String,
+      price: json['price'] as String,
+    );
+  }
+
+  final String id;
+  final String displayName;
+  final String price;
+}
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({
@@ -280,10 +307,28 @@ class _SettingsPageState extends State<SettingsPage> {
               '${l10n.eggParentA} ${_eggParentAControllers.map((c) => c.text).join('/')}',
           onTap: _openEggParentsSettingsPage,
         ),
+        if (_supportsApplePurchases) ...[
+          const SizedBox(height: 22),
+          _SectionHeader(
+            icon: Icons.favorite_border,
+            label: l10n.supportDeveloper,
+          ),
+          _supportEntry(l10n),
+        ],
         const SizedBox(height: 22),
         _aboutSection(l10n),
       ],
     );
+  }
+
+  bool get _supportsApplePurchases {
+    return !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+  }
+
+  void _openSupportPage() {
+    Navigator.of(
+      context,
+    ).push(MaterialPageRoute<void>(builder: (_) => const _SupportPage()));
   }
 
   Future<void> _openTimerDefaultsPage() async {
@@ -646,6 +691,20 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
+  Widget _supportEntry(AppLocalizations l10n) {
+    final theme = Theme.of(context);
+    return Surface(
+      child: ListTile(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+        leading: Icon(Icons.favorite_border, color: theme.colorScheme.primary),
+        title: Text(l10n.supportDeveloper),
+        subtitle: Text(l10n.supportNoUnlock),
+        trailing: const Icon(Icons.chevron_right),
+        onTap: _openSupportPage,
+      ),
+    );
+  }
+
   Widget _aboutRow(String label, String value, {bool selectable = false}) {
     final theme = Theme.of(context);
     final valueStyle = theme.textTheme.bodyMedium;
@@ -804,6 +863,165 @@ class _SettingsPageState extends State<SettingsPage> {
       eggParentBIvs: eggParentBIvs,
       eggMasuda: _eggMasuda,
       eggLockedPid: eggLockedPid,
+    );
+  }
+}
+
+class _SupportPage extends StatefulWidget {
+  const _SupportPage();
+
+  @override
+  State<_SupportPage> createState() => _SupportPageState();
+}
+
+class _SupportPageState extends State<_SupportPage> {
+  List<_SupportProduct> _products = const [];
+  bool _loading = false;
+  bool _purchasing = false;
+  String? _error;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadProducts();
+  }
+
+  Future<void> _loadProducts() async {
+    if (_loading) {
+      return;
+    }
+    if (kIsWeb) {
+      setState(() {
+        _products = const [];
+        _error = AppLocalizations.of(context).supportUnavailable;
+      });
+      return;
+    }
+    setState(() {
+      _loading = true;
+      _error = null;
+    });
+    try {
+      final products = await _supportPurchaseChannel
+          .invokeMethod<List<dynamic>>('products', {'ids': _supportProductIds});
+      final parsed = (products ?? const [])
+          .whereType<Map<dynamic, dynamic>>()
+          .map(_SupportProduct.fromPlatform)
+          .toList(growable: false);
+      if (!mounted) {
+        return;
+      }
+      setState(() {
+        _products = parsed;
+        _error = parsed.isEmpty
+            ? AppLocalizations.of(context).supportUnavailable
+            : null;
+      });
+    } catch (_) {
+      if (!mounted) {
+        return;
+      }
+      setState(() {
+        _products = const [];
+        _error = AppLocalizations.of(context).supportUnavailable;
+      });
+    } finally {
+      if (mounted) {
+        setState(() => _loading = false);
+      }
+    }
+  }
+
+  Future<void> _buy(_SupportProduct product) async {
+    if (_purchasing) {
+      return;
+    }
+    final l10n = AppLocalizations.of(context);
+    setState(() => _purchasing = true);
+    try {
+      final status = await _supportPurchaseChannel.invokeMethod<String>(
+        'purchase',
+        {'id': product.id},
+      );
+      if (!mounted) {
+        return;
+      }
+      final message = switch (status) {
+        'success' => l10n.supportThanks,
+        'pending' => l10n.supportPending,
+        'cancelled' => l10n.supportCancelled,
+        _ => l10n.supportFailed,
+      };
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(message)));
+    } catch (_) {
+      if (!mounted) {
+        return;
+      }
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l10n.supportFailed)));
+    } finally {
+      if (mounted) {
+        setState(() => _purchasing = false);
+      }
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    return Scaffold(
+      appBar: AppBar(title: Text(l10n.supportDeveloper)),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          Text(l10n.supportDescription, style: theme.textTheme.bodyMedium),
+          const SizedBox(height: 4),
+          Text(l10n.supportNoUnlock, style: theme.textTheme.labelMedium),
+          const SizedBox(height: 16),
+          if (_loading)
+            const Center(child: CircularProgressIndicator())
+          else if (_products.isEmpty) ...[
+            Surface(
+              child: Padding(
+                padding: const EdgeInsets.all(14),
+                child: Text(_error ?? l10n.supportUnavailable),
+              ),
+            ),
+            const SizedBox(height: 12),
+            OutlinedButton.icon(
+              onPressed: _loadProducts,
+              icon: const Icon(Icons.refresh),
+              label: Text(l10n.retry),
+            ),
+          ] else
+            ..._products.map(
+              (product) => Padding(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: Surface(
+                  child: ListTile(
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 14,
+                      vertical: 6,
+                    ),
+                    leading: Icon(
+                      Icons.favorite_border,
+                      color: theme.colorScheme.primary,
+                    ),
+                    title: Text(product.displayName),
+                    subtitle: Text(product.price),
+                    trailing: const Icon(Icons.chevron_right),
+                    enabled: !_purchasing,
+                    onTap: _purchasing ? null : () => _buy(product),
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
     );
   }
 }

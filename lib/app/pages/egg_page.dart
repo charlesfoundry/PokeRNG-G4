@@ -71,6 +71,38 @@ class _GenderRatioOption {
   }
 }
 
+class _EggCrossSaveIntro extends StatelessWidget {
+  const _EggCrossSaveIntro({required this.l10n});
+
+  final AppLocalizations l10n;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final bodyStyle = theme.textTheme.bodySmall;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(l10n.eggCrossSaveTitle, style: theme.textTheme.titleLarge),
+        const SizedBox(height: 6),
+        RichText(
+          text: TextSpan(
+            style: bodyStyle,
+            children: [
+              TextSpan(text: l10n.eggCrossSaveNoteBefore),
+              TextSpan(
+                text: l10n.eggCrossSaveNoteEmphasis,
+                style: bodyStyle?.copyWith(fontWeight: FontWeight.w700),
+              ),
+              TextSpan(text: l10n.eggCrossSaveNoteAfter),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
 class _EggPageState extends State<EggPage> {
   late final _tidController = TextEditingController(
     text: '${widget.profile.tid}',
@@ -317,15 +349,7 @@ class _EggPageState extends State<EggPage> {
       child: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          Text(
-            l10n.eggHgssTitle,
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          const SizedBox(height: 6),
-          Text(
-            l10n.eggHgssAlgorithmNote,
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
+          _EggCrossSaveIntro(l10n: l10n),
           const SizedBox(height: 10),
           SegmentedButton<_EggStage>(
             segments: [
