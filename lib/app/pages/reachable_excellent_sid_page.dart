@@ -101,12 +101,21 @@ class _ReachableExcellentSidPageState extends State<ReachableExcellentSidPage> {
         future: _namesFuture,
         builder: (context, snapshot) {
           return ListView(
-            padding: const EdgeInsets.fromLTRB(12, 12, 12, 16),
+            padding: const EdgeInsets.fromLTRB(12, 16, 12, 16),
             children: [
               _SurfaceCard(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    SizedBox(
+                      width: double.infinity,
+                      child: FilledButton.tonalIcon(
+                        onPressed: _openExcellentSidFinderPage,
+                        icon: const Icon(Icons.manage_search),
+                        label: Text(l10n.idRngExcellentSidFinder),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
                     Text(
                       l10n.idRngTarget,
                       style: Theme.of(context).textTheme.titleSmall,
@@ -140,15 +149,6 @@ class _ReachableExcellentSidPageState extends State<ReachableExcellentSidPage> {
                       pid: _parseOptionalPid(_pidController),
                       names: snapshot.data,
                       onSidSelected: _applySidCandidate,
-                    ),
-                    const SizedBox(height: 8),
-                    SizedBox(
-                      width: double.infinity,
-                      child: FilledButton.tonalIcon(
-                        onPressed: _openExcellentSidFinderPage,
-                        icon: const Icon(Icons.manage_search),
-                        label: Text(l10n.idRngExcellentSidFinder),
-                      ),
                     ),
                     const SizedBox(height: 12),
                     ExpansionTile(

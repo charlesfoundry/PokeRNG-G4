@@ -164,6 +164,13 @@ class _ExcellentSidFinderPageState extends State<ExcellentSidFinderPage> {
     final l10n = AppLocalizations.of(context);
     final tid = _parseOptionalInt(_tidController);
     final minIv = _parseOptionalInt(_minIvController);
+    if (tid == null) {
+      setState(() {
+        _groups = null;
+        _error = l10n.idRngTidRequired;
+      });
+      return;
+    }
     if (!_validU16(tid) || minIv == null || minIv < 0 || minIv > 31) {
       setState(() {
         _groups = null;
