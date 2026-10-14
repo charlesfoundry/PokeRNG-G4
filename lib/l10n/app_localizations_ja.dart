@@ -592,6 +592,12 @@ class AppLocalizationsJa extends AppLocalizations {
       '下のチュートリアルは、作者が実機手順で確認済みの乱数です。載っていないゲームや場面でも、App が対応していないとは限りません。まだ追加検証が必要な場合があります。';
 
   @override
+  String get tutorialCategoryUpdates => '更新';
+
+  @override
+  String get releaseNotesHelpTitle => '更新内容';
+
+  @override
   String get tutorialCategoryIntroduction => '紹介';
 
   @override
@@ -915,8 +921,14 @@ class AppLocalizationsJa extends AppLocalizations {
   String get matches => '一致結果';
 
   @override
-  String get seedMatchSelectionHelp =>
-      '実際に命中したseedをタップしてください。目標seedでない場合は補正に使います。目標seedの場合は、残り消費用のペラップ音程が表示されます。';
+  String get seedMatchSelectionHelpBefore => '実際に命中したSeedを';
+
+  @override
+  String get seedMatchSelectionHelpEmphasis => 'タップ';
+
+  @override
+  String get seedMatchSelectionHelpAfter =>
+      '：\n  目標と一致しない場合は、調整ページに戻りデータを自動入力します\n  目標と一致する場合は、ペラップの音程で乱数消費を進めるガイドを表示します';
 
   @override
   String get seedMatchTargetHelp => '目標Seed：タップするとペラップ音程を表示';

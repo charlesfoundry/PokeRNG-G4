@@ -4,13 +4,25 @@ import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 
 import '../../l10n/app_localizations.dart';
 
-class TutorialsPage extends StatelessWidget {
-  const TutorialsPage({super.key});
+const releaseNotesTutorialAssetName = 'release_notes';
+
+class TutorialsPage extends StatefulWidget {
+  const TutorialsPage({super.key, this.initialTopicAssetName});
+
+  final String? initialTopicAssetName;
+
+  @override
+  State<TutorialsPage> createState() => _TutorialsPageState();
+}
+
+class _TutorialsPageState extends State<TutorialsPage> {
+  var _openedInitialTopic = false;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final sections = _tutorialSections(l10n);
+    _openInitialTopicIfNeeded(sections);
     return Scaffold(
       appBar: AppBar(title: Text(l10n.tutorialsTitle)),
       body: ListView(
@@ -38,6 +50,39 @@ class TutorialsPage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void _openInitialTopicIfNeeded(List<_TutorialSection> sections) {
+    final assetName = widget.initialTopicAssetName;
+    if (_openedInitialTopic || assetName == null) {
+      return;
+    }
+    _TutorialTopic? targetTopic;
+    for (final section in sections) {
+      for (final topic in section.topics) {
+        if (topic.assetName == assetName) {
+          targetTopic = topic;
+          break;
+        }
+      }
+      if (targetTopic != null) {
+        break;
+      }
+    }
+    if (targetTopic == null) {
+      return;
+    }
+    _openedInitialTopic = true;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) {
+        return;
+      }
+      Navigator.of(context).push(
+        MaterialPageRoute<void>(
+          builder: (_) => _TutorialDetailPage(topic: targetTopic!),
+        ),
+      );
+    });
   }
 }
 
@@ -180,6 +225,15 @@ String _tutorialLocale(BuildContext context) {
 
 List<_TutorialSection> _tutorialSections(AppLocalizations l10n) {
   return [
+    _TutorialSection(
+      title: l10n.tutorialCategoryUpdates,
+      topics: [
+        _TutorialTopic(
+          title: l10n.releaseNotesHelpTitle,
+          assetName: releaseNotesTutorialAssetName,
+        ),
+      ],
+    ),
     _TutorialSection(
       title: l10n.tutorialCategoryIntroduction,
       topics: [

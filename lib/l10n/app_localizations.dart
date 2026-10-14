@@ -1210,6 +1210,18 @@ abstract class AppLocalizations {
   /// **'The tutorials below document workflows the author has verified through real play. A missing game or scenario does not mean the app does not support it; it may simply need further testing.'**
   String get tutorialNoticeBody;
 
+  /// No description provided for @tutorialCategoryUpdates.
+  ///
+  /// In en, this message translates to:
+  /// **'Updates'**
+  String get tutorialCategoryUpdates;
+
+  /// No description provided for @releaseNotesHelpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Release Notes'**
+  String get releaseNotesHelpTitle;
+
   /// No description provided for @tutorialCategoryIntroduction.
   ///
   /// In en, this message translates to:
@@ -1816,11 +1828,23 @@ abstract class AppLocalizations {
   /// **'Matches'**
   String get matches;
 
-  /// No description provided for @seedMatchSelectionHelp.
+  /// No description provided for @seedMatchSelectionHelpBefore.
   ///
   /// In en, this message translates to:
-  /// **'Tap the seed you actually hit. If it is not the target seed, it will be used for calibration. If it is the target seed, the Chatot pitch guide will appear for the remaining advances.'**
-  String get seedMatchSelectionHelp;
+  /// **''**
+  String get seedMatchSelectionHelpBefore;
+
+  /// No description provided for @seedMatchSelectionHelpEmphasis.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap'**
+  String get seedMatchSelectionHelpEmphasis;
+
+  /// No description provided for @seedMatchSelectionHelpAfter.
+  ///
+  /// In en, this message translates to:
+  /// **' the seed you actually hit:\n  If it is not the target seed, return to Calibration and fill in the data automatically\n  If it is the target seed, show the Chatot pitch guide for advancing frames'**
+  String get seedMatchSelectionHelpAfter;
 
   /// No description provided for @seedMatchTargetHelp.
   ///

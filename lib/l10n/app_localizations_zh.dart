@@ -584,6 +584,12 @@ class AppLocalizationsZh extends AppLocalizations {
       '下列教程记录的是作者已经在实机流程中验证过的乱数。没有出现在教程里的游戏或场景，并不代表 App 不支持，只是仍需要进一步尝试与确认。';
 
   @override
+  String get tutorialCategoryUpdates => '更新';
+
+  @override
+  String get releaseNotesHelpTitle => '更新说明';
+
+  @override
   String get tutorialCategoryIntroduction => '介绍';
 
   @override
@@ -906,8 +912,14 @@ class AppLocalizationsZh extends AppLocalizations {
   String get matches => '匹配结果';
 
   @override
-  String get seedMatchSelectionHelp =>
-      '点击实际命中的seed。未命中目标时用于校准；命中目标时会显示喋喋不休音准，帮助继续推进帧。';
+  String get seedMatchSelectionHelpBefore => '';
+
+  @override
+  String get seedMatchSelectionHelpEmphasis => '点击';
+
+  @override
+  String get seedMatchSelectionHelpAfter =>
+      '实际命中的 Seed:\n  若未命中，则返回校准页并自动填充数据\n  若命中，则增加显示聒噪鸟高低音推进模块';
 
   @override
   String get seedMatchTargetHelp => '目标Seed：点击后显示喋喋不休音准';

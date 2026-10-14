@@ -73,6 +73,7 @@ class AppStorage {
 
   static const _languageKey = 'app.language';
   static const _currentGameKey = 'app.currentGame';
+  static const _seenUpdateNotesVersionKey = 'app.seenUpdateNotesVersion';
 
   Future<AppLanguage> loadLanguage() async {
     return appLanguageFromStorage(await _store.getString(_languageKey));
@@ -96,6 +97,14 @@ class AppStorage {
 
   Future<void> saveCurrentGame(Gen4GameVersion game) {
     return _store.setString(_currentGameKey, game.jsonName);
+  }
+
+  Future<String?> loadSeenUpdateNotesVersion() {
+    return _store.getString(_seenUpdateNotesVersionKey);
+  }
+
+  Future<void> saveSeenUpdateNotesVersion(String version) {
+    return _store.setString(_seenUpdateNotesVersionKey, version);
   }
 
   Future<Map<Gen4GameVersion, AppProfile>> loadProfiles() async {

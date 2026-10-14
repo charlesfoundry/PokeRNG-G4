@@ -600,6 +600,12 @@ class AppLocalizationsEn extends AppLocalizations {
       'The tutorials below document workflows the author has verified through real play. A missing game or scenario does not mean the app does not support it; it may simply need further testing.';
 
   @override
+  String get tutorialCategoryUpdates => 'Updates';
+
+  @override
+  String get releaseNotesHelpTitle => 'Release Notes';
+
+  @override
   String get tutorialCategoryIntroduction => 'Introduction';
 
   @override
@@ -929,8 +935,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get matches => 'Matches';
 
   @override
-  String get seedMatchSelectionHelp =>
-      'Tap the seed you actually hit. If it is not the target seed, it will be used for calibration. If it is the target seed, the Chatot pitch guide will appear for the remaining advances.';
+  String get seedMatchSelectionHelpBefore => '';
+
+  @override
+  String get seedMatchSelectionHelpEmphasis => 'Tap';
+
+  @override
+  String get seedMatchSelectionHelpAfter =>
+      ' the seed you actually hit:\n  If it is not the target seed, return to Calibration and fill in the data automatically\n  If it is the target seed, show the Chatot pitch guide for advancing frames';
 
   @override
   String get seedMatchTargetHelp => 'Target Seed: tap to show Chatot pitches';

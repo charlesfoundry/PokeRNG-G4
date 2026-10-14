@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 import 'app_language.dart';
 import 'app_page.dart';
@@ -14,6 +15,7 @@ import 'pages/results_page.dart';
 import 'pages/search_page.dart';
 import 'pages/settings_page.dart';
 import 'pages/tools_page.dart';
+import 'pages/tutorials_page.dart';
 import '../data/gen4/gen4_game.dart';
 import '../l10n/app_localizations.dart';
 import '../l10n/gen4_game_localizations.dart';
@@ -49,11 +51,15 @@ class _AppShellState extends State<AppShell> {
   List<SavedGen4Target> _savedTargets = const [];
   Gen4GameVersion? _loadedTargetsGame;
   var _targetLoadEpoch = 0;
+  var _checkedUpdateNotes = false;
 
   @override
   void initState() {
     super.initState();
     _loadSavedTargetsIfNeeded(force: true);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _showUpdateNotesIfNeeded();
+    });
   }
 
   @override
@@ -172,6 +178,44 @@ class _AppShellState extends State<AppShell> {
 
   void _selectPage(int index) {
     setState(() => _selectedIndex = index);
+  }
+
+  Future<void> _showUpdateNotesIfNeeded() async {
+    if (_checkedUpdateNotes) {
+      return;
+    }
+    _checkedUpdateNotes = true;
+    final version = await _currentAppVersionMarker();
+    if (version.isEmpty) {
+      return;
+    }
+    final seenVersion = await widget.storage.loadSeenUpdateNotesVersion();
+    if (!mounted || seenVersion == version) {
+      return;
+    }
+    await widget.storage.saveSeenUpdateNotesVersion(version);
+    if (!mounted) {
+      return;
+    }
+    await Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => const TutorialsPage(
+          initialTopicAssetName: releaseNotesTutorialAssetName,
+        ),
+      ),
+    );
+  }
+
+  Future<String> _currentAppVersionMarker() async {
+    try {
+      final info = await PackageInfo.fromPlatform();
+      if (info.version.isNotEmpty) {
+        return info.version;
+      }
+      return info.buildNumber;
+    } catch (_) {
+      return '';
+    }
   }
 
   void _cancelSearch() {

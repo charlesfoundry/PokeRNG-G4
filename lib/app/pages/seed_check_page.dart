@@ -171,8 +171,17 @@ class _SeedCheckPageState extends State<SeedCheckPage> {
           const SizedBox(height: 10),
           Text(l10n.matches, style: Theme.of(context).textTheme.labelLarge),
           const SizedBox(height: 4),
-          Text(
-            l10n.seedMatchSelectionHelp,
+          Text.rich(
+            TextSpan(
+              children: [
+                TextSpan(text: l10n.seedMatchSelectionHelpBefore),
+                TextSpan(
+                  text: l10n.seedMatchSelectionHelpEmphasis,
+                  style: const TextStyle(fontWeight: FontWeight.w700),
+                ),
+                TextSpan(text: l10n.seedMatchSelectionHelpAfter),
+              ],
+            ),
             style: Theme.of(context).textTheme.bodySmall,
           ),
           const SizedBox(height: 8),
