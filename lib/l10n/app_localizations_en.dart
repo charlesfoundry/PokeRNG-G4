@@ -929,6 +929,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get matches => 'Matches';
 
   @override
+  String get seedMatchSelectionHelp =>
+      'Tap the seed you actually hit. If it is not the target seed, it will be used for calibration. If it is the target seed, the Chatot pitch guide will appear for the remaining advances.';
+
+  @override
+  String get seedMatchTargetHelp => 'Target Seed: tap to show Chatot pitches';
+
+  @override
   String get undo => 'Undo';
 
   @override

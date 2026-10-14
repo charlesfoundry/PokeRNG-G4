@@ -1816,6 +1816,18 @@ abstract class AppLocalizations {
   /// **'Matches'**
   String get matches;
 
+  /// No description provided for @seedMatchSelectionHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the seed you actually hit. If it is not the target seed, it will be used for calibration. If it is the target seed, the Chatot pitch guide will appear for the remaining advances.'**
+  String get seedMatchSelectionHelp;
+
+  /// No description provided for @seedMatchTargetHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Target Seed: tap to show Chatot pitches'**
+  String get seedMatchTargetHelp;
+
   /// No description provided for @undo.
   ///
   /// In en, this message translates to:

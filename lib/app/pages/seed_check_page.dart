@@ -170,6 +170,11 @@ class _SeedCheckPageState extends State<SeedCheckPage> {
           _TargetSeedCard(target: widget.request.target),
           const SizedBox(height: 10),
           Text(l10n.matches, style: Theme.of(context).textTheme.labelLarge),
+          const SizedBox(height: 4),
+          Text(
+            l10n.seedMatchSelectionHelp,
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
           const SizedBox(height: 8),
           if (_activeSequenceLength == 0)
             _MessagePanel(message: l10n.calibrateNoSequence)
@@ -678,7 +683,7 @@ class _SeedMatchCard extends StatelessWidget {
                 if (match.observedPhoneCallCount > 0)
                   Text('${l10n.initialAdvance}: ${match.totalPhoneCallSkip}'),
                 if (isTargetSeed && canCalibrateTargetSeed)
-                  Text(l10n.reverseHitTargetSeed),
+                  Text(l10n.seedMatchTargetHelp),
                 Text(_dateTimeValue(match.dateTime)),
               ],
             ),

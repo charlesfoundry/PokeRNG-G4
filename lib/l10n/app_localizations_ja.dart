@@ -915,6 +915,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get matches => '一致結果';
 
   @override
+  String get seedMatchSelectionHelp =>
+      '実際に命中したseedをタップしてください。目標seedでない場合は補正に使います。目標seedの場合は、残り消費用のペラップ音程が表示されます。';
+
+  @override
+  String get seedMatchTargetHelp => '目標Seed：タップするとペラップ音程を表示';
+
+  @override
   String get undo => '戻す';
 
   @override

@@ -379,6 +379,8 @@
   "phoneIrwinKantoMessage": "K - でんわ　うれしいなあ!",
   "phoneIrwinPokerusMessage": "P - げんきかい?",
   "matches": "匹配结果",
+  "seedMatchSelectionHelp": "点击实际命中的seed。未命中目标时用于校准；命中目标时会显示喋喋不休音准，帮助继续推进帧。",
+  "seedMatchTargetHelp": "目标Seed：点击后显示喋喋不休音准",
   "undo": "撤销",
   "clear": "清空",
   "retailTimer": "实机定时器",

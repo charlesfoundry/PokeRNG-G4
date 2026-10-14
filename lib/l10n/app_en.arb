@@ -379,6 +379,8 @@
   "phoneIrwinKantoMessage": "K - I'm so glad you called...",
   "phoneIrwinPokerusMessage": "P - How are you? What are you doing?",
   "matches": "Matches",
+  "seedMatchSelectionHelp": "Tap the seed you actually hit. If it is not the target seed, it will be used for calibration. If it is the target seed, the Chatot pitch guide will appear for the remaining advances.",
+  "seedMatchTargetHelp": "Target Seed: tap to show Chatot pitches",
   "undo": "Undo",
   "clear": "Clear",
   "retailTimer": "Retail Timer",

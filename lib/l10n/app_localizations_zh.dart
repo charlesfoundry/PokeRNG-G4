@@ -906,6 +906,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get matches => '匹配结果';
 
   @override
+  String get seedMatchSelectionHelp =>
+      '点击实际命中的seed。未命中目标时用于校准；命中目标时会显示喋喋不休音准，帮助继续推进帧。';
+
+  @override
+  String get seedMatchTargetHelp => '目标Seed：点击后显示喋喋不休音准';
+
+  @override
   String get undo => '撤销';
 
   @override
